@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Links } from "../utils/utils";
+import { getBaseProdPath, Links } from "../utils/utils";
 import LanguageButton from "./LanguageButton";
 
 export default function Header() {
 	return (
 		<header
-			className="flex flex-col bg-white py-12 px-24"
+			className="relative flex flex-col bg-white pt-12 pb-6 px-24 portrait:px-6"
 			style={{ color: "black" }}
 		>
 			<div
@@ -15,16 +15,25 @@ export default function Header() {
 			>
 				<div className="flex flex-row items-center gap-2">
 					<Link href={"/"}>
-						<Image alt="logo" height={105} width={230} src={"/cs.avif"} />
+						<Image
+							className="portrait:w-[105px] portrait:h-[50px]"
+							alt="logo"
+							height={105}
+							width={230}
+							src={`${getBaseProdPath()}/cs.avif`}
+						/>
 					</Link>
 					<div>
-						<div style={{ marginBottom: "2px" }} className="text-lg">
+						<div
+							style={{ marginBottom: "2px" }}
+							className="text-lg portrait:text-sm"
+						>
 							Intermediário de crédito em Portugal
 						</div>
-						<div className="text-sm" style={{ color: "gray" }}>
+						<div className="text-sm portrait:text-xs" style={{ color: "gray" }}>
 							Your mortgage broker
 						</div>
-						<div className="text-sm" style={{ color: "gray" }}>
+						<div className="text-sm portrait:text-xs" style={{ color: "gray" }}>
 							Votre courtier en crédit
 						</div>
 					</div>
