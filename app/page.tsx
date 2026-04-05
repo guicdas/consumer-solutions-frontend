@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Button from "./components/Button";
 import CtaWithDescription from "./components/CTA";
-import { Links, Pages } from "./utils/utils";
+import { getBaseProdPath, Links, Pages } from "./utils/utils";
 
 export default function Home() {
 	return (
@@ -12,7 +12,7 @@ export default function Home() {
 					style={{ height: "120vh" }}
 				>
 					<video
-						src={"/house.mp4"}
+						src={`${getBaseProdPath()}/house.mp4`}
 						style={{
 							width: "100%",
 							height: "100%",
@@ -39,10 +39,10 @@ export default function Home() {
 								alignItems: "center",
 							}}
 						>
-							<h1 className="text-6xl font-bold">
+							<h1 className="text-6xl font-bold portrait:text-3xl">
 								Unlock Your Dream Home in Portugal?
 							</h1>
-							<h2 className="text-6xl w-[60%] font-extralight">
+							<h2 className="text-6xl w-[60%] font-extralight portrait:text-4xl portrait:w-full">
 								Expert Mortgage Brokerage for International Investors.
 							</h2>
 							<h4 className="mb-10 font-serif font-bold">

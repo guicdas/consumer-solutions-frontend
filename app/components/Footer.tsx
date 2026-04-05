@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Links } from "../utils/utils";
+import { getBaseProdPath, Links } from "../utils/utils";
 import Button from "./Button";
 import ImageWithLink from "./ImageWithLink";
 
@@ -10,19 +10,19 @@ export default function Footer() {
 			<div className="flex flex-row gap-5">
 				<ImageWithLink
 					href="https://www.facebook.com/"
-					src="fb.svg"
+					src={`${getBaseProdPath()}/fb.svg`}
 					alt="Facebook socials"
 					size={17}
 				/>
 				<ImageWithLink
 					href="https://x.com/"
-					src="x.png"
+					src={`${getBaseProdPath()}/x.png`}
 					alt="X socials"
 					size={19}
 				/>
 				<ImageWithLink
 					href="https://www.linkedin.com/"
-					src="linkedin.svg"
+					src={`${getBaseProdPath()}/linkedin.svg`}
 					alt="LinkedIn socials"
 					size={17}
 				/>
@@ -30,7 +30,7 @@ export default function Footer() {
 			<div className="flex flex-row justify-center py-8">
 				<nav>
 					<Link
-						className="border-r border-r-black pr-6  hover:text-gray-500"
+						className="border-r border-r-black pr-6 portrait:pr-4 hover:text-gray-500"
 						href="/"
 					>
 						Home
@@ -38,13 +38,13 @@ export default function Footer() {
 					{Links.map((l) => (
 						<Link
 							key={l}
-							className="border-r border-r-black px-6 hover:text-gray-500"
+							className="border-r border-r-black px-6 portrait:px-4 hover:text-gray-500"
 							href={l}
 						>
 							{l}
 						</Link>
 					))}
-					<Link className="pl-6 hover:text-gray-500" href="/">
+					<Link className="pl-6 portrait:pl-4 hover:text-gray-500" href="/">
 						FAQ
 					</Link>
 				</nav>
