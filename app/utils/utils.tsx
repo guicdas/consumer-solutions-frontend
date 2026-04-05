@@ -7,3 +7,7 @@ export const Links = [
 	// "Testimonials",
 	// "Contact Us",
 ];
+
+export enum Pages {
+	Services = "Services",
+}
