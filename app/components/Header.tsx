@@ -1,15 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Links } from "../utils/utils";
+import LanguageButton from "./LanguageButton";
 
 export default function Header() {
 	return (
-		<header className="flex flex-col bg-white p-15 " style={{ color: "black" }}>
-			<div className="flex flex-row justify-between italic border-b border-b-black">
-				<div className="flex flex-row">
-					<Image alt="logo" height={150} width={200} src={"/cs.avif"} />
+		<header
+			className="flex flex-col bg-white py-12 px-24"
+			style={{ color: "black" }}
+		>
+			<div
+				className="flex flex-row justify-between italic border-b border-b-black"
+				style={{ paddingBottom: "1vh" }}
+			>
+				<div className="flex flex-row items-center gap-2">
+					<Link href={"/"}>
+						<Image alt="logo" height={105} width={230} src={"/cs.avif"} />
+					</Link>
 					<div>
-						<div>Intermediário de crédito em Portugal</div>
+						<div style={{ marginBottom: "2px" }} className="text-lg">
+							Intermediário de crédito em Portugal
+						</div>
 						<div className="text-sm" style={{ color: "gray" }}>
 							Your mortgage broker
 						</div>
@@ -18,15 +29,15 @@ export default function Header() {
 						</div>
 					</div>
 				</div>
-				<div className="flex flex-row w-50 h-12.5 border-t border-b border-black">
-					<div className="w-[50%] h-full border-l border-l-black bg-orange-100" />
-					<div className="w-[50%] h-full border-r border-r-black" />
-				</div>
+				<LanguageButton />
 			</div>
-
-			<nav className="flex flex-row gap-4">
+			<nav className="flex flex-row gap-4 mt-2">
 				{Links.map((l) => (
-					<Link key={l} className="hover:text-gray-500" href={l}>
+					<Link
+						key={l}
+						className="hover:text-gray-500 text-lg font-extralight"
+						href={l}
+					>
 						{l}
 					</Link>
 				))}
