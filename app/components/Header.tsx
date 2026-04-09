@@ -16,6 +16,7 @@ export default function Header() {
 				<div className="flex flex-row items-center gap-2">
 					<Link href={"/"}>
 						<Image
+							loading="lazy"
 							className="portrait:w-[105px] portrait:h-[50px]"
 							alt="logo"
 							height={105}
