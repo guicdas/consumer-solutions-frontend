@@ -15,13 +15,13 @@ export default function Footer() {
 					size={17}
 				/>
 				<ImageWithLink
-					href="https://x.com/"
+					href="https://x.com/CONSUMSOLUTION"
 					src={`${getBaseProdPath()}/x.png`}
 					alt="X socials"
 					size={19}
 				/>
 				<ImageWithLink
-					href="https://www.linkedin.com/"
+					href="https://www.linkedin.com/company/cpcdsconsumersolutions"
 					src={`${getBaseProdPath()}/linkedin.svg`}
 					alt="LinkedIn socials"
 					size={17}
@@ -44,7 +44,7 @@ export default function Footer() {
 							{l}
 						</Link>
 					))}
-					<Link className="pl-6 portrait:pl-4 hover:text-gray-500" href="/">
+					<Link className="pl-6 portrait:pl-4 hover:text-gray-500" href="/About">
 						FAQ
 					</Link>
 				</nav>
