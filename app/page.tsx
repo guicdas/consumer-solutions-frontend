@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Button from "./components/Button";
 import CtaWithDescription from "./components/CTA";
-import { getBaseProdPath, Links, Pages } from "./utils/utils";
+import { getBaseProdPath, Pages } from "./utils/utils";
 
 export default function Home() {
 	return (
@@ -54,21 +54,6 @@ export default function Home() {
 							<Link href={Pages.Services}>
 								<Button str="Explore our Services" type={1} />
 							</Link>
-
-							{/* <button
-								type="button"
-								className="relative bg-green-800 border-50%	w-[80%] text-white hover:bg-green-700 p-2"
-								style={{ borderRadius: "20px" }}
-							>
-								Investment destinations in Portugal -{">"}
-							</button>
-							<button
-								type="button"
-								style={{ borderRadius: "20px" }}
-								className="relative bg-blue-800 text-white w-[80%] hover:bg-blue-700 p-2"
-							>
-								Legal and tax implications in Portugal -{">"}
-							</button> */}
 						</div>
 					</div>
 				</div>
