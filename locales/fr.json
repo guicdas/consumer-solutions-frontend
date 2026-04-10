@@ -1,1 +1,4 @@
-{ "hello": "bonjour" }
+{
+	"videoError": "Your browser does not support the video tag.",
+	"title": "Unlock Your Dream Home in Portugal?"
+}

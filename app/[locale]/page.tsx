@@ -1,9 +1,14 @@
+"use client";
+
 import Link from "next/link";
+import { useTranslations } from "use-intl";
 import Button from "./components/Button";
 import CtaWithDescription from "./components/CTA";
 import { getBaseProdPath, Pages } from "./utils/utils";
 
 export default function Home() {
+	const t = useTranslations();
+
 	return (
 		<div className="flex flex-col min-h-screen bg-zinc-50 font-sans dark:bg-black">
 			<main className="flex w-full flex-col items-center bg-white dark:bg-black">
@@ -21,13 +26,13 @@ export default function Home() {
 						}}
 						crossOrigin="anonymous"
 						playsInline
-						preload="auto"
+						preload=""
 						muted
 						autoPlay
 						loop
 					>
 						<source src="/house	.mp4" type="video/mp4" />
-						Your browser does not support the video tag.
+						{t("videoError")}
 					</video>
 					<div className="absolute flex flex-col w-full h-fit bg-[hsl(100_100_100/0.6)] text-black bottom-0 py-16">
 						<div
@@ -40,7 +45,7 @@ export default function Home() {
 							}}
 						>
 							<h1 className="text-6xl font-bold portrait:text-3xl">
-								Unlock Your Dream Home in Portugal?
+								{t("title")}
 							</h1>
 							<h2 className="text-6xl w-[60%] font-extralight portrait:text-4xl portrait:w-full">
 								Expert Mortgage Brokerage for International Investors.

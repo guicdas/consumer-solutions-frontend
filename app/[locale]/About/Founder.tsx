@@ -18,7 +18,7 @@ export default function Founder() {
 		}}>
 			{paragraphs.map((p: string, i) =>
 				<div
-					key={i + 1}
+					key={`p-${i + 1}`}
 					style={{
 						width: "100%",
 						backgroundColor: "hsl(0 0 98)",
