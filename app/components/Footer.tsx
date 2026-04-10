@@ -31,9 +31,9 @@ export default function Footer() {
 				<nav>
 					<Link
 						className="border-r border-r-black pr-6 portrait:pr-4 hover:text-gray-500"
-						href="/"
+						href="/TCs"
 					>
-						Home
+						T&Cs
 					</Link>
 					{Links.map((l) => (
 						<Link
