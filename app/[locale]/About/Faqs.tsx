@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 
-export default function AboutUs() {
+export default function Faqs() {
 	type faqItem = {
 		title: string;
 		body: string;
-	}
+	};
 
 	const items: faqItem[] = [
 		{ title: "What is the role of a mortgage broker in Portugal?", body: "A mortgage broker in Portugal acts as an intermediary between borrowers and lenders. Their role is to help clients secure the best mortgage terms by evaluating their financial situation, comparing loan offers from various banks, and guiding them through the application process." },
@@ -73,9 +73,11 @@ export default function AboutUs() {
 								textAlign: "left",
 								backgroundColor: "hsl(0 0 90)"
 							}}
+							className="portrait:text-[16px] landscape:text-[19px]"
 						>
 							{item.title}
 							<span style={{
+								flexShrink: 0,
 								transition: "all 200ms ease",
 								translate: openIndex === i ? "0 2px" : "0 -2px",
 								width: "8px",
@@ -92,10 +94,11 @@ export default function AboutUs() {
 							height: openIndex === i ? "fit-content" : "0",
 							paddingTop: openIndex === i ? "20px" : "0",
 							paddingBottom: openIndex === i ? "20px" : "0",
-							paddingLeft: "16px",
-							fontSize: 14,
 							color: "#666"
-						}}>
+						}}
+							className="portrait:text-[12px] landscape:text-[16px] px-10"
+						>
+
 							{item.body}
 						</div>
 
@@ -103,5 +106,6 @@ export default function AboutUs() {
 				))}
 			</div>
 		</div >
+
 	);
 }

@@ -14,8 +14,13 @@ export default function ImageWithLink({
 	alt = "image",
 }: ImageWithLinkProps) {
 	return (
-		<a href={href} referrerPolicy="no-referrer">
-			<Image src={src} height={size} width={size} alt={alt} />
+		<a href={href} referrerPolicy="no-referrer" style={{
+			position: "relative",
+			display: "flex",
+			height: size,
+			width: size,
+		}}>
+			<Image src={src} height={size} width={size} alt={alt} className="w-full h-full" />
 		</a>
 	);
 }

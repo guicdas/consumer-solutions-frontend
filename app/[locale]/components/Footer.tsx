@@ -6,7 +6,8 @@ import ImageWithLink from "./ImageWithLink";
 export default function Footer() {
 	return (
 		<footer className="flex flex-col items-center pb-16 pt-10 bg-white h-fit text-black gap-4">
-			<Button str={`Request a Consultation >`} type={2} />
+			<a href="mailto:consumer.solutions@outlook.com?subject=Requesting Consultation">
+				<Button str={`Request a Consultation >`} type={2} /></a>
 			<div className="flex flex-row gap-5">
 				<ImageWithLink
 					href="https://www.facebook.com/"
@@ -18,7 +19,7 @@ export default function Footer() {
 					href="https://x.com/CONSUMSOLUTION"
 					src={`${getBaseProdPath()}/x.png`}
 					alt="X socials"
-					size={19}
+					size={17}
 				/>
 				<ImageWithLink
 					href="https://www.linkedin.com/company/cpcdsconsumersolutions"
