@@ -4,7 +4,6 @@ import Header from "./components/Header";
 import "../globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { headers } from "next/headers";
 
 const oswald = Oswald({
 	subsets: ["latin"],
@@ -14,21 +13,16 @@ const oswald = Oswald({
 
 
 export default async function RootLayout({
-	children,
+	children, params
 }: Readonly<{
 	children: React.ReactNode;
 	params: { locale: string; };
 }>) {
-	const headersList = await headers();
-	const acceptLanguage = headersList.get("accept-language") ?? "";
-
-	const supported = ["fr", "pt", "en"];
-	const detected = supported.find(lang => acceptLanguage.toLowerCase().startsWith(lang)) ?? "en";
-
+	const { locale } = await params;
 	const messages = await getMessages();
 
 	return (
-		<html lang={detected}>
+		<html lang={locale}>
 			<head>
 				<meta charSet="UTF-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -43,7 +37,7 @@ export default async function RootLayout({
 			<body
 				className={`${oswald.className} antialiased`}
 			>
-				<NextIntlClientProvider messages={messages}>
+				<NextIntlClientProvider locale={locale} messages={messages}>
 					<Header />
 					{children}
 					<Footer />

@@ -1,62 +1,48 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter, usePathname } from "next/navigation";
 import { useLocale } from "next-intl";
+import { useRouter, usePathname } from "@/i18n/navigation";
+import { useState } from "react";
 
 export default function LanguageButton() {
-
-	const flags: Record<string, string> = {
-		en: "🇬🇧",
-		fr: "🇫🇷",
-		pt: "🇵🇹",
+	type languageType = {
+		language: string,
+		flag: string;
 	};
-
+	const langs: languageType[] = [
+		{ language: "en", flag: "GBR" },
+		{ language: "fr", flag: "FRA" },
+		{ language: "pt", flag: "PT" },
+	];
 	const locale = useLocale();
 	const router = useRouter();
 	const pathname = usePathname();
-
-	const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-		const next = e.target.value;
-		const segments = pathname.split("/");
-		segments[1] = next;
-		router.push(segments.join("/"));
-	};
+	const [open, setOpen] = useState(false);
 
 	return (
-		<select
-			value={locale}
-			onChange={onChange}
-			className="absolute right-5 landscape:top-8 portrait:bottom-8 border border-black portrait:border-transparent bg-orange-100 h-10 portrait:h-fit px-2 rounded"
-		>
-			{Object.entries(flags).map(([lang, flag]) => (
-				<option key={lang} value={lang}>
-					{flag} {lang.toUpperCase()}
-				</option>
-			))}
-		</select>
-
+		<div className="absolute right-5 landscape:top-8 portrait:bottom-8 transition-all duration-150">
+			<button type="button" onPointerDown={() => setOpen(!open)} >
+				<Image src={`/${langs.find(l => l.language === locale)?.flag || "GBR"}.png`} alt={locale} height={17} width={27} />
+			</button>
+			{open && (
+				<div className="absolute right-0 mt-1 bg-white border border-black rounded">
+					{langs.map(({ language, flag }: languageType) => (
+						<button
+							type="button"
+							key={language}
+							className="flex items-center gap-2 px-3 py-2 hover:bg-orange-100 w-max"
+							onClick={() => {
+								if (language !== pathname) router.replace(pathname, { locale: language });
+								setOpen(false);
+							}}
+						>
+							<Image src={`/${flag}.png`} alt={language} height={17} width={27} style={{ position: "relative" }} />
+							{language.toUpperCase()}
+						</button>
+					))}
+				</div>
+			)}
+		</div>
 	);
 }
-/*<div className="absolute right-5 landscape:top-8 portrait:bottom-8 flex flex-row w-40 portrait:w-fit h-10 portrait:h-fit border-y border-black portrait:border-transparent">
-	<div
-		className="w-[50%] h-full border-l portrait:border-l-transparent border-l-black bg-orange-100"
-		style={{
-			display: "flex",
-			justifyContent: "center",
-			alignItems: "center",
-		}}
-	>
-		<Image src="GBR.png" alt="toggle english" height={17} width={27} />
-	</div>
-	<div
-		className="w-[50%] h-full border-r border-r-black portrait:border-r-transparent"
-		style={{
-			display: "flex",
-			justifyContent: "center",
-			alignItems: "center",
-		}}
-	>
-		<Image src="FRA.png" alt="toggle french" height={17} width={27} />
-	</div>
-</div>*/

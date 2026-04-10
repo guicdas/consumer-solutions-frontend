@@ -1,1 +1,4 @@
-{ "hello": "ola" }
+{
+	"videoError": "Your browser does not support the video tag.",
+	"title": "Deseja desbloquear a sua casa de sonho em Portugal?"
+}
