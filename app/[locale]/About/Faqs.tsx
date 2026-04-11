@@ -1,111 +1,137 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
+import { useTranslations } from "next-intl";
+import { prata } from "../../fonts-display";
+
+type FaqItem = { q: string; a: string };
 
 export default function Faqs() {
-	type faqItem = {
-		title: string;
-		body: string;
-	};
-
-	const items: faqItem[] = [
-		{ title: "What is the role of a mortgage broker in Portugal?", body: "A mortgage broker in Portugal acts as an intermediary between borrowers and lenders. Their role is to help clients secure the best mortgage terms by evaluating their financial situation, comparing loan offers from various banks, and guiding them through the application process." },
-		{ title: "Why should I use a mortgage broker instead of going directly to a bank?", body: "Mortgage brokers offer several advantages. They have access to a wide range of loan products and can provide expert guidance on the best options for your specific needs. Brokers can often secure more favorable terms and help streamline the application process, saving you time and money." },
-		{ title: "How do mortgage brokers get paid in Portugal?", body: "Mortgage brokers in Portugal typically earn a commission from the lending institution when a client's mortgage application is successful. This fee is usually a percentage of the loan amount. Clients generally do not pay brokers directly for their services." },
-		{ title: "Are mortgage brokers regulated in Portugal?", body: "Yes, mortgage brokers in Portugal are regulated by the Bank of Portugal (Banco de Portugal). To operate legally, brokers must hold a valid license issued by this regulatory authority. This ensures that brokers adhere to professional standards and ethical practices." },
-		{ title: "What factors affect mortgage interest rates in Portugal?", body: "Mortgage interest rates in Portugal can be influenced by various factors, including the Eurozone's monetary policy, the property's location, the loan-to-value ratio, the borrower's creditworthiness, and market competition among lenders." },
-		{ title: "How can I improve my chances of getting a mortgage in Portugal?", body: "To increase your likelihood of mortgage approval, maintain a strong credit score, save for a sizable down payment, provide accurate financial documentation, and work with a mortgage broker to identify lenders that match your financial profile." },
-		{ title: "What is the maximum loan-to-value (LTV) ratio for mortgages in Portugal?", body: "The LTV ratio can vary, but it's common for lenders to offer mortgages with an LTV of up to 80% of the property's value. However, specific terms may vary based on your financial situation and the lending institution." },
-		{ title: "Can I get a mortgage in Portugal as a foreign investor or non-resident?", body: "Yes, Portugal welcomes foreign investors, and non-residents can typically secure mortgages for property purchases. The requirements may vary, so it's advisable to work with a mortgage broker experienced in handling international clients." },
-		{ title: "How long does the mortgage approval process in Portugal usually take?", body: "The mortgage approval process can take several weeks in Portugal. It involves property appraisal, credit checks, and documentation verification. Timelines may vary depending on the complexity of the application and the lender's efficiency." },
-	];
-
+	const t = useTranslations("faq");
+	const items = t.raw("items") as FaqItem[];
+	const baseId = useId();
 	const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-	const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
+	const toggle = (i: number) => {
+		setOpenIndex((prev) => (prev === i ? null : i));
+	};
 
 	return (
-		<div style={{
-			width: "100%",
-			backgroundColor: "hsl(0 0 70)",
-			height: "fit-content",
-			display: "flex",
-			justifyContent: "center",
-			padding: "10vh",
-		}}>
-			<div style={{
-				width: "100%",
-				backgroundColor: "hsl(0 0 98)",
-				color: "black"
-			}}>
+		<section
+			className="relative isolate w-full overflow-hidden bg-[oklch(0.985_0.014_152)] py-[clamp(3.5rem,10vw,9rem)] text-neutral-950"
+			aria-labelledby={`${baseId}-heading`}
+		>
+			<div className="pointer-events-none absolute inset-0" aria-hidden>
 				<div
+					className="absolute -left-[15%] top-[-20%] h-[85%] w-[85%] rotate-[11deg] opacity-90"
 					style={{
-						width: "100%",
-						display: "flex",
-						alignContent: "center",
-						justifyContent: "center",
-						padding: "16px 20px",
-						border: "none",
-						cursor: "pointer",
-						backgroundColor: "hsl(0 0 85)"
+						background:
+							"linear-gradient(135deg, oklch(0.91 0.045 162 / 0.42) 0%, transparent 55%)",
 					}}
-				>
-					FAQ's
-				</div>
-				{items.map((item: faqItem, i) => (
-					<div
-						key={`faq-${i + 1}`}
-						style={{
-							borderBottom: i < items.length - 1 ? "0.5px solid #e0e0e0" : "none"
-						}}
-					>
-						<button
-							type="button"
-							onClick={() => toggle(i)}
-							style={{
-								width: "100%",
-								display: "flex",
-								justifyContent: "space-between",
-								alignItems: "center",
-								padding: "16px 20px",
-								border: "none",
-								cursor: "pointer",
-								textAlign: "left",
-								backgroundColor: "hsl(0 0 90)"
-							}}
-							className="portrait:text-[16px] landscape:text-[19px]"
-						>
-							{item.title}
-							<span style={{
-								flexShrink: 0,
-								transition: "all 200ms ease",
-								translate: openIndex === i ? "0 2px" : "0 -2px",
-								width: "8px",
-								height: "8px",
-								borderLeft: "solid 2px black",
-								borderTop: "solid 2px black",
-								rotate: openIndex === i ? "45deg" : "-135deg"
-							}} />
-						</button>
-
-						<div style={{
-							transition: "all 300ms ease, opacity 70ms ease",
-							opacity: openIndex === i ? "1" : "0",
-							height: openIndex === i ? "fit-content" : "0",
-							paddingTop: openIndex === i ? "20px" : "0",
-							paddingBottom: openIndex === i ? "20px" : "0",
-							color: "#666"
-						}}
-							className="portrait:text-[12px] landscape:text-[16px] px-10"
-						>
-
-							{item.body}
-						</div>
-
-					</div>
-				))}
+				/>
+				<div
+					className="absolute bottom-[-25%] right-[-10%] h-[70%] w-[65%] opacity-80"
+					style={{
+						background:
+							"radial-gradient(ellipse at 70% 70%, oklch(0.88 0.07 158 / 0.38), transparent 62%)",
+					}}
+				/>
 			</div>
-		</div >
 
+			<div className="relative mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-12 px-5 sm:px-8 lg:grid-cols-[minmax(0,min(100%,26rem))_minmax(0,1fr)] lg:gap-x-16 lg:gap-y-0 lg:px-12 xl:gap-x-24 xl:px-16">
+				<header className="flex max-w-xl flex-col gap-5 lg:sticky lg:top-28 lg:self-start lg:gap-7">
+					<p className="text-[0.7rem] font-bold uppercase tracking-[0.4em] text-[#2a6b52] sm:text-xs sm:tracking-[0.45em]">
+						{t("kicker")}
+					</p>
+					<h2
+						id={`${baseId}-heading`}
+						className={`${prata.className} text-[clamp(2.35rem,6.5vw,4.25rem)] font-normal leading-[0.98] tracking-[-0.035em] text-neutral-950`}
+					>
+						{t("heading")}
+					</h2>
+					<p className="text-lg font-extralight leading-relaxed text-neutral-700 sm:text-xl sm:leading-snug md:text-2xl md:leading-snug">
+						{t("lead")}
+					</p>
+				</header>
+
+				<div className="flex min-w-0 flex-col gap-4 md:gap-5">
+					{items.map((item, i) => {
+						const isOpen = openIndex === i;
+						const panelId = `${baseId}-panel-${i}`;
+						const btnId = `${baseId}-btn-${i}`;
+						const staggerMs = Math.min(i * 55, 440);
+
+						return (
+							<div
+								key={`faq-${btnId}`}
+								className={`faq-row-entrance rounded-xl border-2 bg-[oklch(0.998_0.006_155_/_0.92)] shadow-[0_16px_48px_-28px_oklch(0.35_0.09_158_/_0.35)] transition-[border-color,box-shadow] duration-300 ease-out motion-reduce:transition-none ${
+									isOpen
+										? "border-[oklch(0.52_0.1_160_/_0.55)] shadow-[0_20px_56px_-24px_oklch(0.38_0.1_158_/_0.42)]"
+										: "border-neutral-900/[0.09] hover:border-[oklch(0.55_0.08_160_/_0.35)]"
+								}`}
+								style={{ animationDelay: `${staggerMs}ms` }}
+							>
+								<h3 className="m-0 text-lg font-medium md:text-xl">
+									<button
+										id={btnId}
+										type="button"
+										className="flex w-full items-start justify-between gap-4 px-5 py-6 text-left transition-colors duration-200 hover:bg-[oklch(0.97_0.02_155_/_0.65)] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#2a6b52] sm:px-6 sm:py-7"
+										aria-expanded={isOpen}
+										aria-controls={panelId}
+										onClick={() => toggle(i)}
+									>
+										<span className="flex min-w-0 flex-1 items-start gap-4 sm:gap-5">
+											<span
+												className="select-none font-light tabular-nums text-[clamp(1.75rem,4vw,2.35rem)] leading-none tracking-[-0.04em] text-[#2a6b52]"
+												aria-hidden
+											>
+												{String(i + 1).padStart(2, "0")}
+											</span>
+											<span className="min-w-0 pt-1 text-base font-medium leading-snug tracking-[-0.015em] text-neutral-950 sm:text-lg md:text-xl">
+												{item.q}
+											</span>
+										</span>
+										<span
+											className={`mt-1.5 shrink-0 text-[#2a6b52] transition-transform duration-300 ease-out motion-reduce:transition-none ${
+												isOpen ? "rotate-45" : "rotate-0"
+											}`}
+											aria-hidden
+										>
+											<svg
+												width="26"
+												height="26"
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												strokeWidth="2"
+												strokeLinecap="square"
+												aria-hidden
+											>
+												<path d="M12 5v14M5 12h14" />
+											</svg>
+										</span>
+									</button>
+								</h3>
+
+								<div
+									id={panelId}
+									role="region"
+									aria-labelledby={btnId}
+									className="faq-panel"
+									data-open={isOpen ? "true" : "false"}
+									inert={isOpen ? undefined : true}
+								>
+									<div className="faq-panel-inner">
+										<p className="border-t border-neutral-900/[0.07] px-5 pb-7 pt-5 text-sm leading-[1.8] text-neutral-700 sm:px-6 sm:pb-8 sm:text-base sm:leading-[1.85]">
+											{item.a}
+										</p>
+									</div>
+								</div>
+							</div>
+						);
+					})}
+				</div>
+			</div>
+		</section>
 	);
 }

@@ -1,4 +1,88 @@
 {
-	"videoError": "Your browser does not support the video tag.",
-	"title": "Deseja desbloquear a sua casa de sonho em Portugal?"
+	"videoError": "O seu navegador não suporta a etiqueta de vídeo.",
+	"title": "Deseja desbloquear a sua casa de sonho em Portugal?",
+	"faq": {
+		"heading": "Perguntas frequentes",
+		"kicker": "Mediação · Portugal",
+		"lead": "Respostas claras sobre mediação de crédito, supervisão regulatória e financiamento de imóveis em Portugal.",
+		"items": [
+			{
+				"q": "Qual é o papel de um mediador de crédito em Portugal?",
+				"a": "O mediador atua como intermediário entre mutuários e instituições de crédito. Ajuda a obter condições adequadas, analisando a sua situação, comparando propostas e acompanhando o processo de candidatura."
+			},
+			{
+				"q": "Porque devo usar um mediador em vez de ir diretamente ao banco?",
+				"a": "Os mediadores têm acesso a vários produtos e podem orientar opções alinhadas com o seu perfil. Facilitam a comparação, a preparação da documentação e o contacto com os bancos."
+			},
+			{
+				"q": "Como são remunerados os mediadores de crédito em Portugal?",
+				"a": "Em geral recebem uma comissão da instituição financiadora quando o crédito é concedido, muitas vezes em percentagem do montante do empréstimo. Normalmente o cliente não paga diretamente ao mediador por esse serviço."
+			},
+			{
+				"q": "Os mediadores de crédito estão regulados em Portugal?",
+				"a": "Sim. A atividade está sujeita ao enquadramento do Banco de Portugal. É necessária autorização válida para operar legalmente, o que reforça padrões profissionais e proteção dos consumidores."
+			},
+			{
+				"q": "O que influencia as taxas de juro dos créditos à habitação em Portugal?",
+				"a": "As taxas podem reflectir a política monetária da zona euro, mas também o local do imóvel, o rácio empréstimo/valor, o seu perfil de risco e a concorrência entre bancos na altura da candidatura."
+			},
+			{
+				"q": "Como posso melhorar as hipóteses de obter crédito em Portugal?",
+				"a": "Documentação completa, rendimentos estáveis, entrada razoável e informação correcta ajudam bastante. Um mediador também pode indicar bancos cujos critérios se adequam ao seu perfil."
+			},
+			{
+				"q": "Qual é o rácio máximo empréstimo/valor (LTV) em Portugal?",
+				"a": "Os limites variam consoante o banco e o caso. É comum haver financiamento elevado face ao valor do imóvel, mas a percentagem exacta depende do bem, das suas finanças e das regras internas da instituição."
+			},
+			{
+				"q": "Um investidor estrangeiro ou não residente pode obter crédito em Portugal?",
+				"a": "Os não residentes frequentemente conseguem financiar a compra de imóveis em Portugal. Os requisitos diferem dos aplicáveis a residentes; um mediador com experiência em clientes internacionais é particularmente útil."
+			},
+			{
+				"q": "Quanto tempo demora normalmente a aprovação de um crédito à habitação em Portugal?",
+				"a": "O processo pode demorar várias semanas: avaliação do imóvel, análise de risco e verificação de documentos. O prazo depende da completude do processo e dos tempos internos do banco."
+			}
+		]
+	},
+	"services": {
+		"kicker": "Supervisão · Portugal",
+		"heroTitle": "Intermediário de crédito em Portugal",
+		"heroLead": "O Banco de Portugal é a entidade de supervisão da nossa actividade. Encontrará abaixo o registo, os serviços autorizados, as instituições parceiras e informação regulatória.",
+		"registrationTitle": "Registo no Banco de Portugal",
+		"registrationBody": "CPCDS Consumer Solutions — Unipessoal, Lda — intermediário de crédito vinculado, registado junto do Banco de Portugal, sob o n.º 0006380 (este registo pode ser verificado no <bpportal>portal dos intermediários de crédito do Banco de Portugal</bpportal>).",
+		"insuranceTitle": "Seguro de responsabilidade civil profissional",
+		"insuranceMortgage": "Crédito hipotecário: apólice n.º 2524519 — Hiscox, S.A. Sucursal em Portugal, válida de 01/07/2025 a 30/06/2026.",
+		"authorizedTitle": "Serviços autorizados a prestar",
+		"authorizedItems": [
+			"Apresentar ou propor contratos de crédito a consumidores.",
+			"Prestar o serviço de assistência a consumidores mediante a realização de actos preparatórios ou de outros trabalhos de gestão pré-contratual relativamente a contratos de crédito que não tenham sido por si apresentados ou propostos.",
+			"Celebrar contratos de crédito com consumidores em nome das instituições mutuantes.",
+			"Prestar serviços de consultoria, através da emissão de recomendações personalizadas sobre contratos de crédito.",
+			"A prestação de serviços de consultoria relativamente a contratos de crédito traduz-se na emissão de recomendações dirigidas especificamente a um consumidor sobre uma ou mais operações relativas a contratos de crédito."
+		],
+		"banksTitle": "Instituições de crédito (bancos mutuantes)",
+		"banks": [
+			"BANCO BPI, SA",
+			"BANCO BIC PORTUGUÊS, SA",
+			"ABANCA CORPORACIÓN BANCARIA, SA, SUCURSAL EM PORTUGAL",
+			"BANCO CTT, SA",
+			"BANCO SANTANDER TOTTA, SA",
+			"NOVO BANCO, SA",
+			"CAIXA GERAL DE DEPÓSITOS, SA",
+			"BANKINTER, SA - SUCURSAL EM PORTUGAL",
+			"UNION DE CRÉDITOS INMOBILIÁRIOS, S.A., ESTABLECIMIENTO FINANCIERO DE CRÉDITO (SOCIEDAD UNIPERSONAL) - SUCURSAL EM PORTUGAL"
+		],
+		"complaintsTitle": "Reclamações",
+		"complaintsP1": "As reclamações dirigidas à CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA podem ser apresentadas por e-mail ou através da plataforma do Livro de Reclamações (livroreclamacoes.pt). As reclamações podem igualmente ser apresentadas directamente à entidade de supervisão (Banco de Portugal).",
+		"adrTitle": "Resolução alternativa de litígios",
+		"adrLead": "A CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA tem acordos com dois centros de arbitragem de conflitos de consumo:",
+		"adrLisbon": "Centro de Arbitragem de Conflitos de Lisboa — n.º de adesão 34883 — <adrlisbon>centroarbitragemlisboa.pt</adrlisbon>",
+		"adrCniacc": "Centro Nacional de Informação e Arbitragem de Conflitos de Consumo — n.º de adesão 4262 — <adrcniacc>cniacc.pt</adrcniacc>",
+		"prohibitedNote": "Nos termos do artigo 46.º do Decreto-Lei n.º 81-C/2017, de 7 de julho (Regime Jurídico dos Intermediários de Crédito), a CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA está impedida de receber ou entregar quaisquer montantes relacionados com a formação, execução ou cumprimento antecipado de contratos de crédito.",
+		"contactTitle": "Sede e contactos",
+		"address": "Av. Elias Garcia, 144, 3º Esq — 1050-101 Lisboa",
+		"phone": "+351 968 457 788",
+		"email": "consumer.solutions@outlook.com",
+		"privacyLabel": "Política de privacidade (RGPD)"
+	}
 }

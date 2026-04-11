@@ -1,117 +1,304 @@
-export default function Services() {
-	const bancos = [
-		"BANCO BPI, SA",
-		"BANCO BIC PORTUGUÊS, SA",
-		"ABANCA CORPORACIÓN BANCARIA, SA, SUCURSAL EM PORTUGAL",
-		"BANCO CTT, SA",
-		"BANCO SANTANDER TOTTA, SA",
-		"NOVO BANCO, SA",
-		"CAIXA GERAL DE DEPÓSITOS, SA",
-		"BANKINTER, SA - SUCURSAL EM PORTUGAL",
-		"UNION DE CRÉDITOS INMOBILIÁRIOS, S.A., ESTABLECIMIENTO FINANCIERO DE CRÉDITO (SOCIEDAD UNIPERSONAL) - SUCURSAL EM PORTUGAL",
-	];
-	const infos = [
-		"Reclamações dirigidas à CPCDS CONSUMER SOLUTIONS - UNIPESSOAL, LDA podem ser feitas por Email ou da plataforma do Livro de Reclamações (www.livroreclamacoes.pt). Reclamações apresentadas directamente à Entidade de Supervisão (BP)",
-		"Meios de Resolução Alternativa de Litigios - Centros de Arbitragem disponibilizados. A CPCDS CONSUMER SOLUTIONS - UNIPESSOAL, LDA tem acordos com dois centros de arbitragem alternativa de conflitos:– Centro de Arbitragem de Conflitos de Lisboa- Nº de adesão 34883; http://www.centroarbitragemlisboa.pt - Centro Nacional de Informação e Arbitragem de Conflitos de Consumo Nº de adesão 4262;  https://www.cniacc.pt/pt/",
-		/**Complaints addressed to CPCDS CONSUMER SOLUTIONS – UNIPESSOAL, LDA can be made by Email or through the Complaints Book platform (www.livroreclamacoes.pt);Complaints submitted directly to the Supervisory Entity (BP)
-Alternative Dispute Resolution Means - Arbitration Centers provided
-CPCDS CONSUMER SOLUTIONS – UNIPESSOAL, LDA has agreements with two alternative dispute resolution arbitration centers:
-    Lisbon Conflict Arbitration Center - Membership number 34883; http://www.centroarbitragemlisboa.pt
-    National Center for Information and Arbitration of Consumer Conflicts Membership number 4262; https://www.cniacc.pt/pt/ 
-	CPCDS CONSUMER SOLUTIONS – UNIPESSOAL, LDA is prohibited from receiving or delivering any amounts related to the formation, execution, and early fulfillment of credit contracts, under the terms of article 46 of Decree Law 81-C/2017 of July 7th, regarding the Legal Regime of Credit Intermediaries. */
-	];
+import { Link } from "@/i18n/navigation";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import { prata } from "../../fonts-display";
+
+const BP_PORTAL = "https://www.bportugal.pt/intermediarios-credito/";
+const ADR_LISBON = "http://www.centroarbitragemlisboa.pt";
+const ADR_CNIACC = "https://www.cniacc.pt/pt/";
+
+const linkClass =
+	"font-medium text-[#2a6b52] underline decoration-[#2a6b52]/35 underline-offset-[0.22em] transition hover:decoration-[#2a6b52] focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2a6b52]";
+
+const linkOnDark =
+	"font-medium text-[oklch(0.88_0.04_150)] underline decoration-white/35 underline-offset-[0.22em] transition hover:text-white hover:decoration-white focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-200";
+
+function entranceDelay(step: number) {
+	return { animationDelay: `${Math.min(step * 78, 560)}ms` } as const;
+}
+
+export async function generateMetadata({
+	params,
+}: {
+	params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+	const { locale } = await params;
+	const t = await getTranslations({ locale, namespace: "services" });
+	return {
+		title: `${t("heroTitle")} · Consumer Solutions`,
+		description: t("heroLead"),
+	};
+}
+
+export default async function ServicesPage({
+	params,
+}: {
+	params: Promise<{ locale: string }>;
+}) {
+	const { locale } = await params;
+	const t = await getTranslations({ locale, namespace: "services" });
+	const authorized = t.raw("authorizedItems") as string[];
+	const banks = t.raw("banks") as string[];
 
 	return (
-		<>
-			<div className="bg-gray-300 text-black flex flex-col text-center gap-15">
-				<h1 className="text-3xl" style={{ fontWeight: "bolder" }}>
-					Intermediário de Crédito em Portugal
-				</h1>
-				{/* <h2 className="text-white italic">
-				Real Estate Mortgage Broker in Portugal
-			</h2> */}
-				<h2 className="text-2xl">
-					O banco de Portugal
-					<br />é a entidade de supervisão de nossa atividade
-				</h2>
-				<p>
-					CPCDS Consumer Solutions - Unipessoal, Lda - Intermediário de crédito
-					vinculado, registado junto do Banco de Portugal, sob o número: 0006380
-					(este registo pode ser verificado no Portal do Banco de Portugal:
-					https://www.bportugal.pt/intermediarios-credito/).
-				</p>
+		<article className="relative isolate w-full overflow-hidden bg-[oklch(0.982_0.014_152)] text-neutral-950">
+			<div className="pointer-events-none absolute inset-0" aria-hidden>
+				<div
+					className="absolute -left-[25%] top-[-15%] h-[90%] w-[90%] rotate-[10deg] opacity-[0.85]"
+					style={{
+						background:
+							"linear-gradient(145deg, oklch(0.88 0.06 162 / 0.38) 0%, transparent 58%)",
+					}}
+				/>
+				<div
+					className="absolute -right-[15%] bottom-[-20%] h-[75%] w-[80%] opacity-80"
+					style={{
+						background:
+							"radial-gradient(ellipse 65% 55% at 75% 85%, oklch(0.86 0.08 158 / 0.42), transparent 62%)",
+					}}
+				/>
 			</div>
-			<div className="relative flex flex-col bg-white text-black h-80 text-center">
-				<h2 className="pt-5">Seguro de Responsabilidade Civil</h2>
-				<p className="absolute top-1/2">
-					• Crédito Hipotecário: 2524519 - Hiscox, S. A. Sucursal em Portugal,
-					válido de 01/07/2025 a 30/06/2026
-				</p>
+
+			<header
+				className="services-entrance relative border-b-2 border-[#2a6b52]/40 px-5 py-16 sm:px-10 sm:py-20 md:px-14 md:py-24 lg:px-20"
+				style={entranceDelay(0)}
+			>
+				<div className="mx-auto w-full max-w-[90rem]">
+					<div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-end lg:gap-16 xl:gap-24">
+						<div className="space-y-6">
+							<p className="inline-block border-b-2 border-[#2a6b52] pb-2 text-[0.68rem] font-bold uppercase tracking-[0.42em] text-[#2a6b52] sm:text-xs sm:tracking-[0.48em]">
+								{t("kicker")}
+							</p>
+							<h1
+								className={`${prata.className} max-w-[min(100%,42rem)] text-[clamp(2.5rem,9vw,4.75rem)] font-normal leading-[0.96] tracking-[-0.038em] text-neutral-950`}
+							>
+								{t("heroTitle")}
+							</h1>
+						</div>
+						<p className="text-lg font-extralight leading-[1.55] text-neutral-700 sm:text-xl md:text-2xl md:leading-snug">
+							{t("heroLead")}
+						</p>
+					</div>
+				</div>
+			</header>
+
+			<div className="relative mx-auto w-full max-w-[90rem] px-5 py-14 sm:px-8 sm:py-16 md:px-12 md:py-20 lg:px-16">
+				<div className="flex flex-col gap-14 md:gap-20 lg:gap-24">
+					<section
+						className="services-entrance relative overflow-hidden rounded-2xl border-2 border-neutral-900/[0.08] bg-[oklch(0.997_0.006_155)] p-7 shadow-[0_24px_64px_-36px_oklch(0.32_0.1_158_/_0.4)] sm:p-10"
+						style={entranceDelay(1)}
+						aria-labelledby="reg-heading"
+					>
+						<div
+							className="pointer-events-none absolute inset-x-0 top-0 h-1.5 bg-[#2a6b52]"
+							aria-hidden
+						/>
+						<h2
+							id="reg-heading"
+							className={`${prata.className} mb-6 text-[clamp(1.65rem,3.5vw,2.25rem)] tracking-[-0.025em] text-neutral-950`}
+						>
+							{t("registrationTitle")}
+						</h2>
+						<div className="max-w-[65ch] text-base leading-[1.8] text-neutral-700 sm:text-lg">
+							{t.rich("registrationBody", {
+								bpportal: (chunks) => (
+									<a
+										href={BP_PORTAL}
+										className={linkClass}
+										rel="noopener noreferrer"
+										target="_blank"
+									>
+										{chunks}
+									</a>
+								),
+							})}
+						</div>
+					</section>
+
+					<section
+						className="services-entrance rounded-2xl border border-neutral-900/12 bg-[oklch(0.96_0.022_155)] px-7 py-10 sm:px-10 sm:py-12"
+						style={entranceDelay(2)}
+						aria-labelledby="ins-heading"
+					>
+						<h2
+							id="ins-heading"
+							className={`${prata.className} mb-5 text-[clamp(1.5rem,3vw,2rem)] tracking-[-0.02em] text-neutral-950`}
+						>
+							{t("insuranceTitle")}
+						</h2>
+						<p className="max-w-[65ch] text-base font-light leading-relaxed text-neutral-800 sm:text-lg">
+							{t("insuranceMortgage")}
+						</p>
+					</section>
+
+					<section style={entranceDelay(3)} aria-labelledby="auth-heading">
+						<h2
+							id="auth-heading"
+							className={`${prata.className} mb-10 text-[clamp(1.65rem,3.5vw,2.35rem)] tracking-[-0.02em] text-neutral-950`}
+						>
+							{t("authorizedTitle")}
+						</h2>
+						<ol className="list-[lower-alpha] space-y-7 pl-6 marker:font-semibold marker:text-[#2a6b52] sm:pl-10">
+							{authorized.map((item, idx) => (
+								<li
+									key={`auth-${idx}`}
+									className="border-b border-neutral-900/[0.06] pb-7 pl-2 text-[1.05rem] font-normal leading-[1.8] text-neutral-900 last:border-b-0 last:pb-0 sm:text-[1.1rem]"
+								>
+									{item}
+								</li>
+							))}
+						</ol>
+					</section>
+
+					<section
+						className="services-entrance relative overflow-hidden rounded-2xl bg-[oklch(0.14_0.032_158)] px-7 py-12 text-zinc-100 sm:px-10 sm:py-14"
+						style={entranceDelay(4)}
+						aria-labelledby="banks-heading"
+					>
+						<div
+							className="pointer-events-none absolute inset-0 opacity-[0.07]"
+							aria-hidden
+							style={{
+								backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+							}}
+						/>
+						<div
+							className="pointer-events-none absolute inset-0 opacity-90"
+							aria-hidden
+							style={{
+								background:
+									"radial-gradient(ellipse 100% 80% at 100% 0%, oklch(0.28 0.09 165 / 0.5), transparent 55%)",
+							}}
+						/>
+						<div className="relative">
+							<h2
+								id="banks-heading"
+								className={`${prata.className} mb-10 text-[clamp(1.75rem,3.8vw,2.65rem)] tracking-[-0.03em] text-white`}
+							>
+								{t("banksTitle")}
+							</h2>
+							<ul className="grid grid-cols-1 gap-x-12 gap-y-5 border-t border-zinc-600/50 pt-8 sm:grid-cols-2">
+								{banks.map((b) => (
+									<li
+										key={b}
+										className="text-[0.9rem] font-light leading-snug tracking-[0.01em] text-zinc-300 sm:text-[0.95rem]"
+									>
+										{b}
+									</li>
+								))}
+							</ul>
+						</div>
+					</section>
+
+					<section
+						className="services-entrance space-y-12"
+						style={entranceDelay(5)}
+						aria-labelledby="comp-heading"
+					>
+						<div>
+							<h2
+								id="comp-heading"
+								className={`${prata.className} mb-6 text-[clamp(1.65rem,3.2vw,2.25rem)] tracking-[-0.02em] text-neutral-950`}
+							>
+								{t("complaintsTitle")}
+							</h2>
+							<p className="max-w-[65ch] text-base leading-[1.85] text-neutral-700 sm:text-lg">
+								{t("complaintsP1")}
+							</p>
+						</div>
+						<div>
+							<h3 className="mb-5 text-sm font-bold uppercase tracking-[0.28em] text-[#2a6b52]">
+								{t("adrTitle")}
+							</h3>
+							<p className="mb-8 max-w-[65ch] text-base leading-[1.85] text-neutral-700 sm:text-lg">
+								{t("adrLead")}
+							</p>
+							<ul className="max-w-[65ch] space-y-6 text-base leading-relaxed text-neutral-800 sm:text-lg">
+								<li>
+									{t.rich("adrLisbon", {
+										adrlisbon: (chunks) => (
+											<a
+												href={ADR_LISBON}
+												className={linkClass}
+												rel="noopener noreferrer"
+												target="_blank"
+											>
+												{chunks}
+											</a>
+										),
+									})}
+								</li>
+								<li>
+									{t.rich("adrCniacc", {
+										adrcniacc: (chunks) => (
+											<a
+												href={ADR_CNIACC}
+												className={linkClass}
+												rel="noopener noreferrer"
+												target="_blank"
+											>
+												{chunks}
+											</a>
+										),
+									})}
+								</li>
+							</ul>
+						</div>
+						<p className="max-w-[65ch] rounded-xl border-2 border-[#2a6b52]/35 bg-[oklch(0.96_0.025_155)] p-6 text-sm font-medium leading-[1.8] text-neutral-900 sm:p-8 sm:text-base">
+							{t("prohibitedNote")}
+						</p>
+					</section>
+
+					<section
+						className="services-entrance relative overflow-hidden rounded-2xl bg-[oklch(0.15_0.028_158)] px-7 py-12 text-zinc-200 sm:px-10 sm:py-14"
+						style={entranceDelay(6)}
+						aria-labelledby="contact-heading"
+					>
+						<div
+							className="pointer-events-none absolute inset-0 opacity-[0.06]"
+							aria-hidden
+							style={{
+								background:
+									"radial-gradient(ellipse 80% 50% at 20% 100%, oklch(0.42 0.1 160 / 0.45), transparent 60%)",
+							}}
+						/>
+						<div className="relative">
+							<h2
+								id="contact-heading"
+								className={`${prata.className} mb-10 text-[clamp(1.75rem,3.5vw,2.5rem)] tracking-[-0.02em] text-white`}
+							>
+								{t("contactTitle")}
+							</h2>
+							<address className="max-w-[65ch] not-italic">
+								<ul className="space-y-4 text-base leading-relaxed sm:text-lg">
+									<li className="text-zinc-300">{t("address")}</li>
+									<li>
+										<a
+											className={linkOnDark}
+											href={`tel:${t("phone").replace(/\s/g, "")}`}
+										>
+											{t("phone")}
+										</a>
+									</li>
+									<li>
+										<a
+											className={linkOnDark}
+											href={`mailto:${t("email")}`}
+										>
+											{t("email")}
+										</a>
+									</li>
+								</ul>
+							</address>
+							<p className="mt-10 border-t border-zinc-600/50 pt-8">
+								<Link className={`${linkOnDark} text-base`} href="/TCs">
+									{t("privacyLabel")}
+								</Link>
+							</p>
+						</div>
+					</section>
+				</div>
 			</div>
-			<div className="bg-black">
-				<h2 style={{ textDecoration: "underline" }}>
-					Serviços autorizados a prestar:
-				</h2>
-				<ol className="italic list-decimal list-inside pl-10" type="a">
-					<li>Apresentando ou propondo contratos de crédito a consumidores.</li>
-					<li>
-						Prestando o serviço de assistência a consumidores mediante a
-						realização de atos preparatórios ou de outros trabalhos de gestão
-						pré-contratual relativamente a contratos de crédito que não tenham
-						sido por si apresentados ou propostos.
-					</li>
-					<li>
-						Celebrando contratos de crédito com consumidores em nome das
-						instituições mutuantes
-					</li>
-					<li>
-						Prestando serviços de consultoria, através da emissão de
-						recomendações personalizadas sobre contratos de crédito
-					</li>
-					<li>
-						A prestação de serviços de consultoria relativamente a contratos de
-						crédito traduz- se na emissão de recomendações dirigidas
-						especificamente a um consumidor sobre uma ou mais operações
-						relativas a contratos de crédito
-					</li>
-				</ol>
-				{/* <h2 style={{ textDecoration: "underline" }}>
-					Services authorized to provide:
-				</h2>
-				<ul className="text-gray-600 list-disc list-inside pl-10">
-					<li>Presenting or proposing credit agreements to consumers</li>
-					<li>
-						Providing consumer assistance services by carrying out preparatory
-						acts or other pre-contractual management work regarding credit
-						agreements that have not been presented or proposed by themselves
-					</li>
-					<li>
-						Entering into credit agreements with consumers on behalf of lending
-						institutions
-					</li>
-					<li>
-						Providing consultancy services by issuing personalized
-						recommendations on credit agreements
-					</li>
-				</ul> */}
-				<h2>Bancos Mutantes:</h2>
-				{/* <p className="text-gray-600">Banks with Agreements:</p> */}
-				<ul className="pl-10">
-					{bancos.map((b) => (
-						<li key={b}>{b}</li>
-					))}
-				</ul>
-			</div>
-			<div className="bg-blue-400">
-				{infos.map((i) => (
-					<h3 key={i.slice(0, 10)}>{i}</h3>
-				))}
-				<p>Morada da Sede: Av. Elias Garcia, 144, 3ºEsq - 1050-101 Lisboa</p>
-				<p>Contact: +351 968457 788</p>
-				<p>E-mail: consumer.solutions@outlook.com</p>
-				<br />
-				<p>Política de privacidade (RGPD)</p>
-			</div>
-		</>
+		</article>
 	);
 }

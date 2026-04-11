@@ -1,4 +1,88 @@
 {
 	"videoError": "Your browser does not support the video tag.",
-	"title": "Unlock Your Dream Home in Portugal?"
+	"title": "Unlock Your Dream Home in Portugal?",
+	"faq": {
+		"heading": "Frequently asked questions",
+		"kicker": "Brokerage · Portugal",
+		"lead": "Clear answers on mortgage brokerage, regulation, and financing property in Portugal.",
+		"items": [
+			{
+				"q": "What is the role of a mortgage broker in Portugal?",
+				"a": "A mortgage broker in Portugal acts as an intermediary between borrowers and lenders. Their role is to help clients secure suitable mortgage terms by evaluating their financial situation, comparing loan offers from various banks, and guiding them through the application process."
+			},
+			{
+				"q": "Why should I use a mortgage broker instead of going directly to a bank?",
+				"a": "Mortgage brokers have access to a wide range of loan products and can provide guidance on options that fit your situation. They can help compare terms, streamline paperwork, and save time when navigating different lenders’ requirements."
+			},
+			{
+				"q": "How do mortgage brokers get paid in Portugal?",
+				"a": "Mortgage brokers in Portugal typically earn a commission from the lending institution when a mortgage application completes successfully. This is usually a percentage of the loan amount. Clients generally do not pay the broker directly for this service."
+			},
+			{
+				"q": "Are mortgage brokers regulated in Portugal?",
+				"a": "Yes. Mortgage brokers must be registered and are supervised by the Bank of Portugal (Banco de Portugal). Operating legally requires an appropriate license, which helps ensure professional standards and consumer protection."
+			},
+			{
+				"q": "What factors affect mortgage interest rates in Portugal?",
+				"a": "Rates can reflect broader conditions such as Eurozone monetary policy, as well as loan-specific factors: property location, loan-to-value ratio, your credit profile, and competition among lenders at the time you apply."
+			},
+			{
+				"q": "How can I improve my chances of getting a mortgage in Portugal?",
+				"a": "Strong documentation, a stable income history, a sensible deposit, and accurate information all help. A broker can also help match you with lenders whose criteria fit your profile."
+			},
+			{
+				"q": "What is the maximum loan-to-value (LTV) ratio for mortgages in Portugal?",
+				"a": "LTV limits vary by lender and case. It is common to see financing up to a significant share of the property value, but the exact percentage depends on the property, your finances, and the bank’s rules."
+			},
+			{
+				"q": "Can I get a mortgage in Portugal as a foreign investor or non-resident?",
+				"a": "Non-residents can often obtain mortgages for Portuguese property purchases. Requirements differ from those for residents, so working with a broker experienced in international clients is especially useful."
+			},
+			{
+				"q": "How long does the mortgage approval process in Portugal usually take?",
+				"a": "Approval can take several weeks. It includes valuation, credit assessment, and document checks. Timing depends on how complete your file is and the lender’s processing capacity."
+			}
+		]
+	},
+	"services": {
+		"kicker": "Supervision · Portugal",
+		"heroTitle": "Credit intermediary in Portugal",
+		"heroLead": "The Bank of Portugal is the supervisory authority for our activity. Below you will find our registration details, authorised services, partner institutions, and regulatory disclosures.",
+		"registrationTitle": "Bank of Portugal registration",
+		"registrationBody": "CPCDS Consumer Solutions — Unipessoal, Lda is a tied credit intermediary registered with the Bank of Portugal under no. 0006380. You can verify this registration on the <bpportal>Bank of Portugal credit intermediaries portal</bpportal>.",
+		"insuranceTitle": "Professional liability insurance",
+		"insuranceMortgage": "Mortgage credit: policy no. 2524519 — Hiscox, S.A. Branch in Portugal, valid from 1 July 2025 to 30 June 2026.",
+		"authorizedTitle": "Services we are authorised to provide",
+		"authorizedItems": [
+			"Presenting or proposing credit agreements to consumers.",
+			"Providing consumer assistance by carrying out preparatory acts or other pre-contractual management work relating to credit agreements that we have not presented or proposed ourselves.",
+			"Entering into credit agreements with consumers on behalf of lending institutions.",
+			"Providing advisory services by issuing personalised recommendations on credit agreements.",
+			"Advisory services on credit agreements consist of issuing recommendations addressed specifically to a consumer concerning one or more transactions relating to credit agreements."
+		],
+		"banksTitle": "Lending institutions (partner banks)",
+		"banks": [
+			"BANCO BPI, SA",
+			"BANCO BIC PORTUGUÊS, SA",
+			"ABANCA CORPORACIÓN BANCARIA, SA, SUCURSAL EM PORTUGAL",
+			"BANCO CTT, SA",
+			"BANCO SANTANDER TOTTA, SA",
+			"NOVO BANCO, SA",
+			"CAIXA GERAL DE DEPÓSITOS, SA",
+			"BANKINTER, SA - SUCURSAL EM PORTUGAL",
+			"UNION DE CRÉDITOS INMOBILIÁRIOS, S.A., ESTABLECIMIENTO FINANCIERO DE CRÉDITO (SOCIEDAD UNIPERSONAL) - SUCURSAL EM PORTUGAL"
+		],
+		"complaintsTitle": "Complaints",
+		"complaintsP1": "Complaints concerning CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA may be submitted by email or through the online Complaints Book (livroreclamacoes.pt). Complaints may also be lodged directly with the supervisory authority (Bank of Portugal).",
+		"adrTitle": "Alternative dispute resolution",
+		"adrLead": "CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA has agreements with two alternative dispute resolution arbitration centres:",
+		"adrLisbon": "Lisbon Conflict Arbitration Centre — membership no. 34883 — <adrlisbon>centroarbitragemlisboa.pt</adrlisbon>",
+		"adrCniacc": "National Centre for Consumer Arbitration Information — membership no. 4262 — <adrcniacc>cniacc.pt</adrcniacc>",
+		"prohibitedNote": "Under Article 46 of Decree-Law No. 81-C/2017 of 7 July (Legal Regime of Credit Intermediaries), CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA may not receive or hand over any sums related to the formation, performance or early discharge of credit agreements.",
+		"contactTitle": "Registered office & contact",
+		"address": "Av. Elias Garcia, 144, 3º Esq — 1050-101 Lisboa",
+		"phone": "+351 968 457 788",
+		"email": "consumer.solutions@outlook.com",
+		"privacyLabel": "Privacy policy (GDPR)"
+	}
 }

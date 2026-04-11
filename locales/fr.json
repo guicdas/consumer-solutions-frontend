@@ -1,4 +1,88 @@
 {
-	"videoError": "Your browser does not support the video tag.",
-	"title": "Unlock Your Dream Home in Portugal?"
+	"videoError": "Votre navigateur ne prend pas en charge la balise vidéo.",
+	"title": "Unlock Your Dream Home in Portugal?",
+	"faq": {
+		"heading": "Questions fréquentes",
+		"kicker": "Courtage · Portugal",
+		"lead": "Réponses claires sur le courtage hypothécaire, la réglementation et le financement immobilier au Portugal.",
+		"items": [
+			{
+				"q": "Quel est le rôle d’un courtier hypothécaire au Portugal ?",
+				"a": "Le courtier agit comme intermédiaire entre emprunteurs et banques. Il aide à obtenir des conditions adaptées en analysant votre situation, en comparant des offres et en vous accompagnant dans le dossier de demande de prêt."
+			},
+			{
+				"q": "Pourquoi passer par un courtier plutôt que d’aller directement en banque ?",
+				"a": "Les courtiers ont accès à un large éventail de produits et peuvent vous orienter vers des solutions cohérentes avec votre profil. Ils facilitent la comparaison, la préparation des pièces et le suivi auprès des établissements."
+			},
+			{
+				"q": "Comment les courtiers hypothécaires sont-ils rémunérés au Portugal ?",
+				"a": "Ils perçoivent en général une commission de la banque prêteuse lorsque le crédit est accordé, souvent en pourcentage du montant du prêt. Le client ne règle généralement pas directement des honoraires au courtier pour ce service."
+			},
+			{
+				"q": "Les courtiers hypothécaires sont-ils réglementés au Portugal ?",
+				"a": "Oui. L’activité est encadrée par la Banque du Portugal (Banco de Portugal). Une autorisation valide est requise pour exercer légalement, ce qui contribue à des standards professionnels et à la protection des consommateurs."
+			},
+			{
+				"q": "Qu’est-ce qui influence les taux d’intérêt des prêts immobiliers au Portugal ?",
+				"a": "Les taux peuvent refléter la politique monétaire de la zone euro, mais aussi le lieu du bien, le ratio prêt/valeur, votre solvabilité et la concurrence entre banques au moment de la demande."
+			},
+			{
+				"q": "Comment améliorer mes chances d’obtenir un crédit immobilier au Portugal ?",
+				"a": "Des justificatifs complets, des revenus stables, un apport cohérent et des informations exactes aident beaucoup. Un courtier peut aussi vous orienter vers des banques dont les critères correspondent à votre profil."
+			},
+			{
+				"q": "Quel est le ratio prêt/valeur (LTV) maximal au Portugal ?",
+				"a": "Les plafonds varient selon les banques et les dossiers. On voit souvent un financement élevé par rapport à la valeur du bien, mais le pourcentage exact dépend du bien, de votre situation et des règles internes de l’établissement."
+			},
+			{
+				"q": "Un investisseur étranger ou non-résident peut-il obtenir un crédit au Portugal ?",
+				"a": "Les non-résidents peuvent souvent financer un achat immobilier portugais. Les exigences diffèrent de celles des résidents ; un courtier habitué aux clients internationaux est alors particulièrement utile."
+			},
+			{
+				"q": "Combien de temps dure en général l’instruction d’un prêt immobilier au Portugal ?",
+				"a": "L’instruction peut prendre plusieurs semaines : estimation du bien, analyse du risque et vérification des documents. Le délai dépend de l’exhaustivité du dossier et des délais internes de la banque."
+			}
+		]
+	},
+	"services": {
+		"kicker": "Supervision · Portugal",
+		"heroTitle": "Intermédiaire de crédit au Portugal",
+		"heroLead": "La Banque du Portugal est l’autorité de supervision de notre activité. Vous trouverez ci-dessous l’enregistrement, les services autorisés, les partenaires et les informations réglementaires.",
+		"registrationTitle": "Enregistrement auprès de la Banque du Portugal",
+		"registrationBody": "CPCDS Consumer Solutions — Unipessoal, Lda est un intermédiaire de crédit lié, enregistré auprès de la Banque du Portugal sous le n° 0006380. Vous pouvez vérifier cet enregistrement sur le <bpportal>portail des intermédiaires de crédit de la Banque du Portugal</bpportal>.",
+		"insuranceTitle": "Assurance responsabilité civile professionnelle",
+		"insuranceMortgage": "Crédit hypothécaire : police n° 2524519 — Hiscox, S.A. Succursale au Portugal, valable du 1er juillet 2025 au 30 juin 2026.",
+		"authorizedTitle": "Services que nous sommes autorisés à fournir",
+		"authorizedItems": [
+			"Présenter ou proposer des contrats de crédit aux consommateurs.",
+			"Fournir une assistance aux consommateurs par des actes préparatoires ou d’autres travaux de gestion précontractuels relatifs à des contrats de crédit que nous n’avons pas nous-mêmes présentés ou proposés.",
+			"Conclure des contrats de crédit avec des consommateurs pour le compte des institutions prêteuses.",
+			"Fournir des services de conseil par l’émission de recommandations personnalisées sur les contrats de crédit.",
+			"Les services de conseil sur les contrats de crédit consistent à émettre des recommandations adressées spécifiquement à un consommateur concernant une ou plusieurs opérations relatives à des contrats de crédit."
+		],
+		"banksTitle": "Institutions de crédit (banques partenaires)",
+		"banks": [
+			"BANCO BPI, SA",
+			"BANCO BIC PORTUGUÊS, SA",
+			"ABANCA CORPORACIÓN BANCARIA, SA, SUCURSAL EM PORTUGAL",
+			"BANCO CTT, SA",
+			"BANCO SANTANDER TOTTA, SA",
+			"NOVO BANCO, SA",
+			"CAIXA GERAL DE DEPÓSITOS, SA",
+			"BANKINTER, SA - SUCURSAL EM PORTUGAL",
+			"UNION DE CRÉDITOS INMOBILIÁRIOS, S.A., ESTABLECIMIENTO FINANCIERO DE CRÉDITO (SOCIEDAD UNIPERSONAL) - SUCURSAL EM PORTUGAL"
+		],
+		"complaintsTitle": "Réclamations",
+		"complaintsP1": "Les réclamations concernant CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA peuvent être déposées par e-mail ou via la plateforme du Livre des réclamations (livroreclamacoes.pt). Elles peuvent également être adressées directement à l’autorité de supervision (Banque du Portugal).",
+		"adrTitle": "Règlement extrajudiciaire des litiges",
+		"adrLead": "CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA a des accords avec deux centres d’arbitrage de conflits de consommation :",
+		"adrLisbon": "Centre d’arbitrage des conflits de Lisbonne — n° d’adhésion 34883 — <adrlisbon>centroarbitragemlisboa.pt</adrlisbon>",
+		"adrCniacc": "Centre national d’information et d’arbitrage des conflits de consommation — n° d’adhésion 4262 — <adrcniacc>cniacc.pt</adrcniacc>",
+		"prohibitedNote": "Conformément à l’article 46 du décret-loi n° 81-C/2017 du 7 juillet (régime juridique des intermédiaires de crédit), CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA ne peut recevoir ni remettre des sommes liées à la formation, à l’exécution ou à l’exécution anticipée de contrats de crédit.",
+		"contactTitle": "Siège et contacts",
+		"address": "Av. Elias Garcia, 144, 3º Esq — 1050-101 Lisboa",
+		"phone": "+351 968 457 788",
+		"email": "consumer.solutions@outlook.com",
+		"privacyLabel": "Politique de confidentialité (RGPD)"
+	}
 }
