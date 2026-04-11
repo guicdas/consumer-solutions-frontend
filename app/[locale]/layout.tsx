@@ -1,4 +1,5 @@
 import { Oswald } from "next/font/google";
+import { prata } from "../fonts-display";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "../globals.css";
@@ -35,7 +36,7 @@ export default async function RootLayout({
 				<meta property="og:image" content="/guicdas/cs.avif" />
 			</head>
 			<body
-				className={`${oswald.className} antialiased`}
+				className={`${oswald.className} ${prata.variable} antialiased`}
 			>
 				<NextIntlClientProvider locale={locale} messages={messages}>
 					<Header />

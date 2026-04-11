@@ -24,3 +24,40 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes home-hero-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1.5rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.home-hero-enter {
+  opacity: 0;
+  animation: home-hero-in 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.home-hero-enter-delay-1 {
+  animation-delay: 0.09s;
+}
+.home-hero-enter-delay-2 {
+  animation-delay: 0.18s;
+}
+.home-hero-enter-delay-3 {
+  animation-delay: 0.27s;
+}
+.home-hero-enter-delay-4 {
+  animation-delay: 0.38s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero-enter {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
