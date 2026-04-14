@@ -1,5 +1,10 @@
 import Image from "next/image";
+import { routing } from "@/i18n/routing";
 import Button from "../components/Button";
+
+export function generateStaticParams() {
+	return routing.locales.map((locale) => ({ locale }));
+}
 
 export default function Certifications() {
 	return (
