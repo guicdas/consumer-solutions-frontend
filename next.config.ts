@@ -5,8 +5,7 @@ import path from "path";
 const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 const nextConfig: NextConfig = {
-	basePath:
-		process.env.NODE_ENV === "production" ? "/consumer-solutions-frontend" : "",
+	basePath: "/consumer-solutions-frontend", //process.env.NODE_ENV === "production" ? "/consumer-solutions-frontend" : "",
 	images: {
 		unoptimized: true,
 	},
