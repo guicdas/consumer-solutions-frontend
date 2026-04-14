@@ -3,6 +3,7 @@ import createNextIntlPlugin from "next-intl/plugin";
 import path from "path";
 
 const withNextIntl = createNextIntlPlugin(path.resolve("./i18n/request.ts"));
+
 const nextConfig: NextConfig = {
 	basePath:
 		process.env.NODE_ENV === "production" ? "/consumer-solutions-frontend" : "",
