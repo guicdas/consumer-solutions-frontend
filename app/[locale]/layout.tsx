@@ -11,13 +11,15 @@ const oswald = Oswald({
 	variable: "--font-oswald",
 });
 
+type RootLayoutProps = {
+	children: React.ReactNode;
+	params: Promise<{ locale: string }>;
+};
 
 export default async function RootLayout({
-	children, params
-}: Readonly<{
-	children: React.ReactNode;
-	params: { locale: string; };
-}>) {
+	children,
+	params,
+}: RootLayoutProps) {
 	const { locale } = await params;
 	const messages = await getMessages();
 
@@ -34,9 +36,7 @@ export default async function RootLayout({
 				<meta property="og:title" content="Consumer Solutions" />
 				<meta property="og:image" content="/guicdas/cs.avif" />
 			</head>
-			<body
-				className={`${oswald.className} antialiased`}
-			>
+			<body className={`${oswald.className} antialiased`}>
 				<NextIntlClientProvider locale={locale} messages={messages}>
 					<Header />
 					{children}
