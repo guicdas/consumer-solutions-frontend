@@ -1,9 +1,8 @@
 import dynamic from "next/dynamic";
+import { routing } from "@/i18n/routing";
 import Founder from "./Founder";
 
 const Faqs = dynamic(() => import("./Faqs"));
-
-import { routing } from "@/i18n/routing";
 
 export function generateStaticParams() {
 	return routing.locales.map((locale) => ({ locale }));
