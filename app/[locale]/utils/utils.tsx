@@ -1,11 +1,12 @@
 export const Links = [
 	"Services",
-	"Certifications",
-	// "Investments",
-	// "Destinations in Portugal",
-	// "About Us",
-	// "Testimonials",
-	// "Contact Us",
+	"Certifications"
+];
+
+export const footerLinks = [
+	"T&Cs",
+	"Sitemap",
+	"About",
 ];
 
 export enum Pages {

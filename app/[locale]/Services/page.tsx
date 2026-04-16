@@ -10,9 +10,7 @@ export default function Services() {
 		"BANCO BIC PORTUGUÊS, SA",
 		"ABANCA CORPORACIÓN BANCARIA, SA, SUCURSAL EM PORTUGAL",
 		"BANCO CTT, SA",
-		"BANCO SANTANDER TOTTA, SA",
 		"NOVO BANCO, SA",
-		"CAIXA GERAL DE DEPÓSITOS, SA",
 		"BANKINTER, SA - SUCURSAL EM PORTUGAL",
 		"UNION DE CRÉDITOS INMOBILIÁRIOS, S.A., ESTABLECIMIENTO FINANCIERO DE CRÉDITO (SOCIEDAD UNIPERSONAL) - SUCURSAL EM PORTUGAL",
 	];
@@ -22,8 +20,8 @@ export default function Services() {
 		/**Complaints addressed to CPCDS CONSUMER SOLUTIONS – UNIPESSOAL, LDA can be made by Email or through the Complaints Book platform (www.livroreclamacoes.pt);Complaints submitted directly to the Supervisory Entity (BP)
 Alternative Dispute Resolution Means - Arbitration Centers provided
 CPCDS CONSUMER SOLUTIONS – UNIPESSOAL, LDA has agreements with two alternative dispute resolution arbitration centers:
-    Lisbon Conflict Arbitration Center - Membership number 34883; http://www.centroarbitragemlisboa.pt
-    National Center for Information and Arbitration of Consumer Conflicts Membership number 4262; https://www.cniacc.pt/pt/ 
+	Lisbon Conflict Arbitration Center - Membership number 34883; http://www.centroarbitragemlisboa.pt
+	National Center for Information and Arbitration of Consumer Conflicts Membership number 4262; https://www.cniacc.pt/pt/ 
 	CPCDS CONSUMER SOLUTIONS – UNIPESSOAL, LDA is prohibited from receiving or delivering any amounts related to the formation, execution, and early fulfillment of credit contracts, under the terms of article 46 of Decree Law 81-C/2017 of July 7th, regarding the Legal Regime of Credit Intermediaries. */
 	];
 

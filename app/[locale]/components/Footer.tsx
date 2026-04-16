@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getBaseProdPath, Links } from "../utils/utils";
+import { getBaseProdPath, footerLinks } from "../utils/utils";
 import Button from "./Button";
 import ImageWithLink from "./ImageWithLink";
 
@@ -30,24 +30,15 @@ export default function Footer() {
 			</div>
 			<div className="flex flex-row justify-center py-8">
 				<nav>
-					<Link
-						className="border-r border-r-black pr-6 portrait:pr-4 hover:text-gray-500"
-						href="/TCs"
-					>
-						T&Cs
-					</Link>
-					{Links.map((l) => (
+					{footerLinks.map((l: string, i) => (
 						<Link
 							key={l}
-							className="border-r border-r-black px-6 portrait:px-4 hover:text-gray-500"
-							href={l}
+							className={`${i !== footerLinks.length - 1 ? "border-r border-r-black" : ""} px-6 portrait:px-4 hover:text-gray-500`}
+							href={`/${l}`}
 						>
 							{l}
 						</Link>
 					))}
-					<Link className="pl-6 portrait:pl-4 hover:text-gray-500" href="/About">
-						FAQ
-					</Link>
 				</nav>
 			</div>
 			<p>©2021 by Consumer Solutions.</p>

@@ -17,7 +17,7 @@ export default function Header() {
 					<Link href={"/"}>
 						<Image
 							loading="lazy"
-							className="portrait:w-[105px] portrait:h-[50px]"
+							className="portrait:w-26.25 portrait:h-12.5 w-32 h-15"
 							alt="logo"
 							height={105}
 							width={230}
