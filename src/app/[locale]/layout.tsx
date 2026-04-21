@@ -3,7 +3,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "../globals.css";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/src/i18n/routing";
 import { notFound } from "next/navigation";
 
@@ -31,11 +31,6 @@ export default async function RootLayout({
 	params,
 }: RootLayoutProps) {
 	const { locale } = await params;
-	const messages = await getMessages();
-
-	console.log(routing.locales, "-", locale);
-
-
 
 	if (!hasLocale(routing.locales, locale)) {
 		notFound();
@@ -57,7 +52,7 @@ export default async function RootLayout({
 				<meta property="og:image" content="/guicdas/cs.avif" />
 			</head>
 			<body className={`${oswald.className} antialiased`}>
-				<NextIntlClientProvider locale={locale} messages={messages}>
+				<NextIntlClientProvider locale={locale} >
 					<Header />
 					{children}
 					<Footer />
