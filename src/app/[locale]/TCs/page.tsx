@@ -1,9 +1,3 @@
-import { routing } from "@/i18n/routing";
-
-export function generateStaticParams() {
-	return routing.locales.map((locale) => ({ locale }));
-}
-
 export default function TermsAndConditions() {
 	const paragraphs = [
 		"The protection of confidentiality and integrity of our customers' data is considered by CPCDS CONSUMER SOLUTIONS as one of the fundamental pillars in the relationship of trust with people who use our services.",

@@ -2,12 +2,17 @@ import { Oswald } from "next/font/google";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "../globals.css";
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
-import { routing } from "@/i18n/routing";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { getMessages, setRequestLocale } from "next-intl/server";
+import { routing } from "@/src/i18n/routing";
+import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
-	return routing.locales.map((locale) => ({ locale }));
+	return [
+		{ locale: 'en' },
+		{ locale: 'pt' },
+		{ locale: 'fr' },
+	];
 }
 
 const oswald = Oswald({
@@ -18,7 +23,7 @@ const oswald = Oswald({
 
 type RootLayoutProps = {
 	children: React.ReactNode;
-	params: Promise<{ locale: string }>;
+	params: Promise<{ locale: string; }>;
 };
 
 export default async function RootLayout({
@@ -27,6 +32,16 @@ export default async function RootLayout({
 }: RootLayoutProps) {
 	const { locale } = await params;
 	const messages = await getMessages();
+
+	console.log(routing.locales, "-", locale);
+
+
+
+	if (!hasLocale(routing.locales, locale)) {
+		notFound();
+	}
+
+	setRequestLocale(locale);
 
 	return (
 		<html lang={locale}>

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useLocale } from "next-intl";
-import { useRouter, usePathname } from "@/i18n/navigation";
+import { useRouter, usePathname } from "@/src/i18n/navigation";
 import { useState } from "react";
 
 export default function LanguageButton() {

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/src/i18n/navigation";
 import { getBaseProdPath, Links } from "../utils/utils";
 import LanguageButton from "./LanguageButton";
 

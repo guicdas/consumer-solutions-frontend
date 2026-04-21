@@ -1,12 +1,13 @@
 "use client";
 
-import Link from "next/link";
-import { useTranslations } from "use-intl";
-import Button from "./components/Button";
-import CtaWithDescription from "./components/CTA";
+import { useTranslations } from "next-intl";
 import { getBaseProdPath, Pages } from "./utils/utils";
+import CtaWithDescription from "./components/CTA";
+import { Link } from "@/src/i18n/navigation";
+import Button from "./components/Button";
 
-export default function Home() {
+
+export default function Homepage() {
 	const t = useTranslations();
 
 	return (
@@ -31,7 +32,7 @@ export default function Home() {
 						autoPlay
 						loop
 					>
-						<source src="/house	.mp4" type="video/mp4" />
+						<source src="/house.mp4" type="video/mp4" />
 						{t("videoError")}
 					</video>
 					<div className="absolute flex flex-col w-full h-fit bg-[hsl(100_100_100/0.6)] text-black bottom-0 py-16">
