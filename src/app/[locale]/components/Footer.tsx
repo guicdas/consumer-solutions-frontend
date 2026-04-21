@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/src/i18n/navigation";
 import { getBaseProdPath, footerLinks } from "../utils/utils";
 import Button from "./Button";
 import ImageWithLink from "./ImageWithLink";
