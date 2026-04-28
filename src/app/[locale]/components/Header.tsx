@@ -1,9 +1,16 @@
 import Image from "next/image";
 import { Link } from "@/src/i18n/navigation";
-import { Links } from "../utils/utils";
 import LanguageButton from "./LanguageButton";
+import { useTranslations } from "next-intl";
 
 export default function Header() {
+	const t = useTranslations();
+	const Links = [
+		{ name: t("services"), url: "/services" },
+		{ name: t("certifications"), url: "/certifications" }
+	];
+
+
 	return (
 		<header
 			className="relative flex flex-col bg-white pt-12 pb-6 px-24 portrait:px-6"
@@ -44,11 +51,11 @@ export default function Header() {
 			<nav className="flex flex-row gap-4 mt-2">
 				{Links.map((l) => (
 					<Link
-						key={l}
+						key={l.name}
 						className="hover:text-gray-500 text-lg font-extralight"
-						href={l}
+						href={l.url}
 					>
-						{l.toWellFormed()}
+						{l.name}
 					</Link>
 				))}
 			</nav>

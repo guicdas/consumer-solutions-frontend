@@ -1,4 +1,10 @@
 {
+	"services": "Serviços",
+	"certifications": "Certificados",
+
+	"terms": "T&Cs",
+	"about": "Sobre",
+
 	"videoError": "Your browser does not support the video tag.",
 	"title": "Deseja desbloquear a sua casa de sonho em Portugal?"
 }

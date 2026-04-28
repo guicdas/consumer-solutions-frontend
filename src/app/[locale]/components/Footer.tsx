@@ -1,9 +1,17 @@
 import { Link } from "@/src/i18n/navigation";
-import { footerLinks } from "../utils/utils";
 import Button from "./Button";
 import ImageWithLink from "./ImageWithLink";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+	const t = useTranslations();
+
+	const footerLinks = [
+		{ name: t("terms"), url: "terms-conditions" },
+		{ name: "sitemap", url: "Sitemap" },
+		{ name: t("about"), url: "About" }
+	];
+
 	return (
 		<footer className="flex flex-col items-center pb-16 pt-10 bg-white h-fit text-black gap-4">
 			<a href="mailto:consumer.solutions@outlook.com?subject=Requesting Consultation">
