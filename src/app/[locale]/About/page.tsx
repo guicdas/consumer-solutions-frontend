@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import { routing } from "@/src/i18n/routing";
 import Founder from "./Founder";
 import { setRequestLocale } from "next-intl/server";
 import { use } from "react";

@@ -1,16 +1,11 @@
-import { routing } from '@/src/i18n/routing';
 import { use } from "react";
 import { setRequestLocale } from "next-intl/server";
 import Homepage from './Homepage';
+import { routing } from "@/src/i18n/routing";
 
 export function generateStaticParams() {
-	return [
-		{ locale: 'en' },
-		{ locale: 'pt' },
-		{ locale: 'fr' },
-	];
+	return routing.locales.map((locale) => ({ locale }));
 }
-
 type HomeProps = {
 	params: Promise<{ locale: string; }>;
 };

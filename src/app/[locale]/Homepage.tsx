@@ -57,7 +57,7 @@ export default function Homepage() {
 							</h4>
 						</div>
 						<div className="relative flex w-full flex-col gap-8 items-center">
-							<Link href={Pages.Services}>
+							<Link href={`/${Pages.Services}`}>
 								<Button str="Explore our Services" type={1} />
 							</Link>
 						</div>

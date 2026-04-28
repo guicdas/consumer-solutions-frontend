@@ -8,11 +8,7 @@ import { routing } from "@/src/i18n/routing";
 import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
-	return [
-		{ locale: 'en' },
-		{ locale: 'pt' },
-		{ locale: 'fr' },
-	];
+	return routing.locales.map((locale) => ({ locale }));
 }
 
 const oswald = Oswald({

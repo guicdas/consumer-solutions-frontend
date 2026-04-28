@@ -1,4 +1,10 @@
 {
+	"services": "Services",
+	"certifications": "Certificats",
+
+	"terms": "T&Cs",
+	"about": "Infos",
+
 	"videoError": "Your browser does not support the video tag.",
 	"title": "Unlock Your Dream Home in Portugal?"
 }
