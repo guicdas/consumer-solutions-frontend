@@ -1,12 +1,12 @@
 export const Links = [
-	"Services",
-	"Certifications"
+	"services",
+	"certifications"
 ];
 
 export const footerLinks = [
 	"T&Cs",
-	"Sitemap",
-	"About",
+	"sitemap",
+	"about",
 ];
 
 export enum Pages {
