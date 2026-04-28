@@ -1,7 +1,7 @@
 # [Consumer Solutions](https://guicdas.github.io/consumer-solutions-frontend/)
 
 ## TODO
-try a faster translation method because i don't like usetranslations
+usetranslations not refreshing content without text
 
 ### [services](https://www.goldcapitalsolutions.com/blank-page)
 ### [privacy policy](https://www.goldcapitalsolutions.com/pol%C3%ADtica-de-privacidade)

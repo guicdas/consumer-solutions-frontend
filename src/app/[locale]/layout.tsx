@@ -2,13 +2,13 @@ import { Oswald } from "next/font/google";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "../globals.css";
-import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { notFound } from "next/navigation";
+import { hasLocale, Locale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/src/i18n/routing";
-import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
-	return routing.locales.map((locale) => ({ locale }));
+	return routing.locales.map((locale: Locale) => ({ locale }));
 }
 
 const oswald = Oswald({
@@ -19,8 +19,7 @@ const oswald = Oswald({
 
 type RootLayoutProps = {
 	children: React.ReactNode;
-	params: Promise<{ locale: string; }>;
-};
+} & PageProps<"/[locale]">;
 
 export default async function RootLayout({
 	children,
@@ -28,9 +27,7 @@ export default async function RootLayout({
 }: RootLayoutProps) {
 	const { locale } = await params;
 
-	if (!hasLocale(routing.locales, locale)) {
-		notFound();
-	}
+	if (!hasLocale(routing.locales, locale)) notFound();
 
 	setRequestLocale(locale);
 
@@ -40,15 +37,12 @@ export default async function RootLayout({
 				<meta charSet="UTF-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<title>Consumer Solutions</title>
-				<meta
-					name="description"
-					content="website for information about our mortgage broker"
-				/>
+				<meta name="description" content="website about our mortgage broker" />
 				<meta property="og:title" content="Consumer Solutions" />
-				<meta property="og:image" content="/guicdas/cs.avif" />
+				<meta property="og:image" content="/cs.avif" />
 			</head>
 			<body className={`${oswald.className} antialiased`}>
-				<NextIntlClientProvider locale={locale} >
+				<NextIntlClientProvider locale={locale}>
 					<Header />
 					{children}
 					<Footer />

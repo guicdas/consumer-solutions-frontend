@@ -2,6 +2,27 @@
 	"services": "Serviços",
 	"certifications": "Certificados",
 
+	"services-hero": {
+		"title": "Intermediário de Crédito em Portugal",
+		"subtitle": "O banco de Portugal é a entidade de supervisão de nossa atividade",
+		"text": "CPCDS Consumer Solutions - Unipessoal, Lda - Intermediário de crédito vinculado, registado junto do Banco de Portugal, sob o número: 0006380 (este registo pode ser verificado no Portal do Banco de Portugal: https://www.bportugal.pt/intermediarios-credito/)."
+	},
+	"services-responsabilidade": {
+		"title": "Seguro de Responsabilidade Civil",
+		"text": "• Crédito Hipotecário: 2524519 - Hiscox, S. A. Sucursal em Portugal, válido de 01/07/2025 a 30/06/2026"
+	},
+	"services-servicos": {
+		"title": "Serviços autorizados a prestar:",
+		"text": {
+			"0": "Apresentando ou propondo contratos de crédito a consumidores.",
+			"1": "Prestando o serviço de assistência a consumidores mediante a realização de atos preparatórios ou de outros trabalhos de gestão pré-contratual relativamente a contratos de crédito que não tenham sido por si apresentados ou propostos.",
+			"2": "Celebrando contratos de crédito com consumidores em nome das instituições mutuantes",
+			"3": "Prestando serviços de consultoria, através da emissão de recomendações personalizadas sobre contratos de crédito",
+			"4": "A prestação de serviços de consultoria relativamente a contratos de crédito traduz- se na emissão de recomendações dirigidas especificamente a um consumidor sobre uma ou mais operações relativas a contratos de crédito"
+		},
+		"banks": "Bancos Mutantes:"
+	},
+
 	"terms": "T&Cs",
 	"about": "Sobre",
 
