@@ -5,7 +5,8 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 const nextConfig: NextConfig = {
 	output: "export",
-	basePath: "",
+	basePath: "/consumer-solutions-frontend",
+	assetPrefix: "/consumer-solutions-frontend",
 	/*process.env.NODE_ENV === "production" ? "/consumer-solutions-frontend" : "",*/
 	images: {
 		unoptimized: true,
