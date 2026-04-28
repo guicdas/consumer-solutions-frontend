@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import CtaWithDescription from "./components/CTA";
 import { Link } from "@/src/i18n/navigation";
 import Button from "./components/Button";
+import { Pages } from "./utils/utils";
 
 
 export default function Homepage() {
