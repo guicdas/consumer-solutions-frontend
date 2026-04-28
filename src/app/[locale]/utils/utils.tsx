@@ -10,5 +10,5 @@ export const footerLinks = [
 ];
 
 export enum Pages {
-	Services = "Services",
+	Services = "services",
 }
