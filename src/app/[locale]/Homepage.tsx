@@ -1,7 +1,6 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { getBaseProdPath, Pages } from "./utils/utils";
 import CtaWithDescription from "./components/CTA";
 import { Link } from "@/src/i18n/navigation";
 import Button from "./components/Button";
@@ -18,7 +17,7 @@ export default function Homepage() {
 					style={{ height: "120vh" }}
 				>
 					<video
-						src={`${getBaseProdPath()}/house.mp4`}
+						src="/house.mp4"
 						style={{
 							width: "100%",
 							height: "100%",
