@@ -1,5 +1,5 @@
 import { Link } from "@/src/i18n/navigation";
-import { getBaseProdPath, footerLinks } from "../utils/utils";
+import { footerLinks } from "../utils/utils";
 import Button from "./Button";
 import ImageWithLink from "./ImageWithLink";
 
@@ -11,32 +11,32 @@ export default function Footer() {
 			<div className="flex flex-row gap-5">
 				<ImageWithLink
 					href="https://www.facebook.com/"
-					src={`${getBaseProdPath()}/fb.svg`}
+					src="/fb.svg"
 					alt="Facebook socials"
 					size={17}
 				/>
 				<ImageWithLink
 					href="https://x.com/CONSUMSOLUTION"
-					src={`${getBaseProdPath()}/x.png`}
+					src="/x.png"
 					alt="X socials"
 					size={17}
 				/>
 				<ImageWithLink
 					href="https://www.linkedin.com/company/cpcdsconsumersolutions"
-					src={`${getBaseProdPath()}/linkedin.svg`}
+					src="/linkedin.svg"
 					alt="LinkedIn socials"
 					size={17}
 				/>
 			</div>
 			<div className="flex flex-row justify-center py-8">
 				<nav>
-					{footerLinks.map((l: string, i) => (
+					{footerLinks.map((l: { name: string, url: string; }, i) => (
 						<Link
-							key={l}
+							key={l.name}
 							className={`${i !== footerLinks.length - 1 ? "border-r border-r-black" : ""} px-6 portrait:px-4 hover:text-gray-500`}
-							href={`/${l}`}
+							href={`/${l.url}`}
 						>
-							{l}
+							{l.name}
 						</Link>
 					))}
 				</nav>

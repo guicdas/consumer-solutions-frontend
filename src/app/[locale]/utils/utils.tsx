@@ -4,17 +4,11 @@ export const Links = [
 ];
 
 export const footerLinks = [
-	"T&Cs",
-	"sitemap",
-	"about",
+	{ name: "Terms", url: "terms-conditions" },
+	{ name: "sitemap", url: "Sitemap" },
+	{ name: "about", url: "About" }
 ];
 
 export enum Pages {
 	Services = "Services",
 }
-
-export const getBaseProdPath = () => {
-	return process.env.NODE_ENV === "production"
-		? "/consumer-solutions-frontend"
-		: "";
-};

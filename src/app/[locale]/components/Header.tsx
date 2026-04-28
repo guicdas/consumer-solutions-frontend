@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Link } from "@/src/i18n/navigation";
-import { getBaseProdPath, Links } from "../utils/utils";
+import { Links } from "../utils/utils";
 import LanguageButton from "./LanguageButton";
 
 export default function Header() {
@@ -21,7 +21,7 @@ export default function Header() {
 							alt="logo"
 							height={105}
 							width={230}
-							src={`${getBaseProdPath()}/cs.avif`}
+							src="/cs.avif"
 						/>
 					</Link>
 					<div>
@@ -48,7 +48,7 @@ export default function Header() {
 						className="hover:text-gray-500 text-lg font-extralight"
 						href={l}
 					>
-						{l}
+						{l.toWellFormed()}
 					</Link>
 				))}
 			</nav>
