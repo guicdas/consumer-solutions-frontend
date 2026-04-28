@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
 	images: {
 		unoptimized: true,
 	},
+	turbopack: { root: "/" },
+
+	typescript: {
+		ignoreBuildErrors: false,
+	},
 };
 
 export default withNextIntl(nextConfig);

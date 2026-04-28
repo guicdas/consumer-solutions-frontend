@@ -1,4 +1,9 @@
+"use client";
+
+import { useTranslations } from "use-intl";
+
 export default function Services() {
+	const t = useTranslations();
 	const bancos = [
 		"BANCO BPI, SA",
 		"BANCO BIC PORTUGUÊS, SA",
@@ -23,77 +28,25 @@ CPCDS CONSUMER SOLUTIONS – UNIPESSOAL, LDA has agreements with two alternative
 		<>
 			<div className="bg-gray-300 text-black flex flex-col text-center gap-15">
 				<h1 className="text-3xl" style={{ fontWeight: "bolder" }}>
-					Intermediário de Crédito em Portugal
+					{t("services-hero.title")}
 				</h1>
-				{/* <h2 className="text-white italic">
-				Real Estate Mortgage Broker in Portugal
-			</h2> */}
-				<h2 className="text-2xl">
-					O banco de Portugal
-					<br />é a entidade de supervisão de nossa atividade
-				</h2>
-				<p>
-					CPCDS Consumer Solutions - Unipessoal, Lda - Intermediário de crédito
-					vinculado, registado junto do Banco de Portugal, sob o número: 0006380
-					(este registo pode ser verificado no Portal do Banco de Portugal:
-					https://www.bportugal.pt/intermediarios-credito/).
-				</p>
+				<h2 className="text-2xl">{t("services-hero.subtitle")}</h2>
+				<p>{t("services-hero.text")}</p>
 			</div>
-			<div className="relative flex flex-col bg-white text-black h-80 text-center">
-				<h2 className="pt-5">Seguro de Responsabilidade Civil</h2>
-				<p className="absolute top-1/2">
-					• Crédito Hipotecário: 2524519 - Hiscox, S. A. Sucursal em Portugal,
-					válido de 01/07/2025 a 30/06/2026
-				</p>
+			<div className="relative text-2xl justify-center flex flex-col bg-white text-black h-80 text-center">
+				<h2>{t("services-responsabilidade.title")}</h2>
+				<p className="relative">{t("services-responsabilidade.text")}</p>
 			</div>
 			<div className="bg-black">
 				<h2 style={{ textDecoration: "underline" }}>
-					Serviços autorizados a prestar:
+					{t("services-servicos.title")}
 				</h2>
 				<ol className="italic list-decimal list-inside pl-10" type="a">
-					<li>Apresentando ou propondo contratos de crédito a consumidores.</li>
-					<li>
-						Prestando o serviço de assistência a consumidores mediante a
-						realização de atos preparatórios ou de outros trabalhos de gestão
-						pré-contratual relativamente a contratos de crédito que não tenham
-						sido por si apresentados ou propostos.
-					</li>
-					<li>
-						Celebrando contratos de crédito com consumidores em nome das
-						instituições mutuantes
-					</li>
-					<li>
-						Prestando serviços de consultoria, através da emissão de
-						recomendações personalizadas sobre contratos de crédito
-					</li>
-					<li>
-						A prestação de serviços de consultoria relativamente a contratos de
-						crédito traduz- se na emissão de recomendações dirigidas
-						especificamente a um consumidor sobre uma ou mais operações
-						relativas a contratos de crédito
-					</li>
+					{Array.from({ length: 5 }).map((_, i) => (
+						<p key={`listitem-${i + 1}`}>{t(`services-servicos.text.${i}`)}</p>
+					))}
 				</ol>
-				{/* <h2 style={{ textDecoration: "underline" }}>
-					Services authorized to provide:
-				</h2>
-				<ul className="text-gray-600 list-disc list-inside pl-10">
-					<li>Presenting or proposing credit agreements to consumers</li>
-					<li>
-						Providing consumer assistance services by carrying out preparatory
-						acts or other pre-contractual management work regarding credit
-						agreements that have not been presented or proposed by themselves
-					</li>
-					<li>
-						Entering into credit agreements with consumers on behalf of lending
-						institutions
-					</li>
-					<li>
-						Providing consultancy services by issuing personalized
-						recommendations on credit agreements
-					</li>
-				</ul> */}
-				<h2>Bancos Mutantes:</h2>
-				{/* <p className="text-gray-600">Banks with Agreements:</p> */}
+				<h2>{t("services-servicos.banks")}</h2>
 				<ul className="pl-10">
 					{bancos.map((b) => (
 						<li key={b}>{b}</li>

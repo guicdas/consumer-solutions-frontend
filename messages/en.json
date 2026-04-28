@@ -2,6 +2,27 @@
 	"services": "Services",
 	"certifications": "Certifications",
 
+	"services-hero": {
+		"title": "Real Estate Mortgage Broker in Portugal",
+		"subtitle": "Bank of Portugal is the supervisory entity of our activity",
+		"text": "CPCDS Consumer Solutions - Unipessoal, Lda - Agreed Mortgage Broker, registered with the Bank of Portugal under number: 0006380 (this registration can be verified on the Bank of Portugal Portal: https://www.bportugal.pt/intermediarios-credito/)"
+	},
+	"services-responsabilidade": {
+		"title": "Seguro de Responsabilidade Civil",
+		"text": "• Crédito Hipotecário: 2524519 - Hiscox, S. A. Sucursal em Portugal, válido de 01/07/2025 a 30/06/2026"
+	},
+	"services-servicos": {
+		"title": "Services authorized to provide:",
+		"text": {
+			"0": "Presenting or proposing credit agreements to consumers",
+			"1": "Providing consumer assistance services by carrying out preparatory acts or other pre-contractual management work regarding credit agreements that have not been presented or proposed by themselves",
+			"2": "Celebrando contratos de crédito com consumidores em nome das instituições mutuantes",
+			"3": "Entering into credit agreements with consumers on behalf of lending institutions",
+			"4": "Providing consultancy services by issuing personalized recommendations on credit agreements"
+		},
+		"banks": "Banks with Agreements:"
+	},
+
 	"terms": "T&Cs",
 	"about": "About",
 
