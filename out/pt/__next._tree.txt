@@ -1,3 +1,0 @@
-:HL["/consumer-solutions-frontend/_next/static/chunks/0s0-haae8dpi1.css","style"]
-:HL["/consumer-solutions-frontend/_next/static/media/9a800f173b8d9e8f-s.p.129r4siq6of2c.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"locale","param":{"type":"d","key":"pt","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"afS_65N3EMzYWjUU74uF2"}
