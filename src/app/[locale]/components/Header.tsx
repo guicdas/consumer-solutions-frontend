@@ -6,8 +6,8 @@ import { useTranslations } from "next-intl";
 export default function Header() {
 	const t = useTranslations();
 	const Links = [
-		{ name: t("services"), url: "/services" },
-		{ name: t("certifications"), url: "/certifications" }
+		{ name: t("links.services"), url: "/services" },
+		{ name: t("links.certifications"), url: "/certifications" }
 	];
 
 

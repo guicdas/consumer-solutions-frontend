@@ -10,6 +10,8 @@ import { Pages } from "./utils/utils";
 export default function Homepage() {
 	const t = useTranslations();
 
+
+
 	return (
 		<div className="flex flex-col min-h-screen bg-zinc-50 font-sans dark:bg-black">
 			<main className="flex w-full flex-col items-center bg-white dark:bg-black">

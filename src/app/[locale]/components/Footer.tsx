@@ -7,9 +7,9 @@ export default function Footer() {
 	const t = useTranslations();
 
 	const footerLinks = [
-		{ name: t("terms"), url: "terms-conditions" },
-		{ name: "sitemap", url: "Sitemap" },
-		{ name: t("about"), url: "About" }
+		{ name: t("links.terms"), url: "terms-conditions" },
+		{ name: t("links.sitemap"), url: "sitemap" },
+		{ name: t("links.about"), url: "about" }
 	];
 
 	return (
