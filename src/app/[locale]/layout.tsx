@@ -19,7 +19,8 @@ const oswald = Oswald({
 
 type RootLayoutProps = {
 	children: React.ReactNode;
-} & PageProps<"/[locale]">;
+	params: Promise<{ locale: string; }>;
+};
 
 export default async function RootLayout({
 	children,
@@ -37,7 +38,7 @@ export default async function RootLayout({
 				<meta charSet="UTF-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<title>Consumer Solutions</title>
-				<meta name="description" content="website about our mortgage broker" />
+				<meta name="description" content="Need a mortgage? We are your trusted local broker providing expert advice on home loans, refinancing, and consumer finance solutions in Portugal!" />
 				<meta property="og:title" content="Consumer Solutions" />
 				<meta property="og:image" content="/cs.avif" />
 			</head>

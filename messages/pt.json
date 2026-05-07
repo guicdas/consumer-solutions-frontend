@@ -24,8 +24,12 @@
 	},
 
 	"terms": "T&Cs",
+	"sitemap": "mapa do site",
 	"about": "Sobre",
 
 	"videoError": "Your browser does not support the video tag.",
-	"title": "Deseja desbloquear a sua casa de sonho em Portugal?"
+	"title": "Deseja desbloquear a sua casa de sonho em Portugal?",
+	"subtitle": "Expert Mortgage Brokerage for International Investors.",
+	"text": "We Simplify Portuguese Real Estate Financing for Global Investors",
+	"services-button": "Explore os nossos Serviços"
 }

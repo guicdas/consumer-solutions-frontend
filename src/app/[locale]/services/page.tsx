@@ -16,12 +16,7 @@ export default function Services() {
 	const infos = [
 		"Reclamações dirigidas à CPCDS CONSUMER SOLUTIONS - UNIPESSOAL, LDA podem ser feitas por Email ou da plataforma do Livro de Reclamações (www.livroreclamacoes.pt). Reclamações apresentadas directamente à Entidade de Supervisão (BP)",
 		"Meios de Resolução Alternativa de Litigios - Centros de Arbitragem disponibilizados. A CPCDS CONSUMER SOLUTIONS - UNIPESSOAL, LDA tem acordos com dois centros de arbitragem alternativa de conflitos:– Centro de Arbitragem de Conflitos de Lisboa- Nº de adesão 34883; http://www.centroarbitragemlisboa.pt - Centro Nacional de Informação e Arbitragem de Conflitos de Consumo Nº de adesão 4262;  https://www.cniacc.pt/pt/",
-		/**Complaints addressed to CPCDS CONSUMER SOLUTIONS – UNIPESSOAL, LDA can be made by Email or through the Complaints Book platform (www.livroreclamacoes.pt);Complaints submitted directly to the Supervisory Entity (BP)
-Alternative Dispute Resolution Means - Arbitration Centers provided
-CPCDS CONSUMER SOLUTIONS – UNIPESSOAL, LDA has agreements with two alternative dispute resolution arbitration centers:
-	Lisbon Conflict Arbitration Center - Membership number 34883; http://www.centroarbitragemlisboa.pt
-	National Center for Information and Arbitration of Consumer Conflicts Membership number 4262; https://www.cniacc.pt/pt/ 
-	CPCDS CONSUMER SOLUTIONS – UNIPESSOAL, LDA is prohibited from receiving or delivering any amounts related to the formation, execution, and early fulfillment of credit contracts, under the terms of article 46 of Decree Law 81-C/2017 of July 7th, regarding the Legal Regime of Credit Intermediaries. */
+		"Está vedada à CPCDS CONSUMER SOLUTIONS – UNIPESSOAL, LDA, o recebimento ou entrega de quaisquer valores relacionados com a formação, a execução e o cumprimento antecipado dos contratos de crédito, nos termos do artigo 46o do Dec. Lei 81-C/2017 de 07 de Julho relativo ao Regime Jurídico dos Intermediários de crédito."
 	];
 
 	return (
@@ -55,8 +50,9 @@ CPCDS CONSUMER SOLUTIONS – UNIPESSOAL, LDA has agreements with two alternative
 			</div>
 			<div className="bg-blue-400">
 				{infos.map((i) => (
-					<h3 key={i.slice(0, 10)}>{i}</h3>
+					<h3 key={i.slice(0, 10)}>{i}<br /></h3>
 				))}
+				<br />
 				<p>Morada da Sede: Av. Elias Garcia, 144, 3ºEsq - 1050-101 Lisboa</p>
 				<p>Contact: +351 968457 788</p>
 				<p>E-mail: consumer.solutions@outlook.com</p>

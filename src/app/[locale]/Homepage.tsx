@@ -49,16 +49,15 @@ export default function Homepage() {
 								{t("title")}
 							</h1>
 							<h2 className="text-6xl w-[60%] font-extralight portrait:text-4xl portrait:w-full">
-								Expert Mortgage Brokerage for International Investors.
+								{t("subtitle")}
 							</h2>
 							<h4 className="mb-10 font-serif font-bold">
-								We Simplify Portuguese Real Estate Financing for Global
-								Investors
+								{t("text")}
 							</h4>
 						</div>
 						<div className="relative flex w-full flex-col gap-8 items-center">
 							<Link href={`/${Pages.Services}`}>
-								<Button str="Explore our Services" type={1} />
+								<Button str={t("services-button")} type={1} />
 							</Link>
 						</div>
 					</div>
