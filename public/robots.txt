@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+
+# Optional: Specify that Googlebot can follow redirects
+Allow: followlinks
