@@ -13,7 +13,7 @@ export default function Header() {
 
 	return (
 		<header
-			className="relative flex flex-col bg-white pt-12 pb-6 px-24 portrait:px-6"
+			className="relative z-50 flex flex-col bg-white pt-12 pb-6 px-24 portrait:px-6"
 			style={{ color: "black" }}
 		>
 			<div

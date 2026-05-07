@@ -21,7 +21,7 @@ export default function LanguageButton() {
 	const [open, setOpen] = useState(false);
 
 	return (
-		<div className="absolute right-5 landscape:top-8 portrait:bottom-8 transition-all duration-150">
+		<div className="absolute z-50 right-5 landscape:top-8 portrait:bottom-8 transition-all duration-150">
 			<button type="button" onPointerDown={() => setOpen(!open)} >
 				<Image src={`/${langs.find(l => l.language === locale)?.flag || "GBR"}.png`} alt={locale} height={17} width={27} />
 			</button>
