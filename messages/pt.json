@@ -6,41 +6,56 @@
 		"sitemap": "mapa do site",
 		"about": "Sobre"
 	},
+	"header": [
+		"O seu intermediário de crédito em Portugal",
+		"Your mortgage broker",
+		"Votre courtier en crédit"
+	],
 
-	"videoError": "Your browser does not support the video tag.",
-	"title": "Deseja desbloquear a sua casa de sonho em Portugal?",
-	"subtitle": "Expert Mortgage Brokerage for International Investors.",
-	"text": "We Simplify Portuguese Real Estate Financing for Global Investors",
-	"services-button": "Explore os nossos Serviços",
+	"home": {
+		"videoError": "O seu navegador não suporta o vídeo.",
+		"title": "Realize o Sonho da sua Casa em Portugal?",
+		"subtitle": "Intermediação de Crédito Especializada para Investidores Internacionais.",
+		"text": "Simplificamos o Financiamento Imobiliário Português para Investidores Globais.",
+		"services-button": "Explorar os nossos serviços"
+	},
 
 	"services": {
-		"kicker": "Supervision · Portugal",
-		"heroTitle": "Credit intermediary in Portugal",
-		"heroLead": "The Bank of Portugal is the supervisory authority for our activity. Below you will find our registration details, authorised services, partner institutions, and regulatory disclosures.",
-		"registrationTitle": "Bank of Portugal registration",
-		"registrationBody": "CPCDS Consumer Solutions — Unipessoal, Lda is a tied credit intermediary registered with the Bank of Portugal under no. 0006380. You can verify this registration on the <bpportal>Bank of Portugal credit intermediaries portal</bpportal>.",
-		"insuranceTitle": "Seguro de Responsabilidade Civil",
-		"insuranceMortgage": "Crédito Hipotecário: 2524519 - Hiscox, S. A. Sucursal em Portugal, válido de 01/07/2025 a 30/06/2026",
-		"authorizedTitle": "Services we are authorised to provide",
+		"kicker": "Supervisão · Portugal",
+		"heroTitle": "Intermediário de crédito em Portugal",
+		"heroLead": "O Banco de Portugal é a autoridade de supervisão da nossa atividade. Abaixo encontrará os nossos dados de registo, serviços autorizados, instituições parceiras e informações regulatórias.",
+		"registrationTitle": "Registo no Banco de Portugal",
+		"registrationBody": "CPCDS Consumer Solutions — Unipessoal, Lda é um intermediário de crédito vinculado, registado no Banco de Portugal com o n.º 0006380. Pode verificar este registo no <bpportal>portal dos intermediários de crédito do Banco de Portugal</bpportal>.",
+		"insuranceTitle": "Seguro de responsabilidade civil profissional",
+		"insuranceMortgage": "Crédito à habitação: apólice n.º 2524519 — Hiscox, S.A. Sucursal em Portugal, válida de 1 de julho de 2025 a 30 de junho de 2026.",
+		"authorizedTitle": "Serviços que estamos autorizados a prestar",
 		"authorizedItems": [
-			"Apresentando ou propondo contratos de crédito a consumidores.",
-			"Prestando o serviço de assistência a consumidores mediante a realização de atos preparatórios ou de outros trabalhos de gestão pré-contratual relativamente a contratos de crédito que não tenham sido por si apresentados ou propostos.",
-			"Celebrando contratos de crédito com consumidores em nome das instituições mutuantes",
-			"Prestando serviços de consultoria, através da emissão de recomendações personalizadas sobre contratos de crédito",
-			"A prestação de serviços de consultoria relativamente a contratos de crédito traduz- se na emissão de recomendações dirigidas especificamente a um consumidor sobre uma ou mais operações relativas a contratos de crédito"
+			"Apresentar ou propor contratos de crédito aos consumidores.",
+			"Prestar assistência aos consumidores através da realização de atos preparatórios ou outros trabalhos de gestão pré-contratual relativos a contratos de crédito que não tenhamos apresentado ou proposto nós próprios.",
+			"Celebrar contratos de crédito com consumidores em nome das instituições mutuantes.",
+			"Prestar serviços de consultoria mediante a emissão de recomendações personalizadas sobre contratos de crédito.",
+			"Os serviços de consultoria em matéria de contratos de crédito consistem na emissão de recomendações dirigidas especificamente a um consumidor relativamente a uma ou mais operações relacionadas com contratos de crédito."
 		],
-		"banksTitle": "Bancos mutantes",
-		"complaintsTitle": "Complaints",
-		"complaintsP1": "Complaints concerning CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA may be submitted by email or through the online Complaints Book (livroreclamacoes.pt). Complaints may also be lodged directly with the supervisory authority (Bank of Portugal).",
-		"adrTitle": "Alternative dispute resolution",
-		"adrLead": "CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA has agreements with two alternative dispute resolution arbitration centres:",
-		"adrLisbon": "Lisbon Conflict Arbitration Centre — membership no. 34883 — <adrlisbon>centroarbitragemlisboa.pt</adrlisbon>",
-		"adrCniacc": "National Centre for Consumer Arbitration Information — membership no. 4262 — <adrcniacc>cniacc.pt</adrcniacc>",
-		"prohibitedNote": "Under Article 46 of Decree-Law No. 81-C/2017 of 7 July (Legal Regime of Credit Intermediaries), CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA may not receive or hand over any sums related to the formation, performance or early discharge of credit agreements.",
-		"contactTitle": "Registered office & contact",
+		"banksTitle": "Instituições mutuantes (bancos parceiros)",
+		"complaintsTitle": "Reclamações",
+		"complaintsP1": "As reclamações relativas à CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA podem ser apresentadas por e-mail ou através do Livro de Reclamações Online (livroreclamacoes.pt). As reclamações podem também ser apresentadas diretamente junto da autoridade de supervisão (Banco de Portugal).",
+		"adrTitle": "Resolução alternativa de litígios",
+		"adrLead": "A CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA tem acordos com dois centros de arbitragem de resolução alternativa de litígios:",
+		"adrLisbon": "Centro de Arbitragem de Conflitos de Lisboa — n.º de adesão 34883 — <adrlisbon>centroarbitragemlisboa.pt</adrlisbon>",
+		"adrCniacc": "Centro Nacional de Informação e Arbitragem de Conflitos de Consumo — n.º de adesão 4262 — <adrcniacc>cniacc.pt</adrcniacc>",
+		"prohibitedNote": "Nos termos do artigo 46.º do Decreto-Lei n.º 81-C/2017, de 7 de julho (Regime Jurídico dos Intermediários de Crédito), a CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA não pode receber nem entregar quaisquer quantias relacionadas com a formação, execução ou extinção antecipada de contratos de crédito.",
+		"contactTitle": "Sede social & contacto",
 		"address": "Av. Elias Garcia, 144, 3º Esq — 1050-101 Lisboa",
 		"phone": "+351 968 457 788",
 		"email": "consumer.solutions@outlook.com",
-		"privacyLabel": "Privacy policy (GDPR)"
+		"privacyLabel": "Política de privacidade (RGPD)"
+	},
+	"tcs": {
+		"title": "PROTEÇÃO DE DADOS",
+		"content": [
+			"A proteção da confidencialidade e integridade dos dados dos nossos clientes é considerada pela CPCDS CONSUMER SOLUTIONS como um dos pilares fundamentais na relação de confiança com as pessoas que utilizam os nossos serviços.",
+			"A CPCDS CONSUMER SOLUTIONS dispõe de uma organização e de um processo adequado para proteger os seus dados contra a destruição, alteração e acesso não autorizado.\nO Regulamento Geral sobre a Proteção de Dados (RGPD) aplica-se ao tratamento de dados pessoais por meios total ou parcialmente automatizados, bem como ao tratamento por meios não automatizados de dados pessoais contidos em ficheiros.",
+			"Cumprimos as obrigações de confidencialidade decorrentes da atividade de intermediários de crédito à habitação e empréstimos, nos termos das disposições da legislação nacional aplicável e do Regulamento (UE) 2016/679 do Parlamento Europeu e do Conselho, de 27 de abril de 2016 — Regulamento Geral sobre a Proteção de Dados (RGPD)."
+		]
 	}
 }

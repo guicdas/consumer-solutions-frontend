@@ -14,11 +14,6 @@ export default function Services() {
 		"BANKINTER, SA - SUCURSAL EM PORTUGAL",
 		"UNION DE CRÉDITOS INMOBILIÁRIOS, S.A., ESTABLECIMIENTO FINANCIERO DE CRÉDITO (SOCIEDAD UNIPERSONAL) - SUCURSAL EM PORTUGAL",
 	];
-	/* const infos = [
-		"Reclamações dirigidas à CPCDS CONSUMER SOLUTIONS - UNIPESSOAL, LDA podem ser feitas por Email ou da plataforma do Livro de Reclamações (www.livroreclamacoes.pt). Reclamações apresentadas directamente à Entidade de Supervisão (BP)",
-		"Meios de Resolução Alternativa de Litigios - Centros de Arbitragem disponibilizados. A CPCDS CONSUMER SOLUTIONS - UNIPESSOAL, LDA tem acordos com dois centros de arbitragem alternativa de conflitos:– Centro de Arbitragem de Conflitos de Lisboa- Nº de adesão 34883; http://www.centroarbitragemlisboa.pt - Centro Nacional de Informação e Arbitragem de Conflitos de Consumo Nº de adesão 4262;  https://www.cniacc.pt/pt/",
-		"Está vedada à CPCDS CONSUMER SOLUTIONS – UNIPESSOAL, LDA, o recebimento ou entrega de quaisquer valores relacionados com a formação, a execução e o cumprimento antecipado dos contratos de crédito, nos termos do artigo 46o do Dec. Lei 81-C/2017 de 07 de Julho relativo ao Regime Jurídico dos Intermediários de crédito."
-	]; */
 
 	const BP_PORTAL = "https://www.bportugal.pt/page/listagem-intermediarios-de-credito";
 	const ADR_LISBON = "http://www.centroarbitragemlisboa.pt";
@@ -29,12 +24,6 @@ export default function Services() {
 	function entranceDelay(step: number) {
 		return { animationDelay: `${Math.min(step * 78, 560)}ms` } as const;
 	}
-
-	/* "services-hero": {
-			"title": "Real Estate Mortgage Broker in Portugal",
-			"subtitle": "Bank of Portugal is the supervisory entity of our activity",
-			"text": "CPCDS Consumer Solutions - Unipessoal, Lda - Agreed Mortgage Broker, registered with the Bank of Portugal under number: 0006380 (this registration can be verified on the Bank of Portugal Portal: https://www.bportugal.pt/intermediarios-credito/)"
-		}, */
 
 	return (
 		<>
@@ -199,7 +188,7 @@ export default function Services() {
 								>
 									{t("complaintsTitle")}
 								</h2>
-								<p className="max-w-[65ch] text-base leading-[1.85] text-neutral-700 sm:text-lg">
+								<p className="max-w-[90ch] text-base leading-[1.85] text-neutral-700 sm:text-lg">
 									{t("complaintsP1")}
 								</p>
 							</div>
@@ -207,10 +196,10 @@ export default function Services() {
 								<h3 className="mb-5 text-sm font-bold uppercase tracking-[0.28em] text-[#2a6b52]">
 									{t("adrTitle")}
 								</h3>
-								<p className="mb-8 max-w-[65ch] text-base leading-[1.85] text-neutral-700 sm:text-lg">
+								<p className="mb-8 max-w-[60ch] text-base leading-[1.85] text-neutral-700 sm:text-lg">
 									{t("adrLead")}
 								</p>
-								<ul className="max-w-[65ch] space-y-6 text-base leading-relaxed text-neutral-800 sm:text-lg">
+								<ul className="max-w-[90ch] space-y-6 text-base leading-relaxed text-neutral-800 sm:text-lg">
 									<li>
 										{t.rich("adrLisbon", {
 											adrlisbon: (chunks) => (
@@ -241,7 +230,7 @@ export default function Services() {
 									</li>
 								</ul>
 							</div>
-							<p className="max-w-[65ch] rounded-xl border-2 border-[#2a6b52]/35 bg-[oklch(0.96_0.025_155)] p-6 text-sm font-medium leading-[1.8] text-neutral-900 sm:p-8 sm:text-base">
+							<p className="max-w-[90ch] rounded-xl border-2 border-[#2a6b52]/35 bg-[oklch(0.96_0.025_155)] mx-[15vw] p-6 text-sm font-medium leading-[1.8] text-neutral-900 sm:p-8 sm:text-base">
 								{t("prohibitedNote")}
 							</p>
 						</section>

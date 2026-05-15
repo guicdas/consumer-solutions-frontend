@@ -9,6 +9,7 @@ export default function Header() {
 		{ name: t("links.services"), url: "/services" },
 		{ name: t("links.certifications"), url: "/certifications" }
 	];
+	const content = t.raw("header") as string[];
 
 
 	return (
@@ -32,18 +33,15 @@ export default function Header() {
 						/>
 					</Link>
 					<div>
-						<div
-							style={{ marginBottom: "2px" }}
-							className="text-lg portrait:text-sm"
-						>
-							Intermediário de crédito em Portugal
-						</div>
-						<div className="text-sm portrait:text-xs" style={{ color: "gray" }}>
-							Your mortgage broker
-						</div>
-						<div className="text-sm portrait:text-xs" style={{ color: "gray" }}>
-							Votre courtier en crédit
-						</div>
+						{content.map((c: string, i) =>
+							<div
+								key={c}
+								style={{ marginBottom: i === 0 ? "2px" : "0", color: i === 0 ? "black" : "gray" }}
+								className={i === 0 ? "text-lg portrait:text-sm" : "text-sm portrait:text-xs"}
+							>
+								{c}
+							</div>
+						)}
 					</div>
 				</div>
 				<LanguageButton />

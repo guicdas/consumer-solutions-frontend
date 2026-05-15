@@ -8,7 +8,7 @@ import { Pages } from "./utils/utils";
 
 
 export default function Homepage() {
-	const t = useTranslations();
+	const t = useTranslations("home");
 
 
 
