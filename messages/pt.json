@@ -2,32 +2,30 @@
 	"links": {
 		"services": "Serviços",
 		"certifications": "Certificados",
-		"terms": "T&Cs",
-		"sitemap": "mapa do site",
+		"terms": "Política de privacidade",
+		"sitemap": "Mapa do site",
 		"about": "Sobre"
 	},
-	"header": [
-		"O seu intermediário de crédito em Portugal",
-		"Your mortgage broker",
-		"Votre courtier en crédit"
-	],
-
+	"header": {
+		"theme": "Alternar modo escuro",
+		"tagline": "O seu intermediário de crédito em Portugal"
+	},
 	"home": {
+		"metaTitle": "Intermediário de crédito à habitação em Portugal para compradores internacionais",
+		"metaDescription": "Intermediário de crédito em Lisboa, registado no Banco de Portugal. Comparamos as propostas dos nossos bancos parceiros e acompanhamos compradores internacionais no seu crédito à habitação em Portugal, sem custos.",
 		"videoError": "O seu navegador não suporta o vídeo.",
-		"title": "Realize o Sonho da sua Casa em Portugal?",
-		"subtitle": "Intermediação de Crédito Especializada para Investidores Internacionais.",
-		"text": "Simplificamos o Financiamento Imobiliário Português para Investidores Globais.",
+		"title": "Realize o sonho da casa própria em Portugal",
+		"subtitle": "Intermediação de crédito especializada para investidores internacionais.",
+		"text": "Simplificamos o financiamento imobiliário em Portugal para investidores de todo o mundo.",
 		"services-button": "Explorar os nossos serviços"
 	},
-
 	"services": {
-		"kicker": "Supervisão · Portugal",
 		"heroTitle": "Intermediário de crédito em Portugal",
-		"heroLead": "O Banco de Portugal é a autoridade de supervisão da nossa atividade. Abaixo encontrará os nossos dados de registo, serviços autorizados, instituições parceiras e informações regulatórias.",
+		"heroLead": "O Banco de Portugal é a autoridade de supervisão da nossa atividade. Abaixo encontra os nossos dados de registo, os serviços autorizados, as instituições parceiras e a informação regulamentar.",
 		"registrationTitle": "Registo no Banco de Portugal",
-		"registrationBody": "CPCDS Consumer Solutions — Unipessoal, Lda é um intermediário de crédito vinculado, registado no Banco de Portugal com o n.º 0006380. Pode verificar este registo no <bpportal>portal dos intermediários de crédito do Banco de Portugal</bpportal>.",
+		"registrationBody": "CPCDS Consumer Solutions — Unipessoal, Lda é um intermediário de crédito vinculado, registado no Banco de Portugal com o n.º {registration}. Pode verificar este registo no <bpportal>portal dos intermediários de crédito do Banco de Portugal</bpportal>.",
 		"insuranceTitle": "Seguro de responsabilidade civil profissional",
-		"insuranceMortgage": "Crédito à habitação: apólice n.º 2524519 — Hiscox, S.A. Sucursal em Portugal, válida de 1 de julho de 2025 a 30 de junho de 2026.",
+		"insuranceMortgage": "Crédito à habitação: apólice n.º {policy} — Hiscox, S.A. – Sucursal em Portugal, válida de 1 de julho de 2026 a 30 de junho de 2027.",
 		"authorizedTitle": "Serviços que estamos autorizados a prestar",
 		"authorizedItems": [
 			"Apresentar ou propor contratos de crédito aos consumidores.",
@@ -38,24 +36,104 @@
 		],
 		"banksTitle": "Instituições mutuantes (bancos parceiros)",
 		"complaintsTitle": "Reclamações",
-		"complaintsP1": "As reclamações relativas à CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA podem ser apresentadas por e-mail ou através do Livro de Reclamações Online (livroreclamacoes.pt). As reclamações podem também ser apresentadas diretamente junto da autoridade de supervisão (Banco de Portugal).",
+		"complaintsP1": "As reclamações relativas à CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA podem ser apresentadas por e-mail ou através do Livro de Reclamações Eletrónico (livroreclamacoes.pt). Podem também ser apresentadas diretamente à autoridade de supervisão (Banco de Portugal).",
 		"adrTitle": "Resolução alternativa de litígios",
 		"adrLead": "A CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA tem acordos com dois centros de arbitragem de resolução alternativa de litígios:",
-		"adrLisbon": "Centro de Arbitragem de Conflitos de Lisboa — n.º de adesão 34883 — <adrlisbon>centroarbitragemlisboa.pt</adrlisbon>",
+		"adrLisbon": "Centro de Arbitragem de Conflitos de Consumo de Lisboa — n.º de adesão 34883 — <adrlisbon>centroarbitragemlisboa.pt</adrlisbon>",
 		"adrCniacc": "Centro Nacional de Informação e Arbitragem de Conflitos de Consumo — n.º de adesão 4262 — <adrcniacc>cniacc.pt</adrcniacc>",
-		"prohibitedNote": "Nos termos do artigo 46.º do Decreto-Lei n.º 81-C/2017, de 7 de julho (Regime Jurídico dos Intermediários de Crédito), a CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA não pode receber nem entregar quaisquer quantias relacionadas com a formação, execução ou extinção antecipada de contratos de crédito.",
-		"contactTitle": "Sede social & contacto",
-		"address": "Av. Elias Garcia, 144, 3º Esq — 1050-101 Lisboa",
+		"prohibitedNote": "Nos termos do artigo 46.º do Decreto-Lei n.º 81-C/2017, de 7 de julho (Regime Jurídico dos Intermediários de Crédito), está vedado à CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA o recebimento ou a entrega de quaisquer valores relacionados com a formação, a execução e o cumprimento antecipado dos contratos de crédito.",
+		"contactTitle": "Sede e contactos",
+		"address": "Av. Elias Garcia, 144, 3.º Esq. — 1050-101 Lisboa",
 		"phone": "+351 968 457 788",
 		"email": "consumer.solutions@outlook.com",
 		"privacyLabel": "Política de privacidade (RGPD)"
 	},
 	"tcs": {
-		"title": "PROTEÇÃO DE DADOS",
+		"title": "Como cuidamos dos seus dados",
 		"content": [
-			"A proteção da confidencialidade e integridade dos dados dos nossos clientes é considerada pela CPCDS CONSUMER SOLUTIONS como um dos pilares fundamentais na relação de confiança com as pessoas que utilizam os nossos serviços.",
-			"A CPCDS CONSUMER SOLUTIONS dispõe de uma organização e de um processo adequado para proteger os seus dados contra a destruição, alteração e acesso não autorizado.\nO Regulamento Geral sobre a Proteção de Dados (RGPD) aplica-se ao tratamento de dados pessoais por meios total ou parcialmente automatizados, bem como ao tratamento por meios não automatizados de dados pessoais contidos em ficheiros.",
-			"Cumprimos as obrigações de confidencialidade decorrentes da atividade de intermediários de crédito à habitação e empréstimos, nos termos das disposições da legislação nacional aplicável e do Regulamento (UE) 2016/679 do Parlamento Europeu e do Conselho, de 27 de abril de 2016 — Regulamento Geral sobre a Proteção de Dados (RGPD)."
+			"A proteção da confidencialidade e da integridade dos dados dos nossos clientes é considerada pela CPCDS CONSUMER SOLUTIONS um dos pilares fundamentais da relação de confiança com as pessoas que utilizam os nossos serviços.",
+			"A CPCDS CONSUMER SOLUTIONS dispõe de uma organização e de processos adequados para proteger os seus dados contra a destruição, a alteração e o acesso não autorizado.\nO Regulamento Geral sobre a Proteção de Dados (RGPD) aplica-se ao tratamento de dados pessoais por meios total ou parcialmente automatizados, bem como ao tratamento por meios não automatizados de dados pessoais contidos em ficheiros.",
+			"Cumprimos as obrigações de confidencialidade decorrentes da atividade de intermediário de crédito, nos termos da legislação nacional aplicável e do Regulamento (UE) 2016/679 do Parlamento Europeu e do Conselho, de 27 de abril de 2016 — Regulamento Geral sobre a Proteção de Dados (RGPD)."
 		]
+	},
+	"meta": {
+		"title": "Consumer Solutions",
+		"description": "Precisa de crédito habitação? Somos o seu intermediário de crédito de confiança, com aconselhamento especializado em crédito habitação, transferência de crédito e soluções de financiamento em Portugal!"
+	},
+	"cta": {
+		"title": "Descubra o poder da intermediação de crédito especializada para investidores internacionais",
+		"button": "Começar",
+		"complianceTitle": "Financiamento imobiliário em Portugal - conformidade regulamentar:",
+		"complianceBody": "Temos orgulho em estar registados no Banco de Portugal, a autoridade reguladora do setor bancário e financeiro. Este registo demonstra o nosso compromisso com a conformidade, com práticas comerciais éticas e com a prestação de serviços financeiros do mais alto nível aos nossos clientes."
+	},
+	"footer": {
+		"consultation": "Pedir uma consulta >",
+		"mailSubject": "Pedido de consulta",
+		"mailNote": "ou contacte-nos por email"
+	},
+	"about": {
+		"founder": [
+			"Conheça a nossa fundadora e especialista em finanças - Conceição Caldeira da Silva",
+			"Conceição Caldeira da Silva, a força motriz da nossa empresa de intermediação de crédito, traz para a nossa missão mais de duas décadas de experiência em finanças. O seu percurso começou num banco multinacional, onde dedicou 15 anos a ajudar famílias a realizar o sonho da casa própria.",
+			"Ao longo da carreira, a Conceição especializou-se na criação de soluções financeiras à medida para clientes premium, onde as suas competências em estratégias financeiras personalizadas se destacaram. Hoje é uma profissional experiente, com profundo conhecimento dos produtos de financiamento bancário. Com a Conceição ao leme, pode contar com excelência e competência ao escolher-nos.",
+			"Bem-vindo a um mundo de conhecimento financeiro e soluções à medida. Bem-vindo à Consumer Solutions."
+		],
+		"faqTitle": "Perguntas frequentes",
+		"faqs": [
+			{
+				"title": "Qual é o papel de um intermediário de crédito em Portugal?",
+				"body": "Em Portugal, o intermediário de crédito atua entre o cliente e as instituições de crédito. O seu papel é ajudar os clientes a obter as melhores condições, avaliando a sua situação financeira, comparando propostas de vários bancos e acompanhando todo o processo."
+			},
+			{
+				"title": "Porque devo recorrer a um intermediário em vez de ir diretamente ao banco?",
+				"body": "Os intermediários de crédito oferecem várias vantagens. Têm acesso a uma vasta gama de produtos de crédito e podem aconselhá-lo sobre as melhores opções para as suas necessidades. Conseguem muitas vezes condições mais favoráveis e simplificam o processo, poupando-lhe tempo e dinheiro."
+			},
+			{
+				"title": "Como são pagos os intermediários de crédito em Portugal?",
+				"body": "Os nossos serviços de intermediação de crédito são totalmente gratuitos para os clientes: de acordo com as regras do Banco de Portugal, não lhe cobramos pelo nosso apoio. Somos remunerados por uma comissão paga pela instituição de crédito quando o crédito do cliente é aprovado, geralmente uma percentagem do montante do empréstimo."
+			},
+			{
+				"title": "Os intermediários de crédito são regulados em Portugal?",
+				"body": "Sim, os intermediários de crédito em Portugal são supervisionados pelo Banco de Portugal. Para operar legalmente, têm de estar registados e autorizados por esta entidade, o que garante o cumprimento de normas profissionais e práticas éticas."
+			},
+			{
+				"title": "Que fatores influenciam as taxas de juro do crédito habitação em Portugal?",
+				"body": "As taxas de juro podem ser influenciadas por vários fatores, incluindo a política monetária da Zona Euro, a localização do imóvel, o rácio financiamento-garantia (LTV), a capacidade financeira do cliente e a concorrência entre as instituições de crédito."
+			},
+			{
+				"title": "Como posso aumentar as minhas hipóteses de obter crédito habitação em Portugal?",
+				"body": "Para aumentar as hipóteses de aprovação, mantenha um bom historial de crédito, poupe para uma entrada significativa, apresente documentação financeira correta e trabalhe com um intermediário de crédito para identificar as instituições que se adequam ao seu perfil."
+			},
+			{
+				"title": "Qual é o rácio financiamento-garantia (LTV) máximo em Portugal?",
+				"body": "O rácio LTV pode variar, mas é comum as instituições financiarem até 80% do valor do imóvel. As condições concretas dependem, no entanto, da sua situação financeira e da instituição de crédito."
+			},
+			{
+				"title": "Posso obter crédito habitação em Portugal sendo investidor estrangeiro ou não residente?",
+				"body": "Sim, Portugal acolhe investidores estrangeiros e os não residentes podem, em geral, obter crédito para comprar imóveis. Os requisitos variam, por isso é aconselhável trabalhar com um intermediário com experiência em clientes internacionais."
+			},
+			{
+				"title": "Quanto tempo demora normalmente a aprovação de crédito habitação em Portugal?",
+				"body": "A aprovação pode demorar várias semanas em Portugal. Inclui a avaliação do imóvel, a análise de crédito e a verificação de documentos. Os prazos variam consoante a complexidade do processo e a rapidez da instituição de crédito."
+			}
+		]
+	},
+	"certifications": {
+		"imageAlt": "Transparência",
+		"title": "O nosso compromisso com a transparência e com os clientes",
+		"kicker": "Intermediação de crédito em Portugal",
+		"freeTitle": "Intermediação de crédito transparente: serviços gratuitos em Portugal",
+		"freeBody": "Na Consumer Solutions, a transparência não é apenas um princípio; é o nosso compromisso. Os nossos serviços de intermediação de crédito são totalmente gratuitos para os clientes, conforme determinado pelo Banco de Portugal. Isto reflete a nossa dedicação aos melhores interesses e ao bem-estar financeiro dos nossos clientes.",
+		"mandateTitle": "O que determina o Banco de Portugal:",
+		"mandateItems": [
+			"Os nossos serviços cumprem a regulamentação do Banco de Portugal, que proíbe os intermediários de crédito de cobrar aos clientes pelo seu apoio.",
+			"Encaramos esta exigência como prova da nossa abordagem centrada no cliente e do nosso compromisso com a transparência."
+		],
+		"interestsTitle": "Os seus interesses, a nossa prioridade:",
+		"interestsItems": [
+			"Ao escolher a Consumer Solutions, escolhe um parceiro comprometido com o seu bem-estar financeiro.",
+			"Colocamos os seus interesses em primeiro lugar, garantindo serviços de intermediação de crédito gratuitos e adaptados a si em Portugal."
+		],
+		"button": "Conhecer a equipa"
 	}
 }

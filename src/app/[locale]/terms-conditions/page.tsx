@@ -1,55 +1,68 @@
-"use client";
-
 import { useTranslations } from "next-intl";
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { use } from "react";
+import ContactList from "../components/ContactList";
+import PageShell from "../components/PageShell";
+import { KICKER } from "../components/styles";
+import { pageMetadata } from "../metadata";
 
-export default function TermsAndConditions() {
+
+export async function generateMetadata({ params }: PageProps<"/[locale]/terms-conditions">): Promise<Metadata> {
+	const { locale } = await params;
+	const t = await getTranslations({ locale, namespace: "tcs" });
+	return pageMetadata(locale, "/terms-conditions", t("title"), (t.raw("content") as string[])[0]);
+}
+
+export default function TermsAndConditions({ params }: PageProps<"/[locale]/terms-conditions">) {
+	const { locale } = use(params);
+	setRequestLocale(locale);
 	const t = useTranslations("tcs");
-	const content = t.raw("content") as string[];
+	const links = useTranslations("links");
+	const contact = useTranslations("services");
+	const [lead, ...rest] = t.raw("content") as string[];
+	// Paragraphs may hold several blocks separated by "\n"; each becomes its own paragraph.
+	const paragraphs = rest.flatMap((p) => p.split("\n"));
 
 	return (
-		<div
-			style={{
-				width: "100vw",
-				backgroundColor: "hsl(0 0 85)",
-				color: "black",
-				height: "fit-content",
-				display: "flex",
-				flexDirection: "column",
-				gap: "5vh",
-				justifyContent: "center",
-				alignItems: "center",
-			}}
-			className="portrait:text-[15px] landscape:text-[22px] py-18"
-		>
-			<div
-				style={{
-					width: "100%",
-					display: "flex",
-					alignContent: "center",
-					justifyContent: "center",
-					border: "none",
-				}}
-			>
-				{t("title")}
-			</div>
+		<PageShell>
 
-			{content.map((p, i) => (
-				<p
-					key={`p${i + 1}`}
-					style={{
-						width: "100%",
-						display: "flex",
-						alignContent: "center",
-						justifyContent: "center",
-						border: "none",
-						whiteSpace: "pre-line",
-						fontWeight: i === 0 ? "400" : "200",
-					}}
-					className={`${i === 0 ? "portrait:px-16 landscape:px-44" : "portrait:px-8 landscape:px-28"}`}
+			<header className="relative border-b-2 border-accent/40 px-5 py-12 sm:px-10 sm:py-14 md:px-14 md:py-16 lg:px-20">
+				<div className="mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-end lg:gap-16">
+					<div className="space-y-6">
+						<p className={KICKER}>{links("terms")}</p>
+						<h1 className="text-[clamp(1.9rem,4.5vw,2.9rem)] font-light leading-[1.1] tracking-[-0.025em]">{t("title")}</h1>
+					</div>
+					<p className="text-base font-light leading-[1.75] text-neutral-700 sm:text-lg">{lead}</p>
+				</div>
+			</header>
+
+			<div className="relative mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-10 px-5 py-14 sm:px-8 sm:py-16 md:px-12 md:py-20 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)] lg:gap-12 lg:px-16">
+				<div className="divide-y divide-neutral-900/[0.08] rounded-2xl border-2 border-neutral-900/[0.08] bg-surface shadow-[0_24px_64px_-36px_oklch(0.32_0.1_158_/_0.4)]">
+					{paragraphs.map((p) => (
+						<p key={p} className="px-7 py-8 text-base leading-[1.85] text-neutral-700 sm:px-10 sm:text-lg">
+							{p}
+						</p>
+					))}
+				</div>
+
+				<aside
+					aria-labelledby="privacy-contact"
+					className="relative self-start overflow-hidden rounded-2xl bg-panel dark:ring-1 dark:ring-accent/30 px-7 py-10 text-zinc-200 sm:px-9"
 				>
-					{p}
-				</p>
-			))}
-		</div>
+					<div
+						className="pointer-events-none absolute inset-0"
+						aria-hidden
+						style={{ background: "radial-gradient(ellipse 100% 80% at 100% 0%, var(--panel-glow), transparent 55%)" }}
+					/>
+					<div className="relative">
+						<h2 id="privacy-contact" className="mb-8 text-[clamp(1.35rem,2.4vw,1.75rem)] leading-tight tracking-[-0.02em] text-white">
+							{contact("contactTitle")}
+						</h2>
+						<ContactList dark className="space-y-4" />
+					</div>
+				</aside>
+			</div>
+		</PageShell>
 	);
 }

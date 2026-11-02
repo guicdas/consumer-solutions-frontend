@@ -5,8 +5,8 @@
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
-		"start": "next start",
-		"lint": "eslint"
+		"check:messages": "bun scripts/check-messages.mjs",
+		"start": "next start"
 	},
 	"dependencies": {
 		"next": "^16.2.3",

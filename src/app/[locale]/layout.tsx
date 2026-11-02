@@ -1,31 +1,32 @@
+import type { Metadata } from "next";
 import { Oswald } from "next/font/google";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "../globals.css";
 import { notFound } from "next/navigation";
-import { hasLocale, Locale, NextIntlClientProvider } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/src/i18n/routing";
+import { SITE_URL } from "./metadata";
 
 export function generateStaticParams() {
-	return routing.locales.map((locale: Locale) => ({ locale }));
+	return routing.locales.map((locale) => ({ locale }));
 }
 
-const oswald = Oswald({
-	subsets: ["latin"],
-	weight: ["200", "400", "500", "700"],
-	variable: "--font-oswald",
-});
+export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Promise<Metadata> {
+	const { locale } = await params;
+	const t = await getTranslations({ locale, namespace: "meta" });
+	return {
+		metadataBase: new URL(SITE_URL),
+		title: { default: t("title"), template: `%s · ${t("title")}` },
+		description: t("description"),
+	};
+}
 
-type RootLayoutProps = {
-	children: React.ReactNode;
-	params: Promise<{ locale: string; }>;
-};
+// Oswald is a variable font: leaving out `weight` loads one file that covers every weight (200–700).
+const oswald = Oswald({ subsets: ["latin"] });
 
-export default async function RootLayout({
-	children,
-	params,
-}: RootLayoutProps) {
+export default async function RootLayout({ children, params }: LayoutProps<"/[locale]">) {
 	const { locale } = await params;
 
 	if (!hasLocale(routing.locales, locale)) notFound();
@@ -33,17 +34,19 @@ export default async function RootLayout({
 	setRequestLocale(locale);
 
 	return (
-		<html lang={locale}>
+		// suppressHydrationWarning: the head script sets data-theme before React hydrates.
+		<html lang={locale} suppressHydrationWarning>
 			<head>
-				<meta charSet="UTF-8" />
-				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-				<title>Consumer Solutions</title>
-				<meta name="description" content="Need a mortgage? We are your trusted local broker providing expert advice on home loans, refinancing, and consumer finance solutions in Portugal!" />
-				<meta property="og:title" content="Consumer Solutions" />
-				<meta property="og:image" content="/cs.avif" />
+				{/* Runs before paint so the page never flashes the wrong theme. */}
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t}catch(e){}`,
+					}}
+				/>
 			</head>
 			<body className={`${oswald.className} antialiased`}>
-				<NextIntlClientProvider locale={locale}>
+				{/* messages={null}: client components get only the locale; all texts are rendered on the server */}
+				<NextIntlClientProvider locale={locale} messages={null}>
 					<Header />
 					{children}
 					<Footer />

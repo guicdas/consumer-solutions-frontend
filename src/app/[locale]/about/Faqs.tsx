@@ -1,111 +1,29 @@
-"use client";
+export type FaqItem = { title: string; body: string };
 
-import { useState } from "react";
-
-export default function Faqs() {
-	type faqItem = {
-		title: string;
-		body: string;
-	};
-
-	const items: faqItem[] = [
-		{ title: "What is the role of a mortgage broker in Portugal?", body: "A mortgage broker in Portugal acts as an intermediary between borrowers and lenders. Their role is to help clients secure the best mortgage terms by evaluating their financial situation, comparing loan offers from various banks, and guiding them through the application process." },
-		{ title: "Why should I use a mortgage broker instead of going directly to a bank?", body: "Mortgage brokers offer several advantages. They have access to a wide range of loan products and can provide expert guidance on the best options for your specific needs. Brokers can often secure more favorable terms and help streamline the application process, saving you time and money." },
-		{ title: "How do mortgage brokers get paid in Portugal?", body: "Mortgage brokers in Portugal typically earn a commission from the lending institution when a client's mortgage application is successful. This fee is usually a percentage of the loan amount. Clients generally do not pay brokers directly for their services." },
-		{ title: "Are mortgage brokers regulated in Portugal?", body: "Yes, mortgage brokers in Portugal are regulated by the Bank of Portugal (Banco de Portugal). To operate legally, brokers must hold a valid license issued by this regulatory authority. This ensures that brokers adhere to professional standards and ethical practices." },
-		{ title: "What factors affect mortgage interest rates in Portugal?", body: "Mortgage interest rates in Portugal can be influenced by various factors, including the Eurozone's monetary policy, the property's location, the loan-to-value ratio, the borrower's creditworthiness, and market competition among lenders." },
-		{ title: "How can I improve my chances of getting a mortgage in Portugal?", body: "To increase your likelihood of mortgage approval, maintain a strong credit score, save for a sizable down payment, provide accurate financial documentation, and work with a mortgage broker to identify lenders that match your financial profile." },
-		{ title: "What is the maximum loan-to-value (LTV) ratio for mortgages in Portugal?", body: "The LTV ratio can vary, but it's common for lenders to offer mortgages with an LTV of up to 80% of the property's value. However, specific terms may vary based on your financial situation and the lending institution." },
-		{ title: "Can I get a mortgage in Portugal as a foreign investor or non-resident?", body: "Yes, Portugal welcomes foreign investors, and non-residents can typically secure mortgages for property purchases. The requirements may vary, so it's advisable to work with a mortgage broker experienced in handling international clients." },
-		{ title: "How long does the mortgage approval process in Portugal usually take?", body: "The mortgage approval process can take several weeks in Portugal. It involves property appraisal, credit checks, and documentation verification. Timelines may vary depending on the complexity of the application and the lender's efficiency." },
-	];
-
-	const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-	const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
-
+// Native <details>; the shared name makes it an exclusive accordion (one open at a time) with no client JS.
+// Open/close animation lives in globals.css (.faq::details-content).
+export default function Faqs({ title, items }: { title: string; items: FaqItem[] }) {
 	return (
-		<div style={{
-			width: "100%",
-			backgroundColor: "hsl(0 0 70)",
-			height: "fit-content",
-			display: "flex",
-			justifyContent: "center",
-			padding: "10vh",
-		}}>
-			<div style={{
-				width: "100%",
-				backgroundColor: "hsl(0 0 98)",
-				color: "black"
-			}}>
-				<div
-					style={{
-						width: "100%",
-						display: "flex",
-						alignContent: "center",
-						justifyContent: "center",
-						padding: "16px 20px",
-						border: "none",
-						cursor: "pointer",
-						backgroundColor: "hsl(0 0 85)"
-					}}
-				>
-					FAQ's
+		<section aria-labelledby="faq-heading" className="relative mx-auto w-full max-w-[90rem] px-5 pb-16 sm:px-8 sm:pb-20 md:px-12 md:pb-24 lg:px-16">
+			<div className="grid grid-cols-1 gap-10 border-t border-neutral-900/[0.08] pt-14 lg:grid-cols-[minmax(0,0.6fr)_minmax(0,1.4fr)] lg:gap-16 md:pt-20">
+				<h2 id="faq-heading" className="text-[clamp(1.65rem,3.5vw,2.35rem)] leading-tight tracking-[-0.025em] lg:sticky lg:top-8 lg:self-start">
+					{title}
+				</h2>
+				<div className="overflow-hidden rounded-2xl border-2 border-neutral-900/[0.08] bg-surface shadow-[0_24px_64px_-36px_oklch(0.32_0.1_158_/_0.4)]">
+					{items.map((item) => (
+						<details key={item.title} name="faq" className="faq group border-b border-neutral-900/[0.08] last:border-b-0">
+							<summary className="flex cursor-pointer list-none items-center justify-between gap-6 px-6 py-5 text-base font-medium leading-snug text-neutral-900 transition hover:bg-tint focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent sm:px-8 sm:py-6 sm:text-lg [&::-webkit-details-marker]:hidden">
+								{item.title}
+								<span
+									className="h-2 w-2 shrink-0 -translate-y-0.5 rotate-45 border-b-2 border-r-2 border-accent transition-transform duration-200 group-open:translate-y-0.5 group-open:-rotate-[135deg]"
+									aria-hidden
+								/>
+							</summary>
+							<p className="px-6 pb-6 text-base leading-[1.8] text-neutral-700 sm:px-8 sm:pb-8">{item.body}</p>
+						</details>
+					))}
 				</div>
-				{items.map((item: faqItem, i) => (
-					<div
-						key={`faq-${i + 1}`}
-						style={{
-							borderBottom: i < items.length - 1 ? "0.5px solid #e0e0e0" : "none"
-						}}
-					>
-						<button
-							type="button"
-							onClick={() => toggle(i)}
-							style={{
-								width: "100%",
-								display: "flex",
-								justifyContent: "space-between",
-								alignItems: "center",
-								padding: "16px 20px",
-								border: "none",
-								cursor: "pointer",
-								textAlign: "left",
-								backgroundColor: "hsl(0 0 90)"
-							}}
-							className="portrait:text-[16px] landscape:text-[19px]"
-						>
-							{item.title}
-							<span style={{
-								flexShrink: 0,
-								transition: "all 200ms ease",
-								translate: openIndex === i ? "0 2px" : "0 -2px",
-								width: "8px",
-								height: "8px",
-								borderLeft: "solid 2px black",
-								borderTop: "solid 2px black",
-								rotate: openIndex === i ? "45deg" : "-135deg"
-							}} />
-						</button>
-
-						<div style={{
-							transition: "all 300ms ease, opacity 70ms ease",
-							opacity: openIndex === i ? "1" : "0",
-							height: openIndex === i ? "fit-content" : "0",
-							paddingTop: openIndex === i ? "20px" : "0",
-							paddingBottom: openIndex === i ? "20px" : "0",
-							color: "#666"
-						}}
-							className="portrait:text-[12px] landscape:text-[16px] px-10"
-						>
-
-							{item.body}
-						</div>
-
-					</div>
-				))}
 			</div>
-		</div >
-
+		</section>
 	);
 }

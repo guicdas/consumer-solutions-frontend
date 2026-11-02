@@ -1,44 +1,25 @@
 import type { MetadataRoute } from "next";
+import { routing } from "@/src/i18n/routing";
+import { SITE_URL } from "./[locale]/metadata";
 
 export const dynamic = "force-static";
 
+const BASE = SITE_URL;
+
+const pages: { path: string; changeFrequency: "yearly" | "monthly" | "weekly"; priority: number }[] = [
+	{ path: "", changeFrequency: "yearly", priority: 1 },
+	{ path: "/services", changeFrequency: "monthly", priority: 0.8 },
+	{ path: "/about", changeFrequency: "yearly", priority: 0.7 },
+	{ path: "/certifications", changeFrequency: "yearly", priority: 0.6 },
+	{ path: "/terms-conditions", changeFrequency: "weekly", priority: 0.5 },
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
-	return [
-		{
-			url: "https://www.cpcdsconsumersolutions.pt/en",
-			lastModified: new Date(),
-			changeFrequency: "yearly",
-			priority: 1,
-			alternates: {
-				languages: {
-					fr: "https://www.cpcdsconsumersolutions.pt/fr/",
-					pt: "https://www.cpcdsconsumersolutions.pt/pt/",
-				},
-			},
+	return pages.map(({ path, ...rest }) => ({
+		url: `${BASE}/${routing.defaultLocale}${path}`,
+		...rest,
+		alternates: {
+			languages: Object.fromEntries(routing.locales.map((l) => [l, `${BASE}/${l}${path}`])),
 		},
-		{
-			url: "https://www.cpcdsconsumersolutions.pt/en/services",
-			lastModified: new Date(),
-			changeFrequency: "monthly",
-			priority: 0.8,
-			alternates: {
-				languages: {
-					fr: "https://www.cpcdsconsumersolutions.pt/fr/services",
-					pt: "https://www.cpcdsconsumersolutions.pt/pt/services",
-				},
-			},
-		},
-		{
-			url: "https://www.cpcdsconsumersolutions.pt/en/terms-conditions",
-			lastModified: new Date(),
-			changeFrequency: "weekly",
-			priority: 0.5,
-			alternates: {
-				languages: {
-					fr: "https://www.cpcdsconsumersolutions.pt/fr/terms-conditions",
-					pt: "https://www.cpcdsconsumersolutions.pt/pt/terms-conditions",
-				},
-			},
-		},
-	];
+	}));
 }

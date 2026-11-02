@@ -1,329 +1,184 @@
-"use client";
-
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import type { ReactNode } from "react";
+import { Link } from "@/src/i18n/navigation";
+import Card from "../components/Card";
+import ContactList from "../components/ContactList";
+import PageShell from "../components/PageShell";
+import { LINK_DARK } from "../components/styles";
+
+const LINK_LIGHT = "font-medium text-accent underline decoration-accent/35 underline-offset-[0.22em] transition hover:decoration-accent focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent";
+const H2 = "text-[clamp(1.65rem,3.5vw,2.35rem)] leading-tight tracking-[-0.025em]";
+
+const BANKS = [
+	"BANCO BPI, SA",
+	"BANCO BIC PORTUGUÊS, SA",
+	"ABANCA CORPORACIÓN BANCARIA, SA, SUCURSAL EM PORTUGAL",
+	"BANCO CTT, SA",
+	"NOVO BANCO, SA",
+	"BANKINTER, SA - SUCURSAL EM PORTUGAL",
+	"UNION DE CRÉDITOS INMOBILIÁRIOS, S.A., ESTABLECIMIENTO FINANCIERO DE CRÉDITO (SOCIEDAD UNIPERSONAL) - SUCURSAL EM PORTUGAL",
+];
+// Single source for both numbers: the key-facts card and the translated sentences read them from here.
+export const REGISTRATION_NO = "0006380";
+const POLICY_NO = "2524519";
+const BP_PORTAL = "https://www.bportugal.pt/page/listagem-intermediarios-de-credito";
+const ADR_LISBON = "http://www.centroarbitragemlisboa.pt";
+const ADR_CNIACC = "https://www.cniacc.pt/pt/";
+
+function external(href: string) {
+	return function ExternalLink(chunks: ReactNode) {
+		return (
+			<a href={href} className={LINK_LIGHT} rel="noopener noreferrer" target="_blank">
+				{chunks}
+			</a>
+		);
+	};
+}
 
 export default function Services() {
 	const t = useTranslations("services");
-	const banks = [
-		"BANCO BPI, SA",
-		"BANCO BIC PORTUGUÊS, SA",
-		"ABANCA CORPORACIÓN BANCARIA, SA, SUCURSAL EM PORTUGAL",
-		"BANCO CTT, SA",
-		"NOVO BANCO, SA",
-		"BANKINTER, SA - SUCURSAL EM PORTUGAL",
-		"UNION DE CRÉDITOS INMOBILIÁRIOS, S.A., ESTABLECIMIENTO FINANCIERO DE CRÉDITO (SOCIEDAD UNIPERSONAL) - SUCURSAL EM PORTUGAL",
+	const authorized = t.raw("authorizedItems") as string[];
+	// The last item defines "advisory services" rather than listing a service, so it renders as a footnote.
+	const services = authorized.slice(0, -1);
+	const advisoryNote = authorized.at(-1);
+
+	const facts = [
+		{ label: t("registrationTitle"), value: REGISTRATION_NO },
+		{ label: t("insuranceTitle"), value: POLICY_NO },
+		{ label: t("banksTitle"), value: String(BANKS.length) },
 	];
 
-	const BP_PORTAL = "https://www.bportugal.pt/page/listagem-intermediarios-de-credito";
-	const ADR_LISBON = "http://www.centroarbitragemlisboa.pt";
-	const ADR_CNIACC = "https://www.cniacc.pt/pt/";
-	const authorized = t.raw("authorizedItems") as string[];
-
-
-	function entranceDelay(step: number) {
-		return { animationDelay: `${Math.min(step * 78, 560)}ms` } as const;
-	}
-
 	return (
-		<>
-			<article className="relative isolate w-full overflow-hidden bg-[oklch(0.982_0.014_152)] text-neutral-950">
-				<div className="pointer-events-none absolute inset-0" aria-hidden>
-					<div
-						className="absolute -left-[25%] top-[-15%] h-[90%] w-[90%] rotate-[10deg] opacity-[0.85]"
-						style={{
-							background:
-								"linear-gradient(145deg, oklch(0.88 0.06 162 / 0.38) 0%, transparent 58%)",
-						}}
-					/>
-					<div
-						className="absolute -right-[15%] bottom-[-20%] h-[75%] w-[80%] opacity-80"
-						style={{
-							background:
-								"radial-gradient(ellipse 65% 55% at 75% 85%, oklch(0.86 0.08 158 / 0.42), transparent 62%)",
-						}}
-					/>
+		<PageShell>
+			{/* Hero + key facts */}
+			<header className="relative border-b-2 border-accent/40 px-5 py-16 sm:px-10 sm:py-20 md:px-14 md:py-24 lg:px-20">
+				<div className="mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-16">
+					<div className="space-y-6">
+						<h1 className="max-w-[42rem] text-[clamp(2.5rem,8vw,4.5rem)] font-normal leading-[0.96] tracking-[-0.038em]">
+							{t("heroTitle")}
+						</h1>
+						<p className="max-w-[60ch] text-lg font-extralight leading-[1.6] text-neutral-700 sm:text-xl">
+							{t("heroLead")}
+						</p>
+					</div>
+					<dl className="divide-y divide-neutral-900/[0.08] overflow-hidden rounded-2xl border-2 border-neutral-900/[0.08] bg-surface shadow-[0_24px_64px_-36px_oklch(0.32_0.1_158_/_0.4)]">
+						{facts.map((f) => (
+							<div key={f.label} className="flex items-center justify-between gap-6 px-7 py-6 sm:px-9">
+								<dt className="text-sm font-medium leading-snug text-neutral-600 sm:text-base">{f.label}</dt>
+								<dd className="text-[clamp(1.6rem,3vw,2.1rem)] font-normal tabular-nums tracking-[-0.02em] text-accent">
+									{f.value}
+								</dd>
+							</div>
+						))}
+					</dl>
+				</div>
+			</header>
+
+			<div className="relative mx-auto flex w-full max-w-[90rem] flex-col gap-16 px-5 py-14 sm:px-8 sm:py-16 md:gap-24 md:px-12 md:py-20 lg:px-16">
+				{/* Credentials */}
+				<div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
+					<Card id="reg-heading" title={t("registrationTitle")}>
+						<p className="text-base leading-[1.8] text-neutral-700 sm:text-lg">
+							{t.rich("registrationBody", { registration: REGISTRATION_NO, bpportal: external(BP_PORTAL) })}
+						</p>
+					</Card>
+					<Card id="ins-heading" title={t("insuranceTitle")}>
+						<p className="text-base leading-[1.8] text-neutral-700 sm:text-lg">{t("insuranceMortgage", { policy: POLICY_NO })}</p>
+					</Card>
 				</div>
 
-				<header
-					className="services-entrance relative border-b-2 border-[#2a6b52]/40 px-5 py-16 sm:px-10 sm:py-20 md:px-14 md:py-24 lg:px-20"
+				{/* Authorised services */}
+				<section aria-labelledby="auth-heading">
+					<h2 id="auth-heading" className={`${H2} mb-10`}>
+						{t("authorizedTitle")}
+					</h2>
+					<ol className="grid grid-cols-1 gap-6 md:grid-cols-2">
+						{services.map((item) => (
+							<li
+								key={item}
+								className="flex gap-4 rounded-2xl border border-neutral-900/12 bg-tint p-6 sm:p-8"
+							>
+								<span className="mt-[0.45em] h-4 w-0.5 shrink-0 rounded-full bg-accent-strong/55" aria-hidden />
+								<span className="text-base leading-[1.75] text-neutral-900 sm:text-[1.05rem]">{item}</span>
+							</li>
+						))}
+					</ol>
+					{advisoryNote && (
+						<p className="mt-8 max-w-[90ch] border-l-2 border-accent pl-5 text-sm italic leading-[1.8] text-neutral-600 sm:text-base">
+							{advisoryNote}
+						</p>
+					)}
+				</section>
 
+				{/* Partner banks */}
+				<section
+					aria-labelledby="banks-heading"
+					className="relative overflow-hidden rounded-2xl bg-panel dark:ring-1 dark:ring-accent/30 px-7 py-12 text-zinc-100 sm:px-10 sm:py-14"
 				>
-					<div className="mx-auto w-full max-w-[90rem]">
-						<div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-end lg:gap-16 xl:gap-24">
-							<div className="space-y-6">
-								<p className="inline-block border-b-2 border-[#2a6b52] pb-2 text-[0.68rem] font-bold uppercase tracking-[0.42em] text-[#2a6b52] sm:text-xs sm:tracking-[0.48em]">
-									{t("kicker")}
-								</p>
-								<h1
-									className={` max-w-[min(100%,42rem)] text-[clamp(2.5rem,9vw,4.75rem)] font-normal leading-[0.96] tracking-[-0.038em] text-neutral-950`}
+					<div
+						className="pointer-events-none absolute inset-0"
+						aria-hidden
+						style={{ background: "radial-gradient(ellipse 100% 80% at 100% 0%, var(--panel-glow), transparent 55%)" }}
+					/>
+					<div className="relative">
+						<h2 id="banks-heading" className={`${H2} mb-10 text-white`}>
+							{t("banksTitle")}
+						</h2>
+						<ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+							{BANKS.map((b) => (
+								<li
+									key={b}
+									className="flex items-center rounded-xl border border-white/10 bg-white/[0.04] px-5 py-4 text-[0.85rem] font-medium leading-snug tracking-[0.02em] text-zinc-200"
 								>
-									{t("heroTitle")}
-								</h1>
-							</div>
-							<p className="text-lg font-extralight leading-[1.55] text-neutral-700 sm:text-xl md:text-2xl md:leading-snug">
-								{t("heroLead")}
-							</p>
-						</div>
+									{b}
+								</li>
+							))}
+						</ul>
 					</div>
-				</header>
+				</section>
 
-				<div className="relative mx-auto w-full max-w-[90rem] px-5 py-14 sm:px-8 sm:py-16 md:px-12 md:py-20 lg:px-16">
-					<div className="flex flex-col gap-14 md:gap-20 lg:gap-24">
-						<section
-							className="services-entrance relative overflow-hidden rounded-2xl border-2 border-neutral-900/[0.08] bg-[oklch(0.997_0.006_155)] p-7 shadow-[0_24px_64px_-36px_oklch(0.32_0.1_158_/_0.4)] sm:p-10"
-							style={entranceDelay(1)}
-							aria-labelledby="reg-heading"
-						>
-							<div
-								className="pointer-events-none absolute inset-x-0 top-0 h-1.5 bg-[#2a6b52]"
-								aria-hidden
-							/>
-							<h2
-								id="reg-heading"
-								className={` mb-6 text-[clamp(1.65rem,3.5vw,2.25rem)] tracking-[-0.025em] text-neutral-950`}
-							>
-								{t("registrationTitle")}
-							</h2>
-							<div className="max-w-[65ch] text-base leading-[1.8] text-neutral-700 sm:text-lg">
-								{t.rich("registrationBody", {
-									bpportal: (chunks) => (
-										<a
-											href={BP_PORTAL}
-											className={"font-medium text-[#2a6b52] underline decoration-[#2a6b52]/35 underline-offset-[0.22em] transition hover:decoration-[#2a6b52] focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2a6b52]"}
-											rel="noopener noreferrer"
-											target="_blank"
-										>
-											{chunks}
-										</a>
-									),
-								})}
-							</div>
-						</section>
-
-						<section
-							className="services-entrance rounded-2xl border border-neutral-900/12 bg-[oklch(0.96_0.022_155)] px-7 py-10 sm:px-10 sm:py-12"
-							style={entranceDelay(2)}
-							aria-labelledby="ins-heading"
-						>
-							<h2
-								id="ins-heading"
-								className={` mb-5 text-[clamp(1.5rem,3vw,2rem)] tracking-[-0.02em] text-neutral-950`}
-							>
-								{t("insuranceTitle")}
-							</h2>
-							<p className="max-w-[65ch] text-base font-light leading-relaxed text-neutral-800 sm:text-lg">
-								{t("insuranceMortgage")}
-							</p>
-						</section>
-
-						<section style={entranceDelay(3)} aria-labelledby="auth-heading">
-							<h2
-								id="auth-heading"
-								className={` mb-10 text-[clamp(1.65rem,3.5vw,2.35rem)] tracking-[-0.02em] text-neutral-950`}
-							>
-								{t("authorizedTitle")}
-							</h2>
-							<ol className="list-[lower-alpha] space-y-7 pl-6 marker:font-semibold marker:text-[#2a6b52] sm:pl-10">
-								{authorized.map((item, idx) => (
-									<li
-										key={`auth-${idx}`}
-										className="border-b border-neutral-900/[0.06] pb-7 pl-2 text-[1.05rem] font-normal leading-[1.8] text-neutral-900 last:border-b-0 last:pb-0 sm:text-[1.1rem]"
-									>
-										{item}
-									</li>
-								))}
-							</ol>
-						</section>
-
-						<section
-							className="services-entrance relative overflow-hidden rounded-2xl bg-[oklch(0.14_0.032_158)] px-7 py-12 text-zinc-100 sm:px-10 sm:py-14"
-							style={entranceDelay(4)}
-							aria-labelledby="banks-heading"
-						>
-							<div
-								className="pointer-events-none absolute inset-0 opacity-[0.07]"
-								aria-hidden
-								style={{
-									backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-								}}
-							/>
-							<div
-								className="pointer-events-none absolute inset-0 opacity-90"
-								aria-hidden
-								style={{
-									background:
-										"radial-gradient(ellipse 100% 80% at 100% 0%, oklch(0.28 0.09 165 / 0.5), transparent 55%)",
-								}}
-							/>
-							<div className="relative">
-								<h2
-									id="banks-heading"
-									className={` mb-10 text-[clamp(1.75rem,3.8vw,2.65rem)] tracking-[-0.03em] text-white`}
-								>
-									{t("banksTitle")}
-								</h2>
-								<ul className="grid grid-cols-1 gap-x-12 gap-y-5 border-t border-zinc-600/50 pt-8 sm:grid-cols-2">
-									{banks.map((b) => (
-										<li
-											key={b}
-											className="text-[0.9rem] font-light leading-snug tracking-[0.01em] text-zinc-300 sm:text-[0.95rem]"
-										>
-											{b}
-										</li>
-									))}
-								</ul>
-							</div>
-						</section>
-
-						<section
-							className="services-entrance space-y-12"
-							style={entranceDelay(5)}
-							aria-labelledby="comp-heading"
-						>
-							<div>
-								<h2
-									id="comp-heading"
-									className={` mb-6 text-[clamp(1.65rem,3.2vw,2.25rem)] tracking-[-0.02em] text-neutral-950`}
-								>
-									{t("complaintsTitle")}
-								</h2>
-								<p className="max-w-[90ch] text-base leading-[1.85] text-neutral-700 sm:text-lg">
-									{t("complaintsP1")}
-								</p>
-							</div>
-							<div>
-								<h3 className="mb-5 text-sm font-bold uppercase tracking-[0.28em] text-[#2a6b52]">
-									{t("adrTitle")}
-								</h3>
-								<p className="mb-8 max-w-[60ch] text-base leading-[1.85] text-neutral-700 sm:text-lg">
-									{t("adrLead")}
-								</p>
-								<ul className="max-w-[90ch] space-y-6 text-base leading-relaxed text-neutral-800 sm:text-lg">
-									<li>
-										{t.rich("adrLisbon", {
-											adrlisbon: (chunks) => (
-												<a
-													href={ADR_LISBON}
-													className={"font-medium text-[#2a6b52] underline decoration-[#2a6b52]/35 underline-offset-[0.22em] transition hover:decoration-[#2a6b52] focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2a6b52]"}
-													rel="noopener noreferrer"
-													target="_blank"
-												>
-													{chunks}
-												</a>
-											),
-										})}
-									</li>
-									<li>
-										{t.rich("adrCniacc", {
-											adrcniacc: (chunks) => (
-												<a
-													href={ADR_CNIACC}
-													className={"font-medium text-[#2a6b52] underline decoration-[#2a6b52]/35 underline-offset-[0.22em] transition hover:decoration-[#2a6b52] focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2a6b52]"}
-													rel="noopener noreferrer"
-													target="_blank"
-												>
-													{chunks}
-												</a>
-											),
-										})}
-									</li>
-								</ul>
-							</div>
-							<p className="max-w-[90ch] rounded-xl border-2 border-[#2a6b52]/35 bg-[oklch(0.96_0.025_155)] mx-[15vw] p-6 text-sm font-medium leading-[1.8] text-neutral-900 sm:p-8 sm:text-base">
-								{t("prohibitedNote")}
-							</p>
-						</section>
-
-						<section
-							className="services-entrance relative overflow-hidden rounded-2xl bg-[oklch(0.15_0.028_158)] px-7 py-12 text-zinc-200 sm:px-10 sm:py-14"
-							style={entranceDelay(6)}
-							aria-labelledby="contact-heading"
-						>
-							<div
-								className="pointer-events-none absolute inset-0 opacity-[0.06]"
-								aria-hidden
-								style={{
-									background:
-										"radial-gradient(ellipse 80% 50% at 20% 100%, oklch(0.42 0.1 160 / 0.45), transparent 60%)",
-								}}
-							/>
-							<div className="relative">
-								<h2
-									id="contact-heading"
-									className={` mb-10 text-[clamp(1.75rem,3.5vw,2.5rem)] tracking-[-0.02em] text-white`}
-								>
-									{t("contactTitle")}
-								</h2>
-								<address className="max-w-[65ch] not-italic">
-									<ul className="space-y-4 text-base leading-relaxed sm:text-lg">
-										<li className="text-zinc-300">{t("address")}</li>
-										<li>
-											<a
-												className={"font-medium text-[oklch(0.88_0.04_150)] underline decoration-white/35 underline-offset-[0.22em] transition hover:text-white hover:decoration-white focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-200"}
-												href={`tel:${t("phone").replace(/\s/g, "")}`}
-											>
-												{t("phone")}
-											</a>
-										</li>
-										<li>
-											<a
-												className={"font-medium text-[oklch(0.88_0.04_150)] underline decoration-white/35 underline-offset-[0.22em] transition hover:text-white hover:decoration-white focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-200"}
-												href={`mailto:${t("email")}`}
-											>
-												{t("email")}
-											</a>
-										</li>
-									</ul>
-								</address>
-								<p className="mt-10 border-t border-zinc-600/50 pt-8">
-									<Link className={`${"font-medium text-[oklch(0.88_0.04_150)] underline decoration-white/35 underline-offset-[0.22em] transition hover:text-white hover:decoration-white focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-200"} text-base`} href="/TCs">
-										{t("privacyLabel")}
-									</Link>
-								</p>
-							</div>
-						</section>
+				{/* Complaints & dispute resolution */}
+				<section aria-labelledby="comp-heading" className="space-y-10">
+					<div>
+						<h2 id="comp-heading" className={`${H2} mb-6`}>
+							{t("complaintsTitle")}
+						</h2>
+						<p className="max-w-[80ch] text-base leading-[1.85] text-neutral-700 sm:text-lg">{t("complaintsP1")}</p>
 					</div>
-				</div>
-			</article>
-			{/* <div className="bg-gray-300 text-black flex flex-col text-center gap-15">
-				<h1 className="text-3xl" style={{ fontWeight: "bolder" }}>
-					{t("services-hero.title")}
-				</h1>
-				<h2 className="text-2xl">{t("services-hero.subtitle")}</h2>
-				<p>{t("services-hero.text")}</p>
+					<div className="rounded-2xl border border-neutral-900/12 bg-tint p-6 sm:p-10">
+						<h3 className="mb-3 text-sm font-bold uppercase tracking-[0.28em] text-accent">{t("adrTitle")}</h3>
+						<p className="mb-6 max-w-[80ch] text-base leading-[1.8] text-neutral-700">{t("adrLead")}</p>
+						<ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
+							<li className="rounded-xl border border-neutral-900/12 bg-surface p-5 text-base leading-relaxed text-neutral-800">
+								{t.rich("adrLisbon", { adrlisbon: external(ADR_LISBON) })}
+							</li>
+							<li className="rounded-xl border border-neutral-900/12 bg-surface p-5 text-base leading-relaxed text-neutral-800">
+								{t.rich("adrCniacc", { adrcniacc: external(ADR_CNIACC) })}
+							</li>
+						</ul>
+					</div>
+					<p className="flex gap-5 rounded-xl border-2 border-accent/35 bg-tint p-6 text-sm font-medium leading-[1.8] text-neutral-900 sm:p-8 sm:text-base">
+						<span className="text-2xl leading-none text-accent" aria-hidden>§</span>
+						{t("prohibitedNote")}
+					</p>
+				</section>
+
+				{/* Contact */}
+				<section
+					aria-labelledby="contact-heading"
+					className="relative overflow-hidden rounded-2xl bg-panel dark:ring-1 dark:ring-accent/30 px-7 py-12 text-zinc-200 sm:px-10 sm:py-14"
+				>
+					<h2 id="contact-heading" className={`${H2} mb-10 text-white`}>
+						{t("contactTitle")}
+					</h2>
+					<ContactList dark className="grid grid-cols-1 gap-8 text-base md:grid-cols-3" />
+					<p className="mt-10 border-t border-zinc-600/50 pt-8">
+						<Link className={`${LINK_DARK} text-base`} href="/terms-conditions">
+							{t("privacyLabel")}
+						</Link>
+					</p>
+				</section>
 			</div>
-			<div className="relative text-2xl justify-center flex flex-col bg-white text-black h-80 text-center">
-				<h2>{t("services-responsabilidade.title")}</h2>
-				<p className="relative">{t("services-responsabilidade.text")}</p>
-			</div>
-			<div className="bg-black">
-				<h2 style={{ textDecoration: "underline" }}>
-					{t("services-servicos.title")}
-				</h2>
-				<ol className="italic list-decimal list-inside pl-10" type="a">
-					{Array.from({ length: 5 }).map((_, i) => (
-						<p key={`listitem-${i + 1}`}>{t(`services-servicos.text.${i}`)}</p>
-					))}
-				</ol>
-				<h2>{t("services-servicos.banks")}</h2>
-				<ul className="pl-10">
-					{banks.map((b) => (
-						<li key={b}>{b}</li>
-					))}
-				</ul>
-			</div>
-			<div className="bg-blue-400">
-				{infos.map((i) => (
-					<h3 key={i.slice(0, 10)}>{i}<br /></h3>
-				))}
-				<br />
-				<p>Morada da Sede: Av. Elias Garcia, 144, 3ºEsq - 1050-101 Lisboa</p>
-				<p>Contact: +351 968457 788</p>
-				<p>E-mail: consumer.solutions@outlook.com</p>
-				<br />
-				<p>Política de privacidade (RGPD)</p>
-			</div> */}
-		</>
+		</PageShell>
 	);
 }

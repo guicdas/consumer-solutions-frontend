@@ -2,31 +2,30 @@
 	"links": {
 		"services": "Services",
 		"certifications": "Certifications",
-		"terms": "T&Cs",
+		"terms": "Privacy policy",
 		"sitemap": "Sitemap",
 		"about": "About"
 	},
-	"header": [
-		"Your Portuguese mortgage broker",
-		"Intermediário de crédito",
-		"Votre courtier en crédit"
-	],
+	"header": {
+		"theme": "Toggle dark mode",
+		"tagline": "Your Portuguese mortgage broker"
+	},
 	"home": {
+		"metaTitle": "Mortgage Broker in Portugal for International Buyers",
+		"metaDescription": "Mortgage credit intermediary in Lisbon, registered with the Bank of Portugal. We compare offers from our partner banks and guide international buyers through their Portuguese home loan, free of charge.",
 		"videoError": "Your browser does not support the video tag.",
-		"title": "Unlock Your Dream Home in Portugal?",
+		"title": "Unlock Your Dream Home in Portugal",
 		"subtitle": "Expert Mortgage Brokerage for International Investors.",
-		"text": "We Simplify Portuguese Real Estate Financing for Global Investors",
+		"text": "We Simplify Portuguese Real Estate Financing for Global Investors.",
 		"services-button": "Explore our Services"
 	},
-
 	"services": {
-		"kicker": "Supervision · Portugal",
 		"heroTitle": "Credit intermediary in Portugal",
 		"heroLead": "The Bank of Portugal is the supervisory authority for our activity. Below you will find our registration details, authorised services, partner institutions, and regulatory disclosures.",
 		"registrationTitle": "Bank of Portugal registration",
-		"registrationBody": "CPCDS Consumer Solutions — Unipessoal, Lda is a tied credit intermediary registered with the Bank of Portugal under no. 0006380. You can verify this registration on the <bpportal>Bank of Portugal credit intermediaries portal</bpportal>.",
+		"registrationBody": "CPCDS Consumer Solutions — Unipessoal, Lda is a tied credit intermediary registered with the Bank of Portugal under no. {registration}. You can verify this registration on the <bpportal>Bank of Portugal credit intermediaries portal</bpportal>.",
 		"insuranceTitle": "Professional liability insurance",
-		"insuranceMortgage": "Mortgage credit: policy no. 2524519 — Hiscox, S.A. Branch in Portugal, valid from 1 July 2025 to 30 June 2026.",
+		"insuranceMortgage": "Mortgage credit: policy no. {policy} — Hiscox S.A., Portuguese branch, valid from 1 July 2026 to 30 June 2027.",
 		"authorizedTitle": "Services we are authorised to provide",
 		"authorizedItems": [
 			"Presenting or proposing credit agreements to consumers.",
@@ -40,21 +39,101 @@
 		"complaintsP1": "Complaints concerning CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA may be submitted by email or through the online Complaints Book (livroreclamacoes.pt). Complaints may also be lodged directly with the supervisory authority (Bank of Portugal).",
 		"adrTitle": "Alternative dispute resolution",
 		"adrLead": "CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA has agreements with two alternative dispute resolution arbitration centres:",
-		"adrLisbon": "Lisbon Conflict Arbitration Centre — membership no. 34883 — <adrlisbon>centroarbitragemlisboa.pt</adrlisbon>",
-		"adrCniacc": "National Centre for Consumer Arbitration Information — membership no. 4262 — <adrcniacc>cniacc.pt</adrcniacc>",
-		"prohibitedNote": "Under Article 46 of Decree-Law No. 81-C/2017 of 7 July (Legal Regime of Credit Intermediaries), CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA may not receive or hand over any sums related to the formation, performance or early discharge of credit agreements.",
+		"adrLisbon": "Lisbon Consumer Dispute Arbitration Centre — membership no. 34883 — <adrlisbon>centroarbitragemlisboa.pt</adrlisbon>",
+		"adrCniacc": "National Centre for Information and Arbitration of Consumer Disputes — membership no. 4262 — <adrcniacc>cniacc.pt</adrcniacc>",
+		"prohibitedNote": "Under Article 46 of Decree-Law No. 81-C/2017 of 7 July (Legal Regime of Credit Intermediaries), CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA may not receive or hand over any sums related to the conclusion, performance or early repayment of credit agreements.",
 		"contactTitle": "Registered office & contact",
-		"address": "Av. Elias Garcia, 144, 3º Esq — 1050-101 Lisboa",
+		"address": "Av. Elias Garcia, 144, 3.º Esq. — 1050-101 Lisboa",
 		"phone": "+351 968 457 788",
 		"email": "consumer.solutions@outlook.com",
 		"privacyLabel": "Privacy policy (GDPR)"
 	},
 	"tcs": {
-		"title": "DATA PROTECTION",
+		"title": "How we look after your data",
 		"content": [
-			"The protection of confidentiality and integrity of our customers' data is considered by CPCDS CONSUMER SOLUTIONS as one of the fundamental pillars in the relationship of trust with people who use our services.",
-			"CPCDS CONSUMER SOLUTIONS has an organization and an adequate process to protect your data against destruction, alteration, and unauthorized access.\nThe General Data Protection Regulation (RGPD) applies to the processing of personal data by fully or partially automated means, as well as to the processing by non-automated means of personal data contained in files.",
-			"We comply with the confidentiality obligations arising from the activity of mortgage and loans brokers under the provisions of applicable national legislation and Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 - General Regulation on Data Protection (GDPR)."
+			"CPCDS CONSUMER SOLUTIONS considers protecting the confidentiality and integrity of our customers' data to be one of the fundamental pillars of the relationship of trust with the people who use our services.",
+			"CPCDS CONSUMER SOLUTIONS has an appropriate organisation and processes in place to protect your data against destruction, alteration and unauthorised access.\nThe General Data Protection Regulation (GDPR) applies to the processing of personal data wholly or partly by automated means, and to the processing other than by automated means of personal data that form part of a filing system.",
+			"We comply with the confidentiality obligations arising from our activity as a credit intermediary, under the applicable national legislation and Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 — the General Data Protection Regulation (GDPR)."
 		]
+	},
+	"meta": {
+		"title": "Consumer Solutions",
+		"description": "Need a mortgage? We are your trusted local broker providing expert advice on home loans, refinancing, and consumer finance solutions in Portugal!"
+	},
+	"cta": {
+		"title": "Experience the Power of Expert Mortgage Brokerage for Global Investors",
+		"button": "Get Started",
+		"complianceTitle": "Portugal Property Financing - Regulatory Compliance:",
+		"complianceBody": "We are proud to be registered with the Bank of Portugal, the regulatory authority for the banking and financial sector. This registration demonstrates our commitment to compliance, ethical business practices, and providing our clients with the highest level of financial services."
+	},
+	"footer": {
+		"consultation": "Request a Consultation >",
+		"mailSubject": "Requesting Consultation",
+		"mailNote": "or contact us via email"
+	},
+	"about": {
+		"founder": [
+			"Meet Our Founder and Finance Expert - Conceição Caldeira da Silva",
+			"Conceição Caldeira da Silva, the driving force behind our mortgage brokerage, brings over two decades of finance expertise to our mission. Her journey began within the walls of a multinational bank, where she dedicated 15 years to helping families secure their dreams of homeownership.",
+			"As her career evolved, Conceição specialised in crafting tailored financial solutions for premium partners, where her skills in bespoke financial strategies truly flourished. Today, she stands as a seasoned finance professional with in-depth knowledge of bank financing products. With Conceição at the helm, you can expect nothing less than excellence and expertise when you choose our brokerage.",
+			"Welcome to a world of financial wisdom and tailored solutions. Welcome to Consumer Solutions."
+		],
+		"faqTitle": "FAQs",
+		"faqs": [
+			{
+				"title": "What is the role of a mortgage broker in Portugal?",
+				"body": "A mortgage broker in Portugal acts as an intermediary between borrowers and lenders. Their role is to help clients secure the best mortgage terms by evaluating their financial situation, comparing loan offers from various banks, and guiding them through the application process."
+			},
+			{
+				"title": "Why should I use a mortgage broker instead of going directly to a bank?",
+				"body": "Mortgage brokers offer several advantages. They have access to a wide range of loan products and can provide expert guidance on the best options for your specific needs. Brokers can often secure more favourable terms and help streamline the application process, saving you time and money."
+			},
+			{
+				"title": "How do mortgage brokers get paid in Portugal?",
+				"body": "Our mortgage brokerage services are entirely free for clients: under Bank of Portugal rules, we do not charge you for our assistance. We are paid a commission by the lending institution when a client's mortgage is approved, usually a percentage of the loan amount."
+			},
+			{
+				"title": "Are mortgage brokers regulated in Portugal?",
+				"body": "Yes, mortgage brokers in Portugal are regulated by the Bank of Portugal (Banco de Portugal). To operate legally, brokers must be registered with and authorised by this regulatory authority. This ensures that brokers adhere to professional standards and ethical practices."
+			},
+			{
+				"title": "What factors affect mortgage interest rates in Portugal?",
+				"body": "Mortgage interest rates in Portugal can be influenced by various factors, including the Eurozone's monetary policy, the property's location, the loan-to-value ratio, the borrower's creditworthiness, and market competition among lenders."
+			},
+			{
+				"title": "How can I improve my chances of getting a mortgage in Portugal?",
+				"body": "To increase your likelihood of mortgage approval, maintain a good credit history, save for a sizeable down payment, provide accurate financial documentation, and work with a mortgage broker to identify lenders that match your financial profile."
+			},
+			{
+				"title": "What is the maximum loan-to-value (LTV) ratio for mortgages in Portugal?",
+				"body": "The LTV ratio can vary, but it's common for lenders to offer mortgages with an LTV of up to 80% of the property's value. However, specific terms may vary based on your financial situation and the lending institution."
+			},
+			{
+				"title": "Can I get a mortgage in Portugal as a foreign investor or non-resident?",
+				"body": "Yes, Portugal welcomes foreign investors, and non-residents can typically secure mortgages for property purchases. The requirements may vary, so it's advisable to work with a mortgage broker experienced in handling international clients."
+			},
+			{
+				"title": "How long does the mortgage approval process in Portugal usually take?",
+				"body": "The mortgage approval process can take several weeks in Portugal. It involves property appraisal, credit checks, and documentation verification. Timelines may vary depending on the complexity of the application and the lender's efficiency."
+			}
+		]
+	},
+	"certifications": {
+		"imageAlt": "Transparency",
+		"title": "Our Commitment to Transparency and Client Benefits",
+		"kicker": "Mortgage Brokerage Portugal",
+		"freeTitle": "Transparent Mortgage Brokerage: Free Services in Portugal",
+		"freeBody": "At Consumer Solutions, transparency is not just a principle; it's our commitment. Our mortgage brokerage services are entirely free for clients, a mandate set by the Bank of Portugal. This reflects our unwavering dedication to clients' best interests and financial well-being.",
+		"mandateTitle": "Bank of Portugal's Mandate:",
+		"mandateItems": [
+			"Our services align with the regulations of the Bank of Portugal, which require mortgage brokers not to charge clients for their assistance.",
+			"We embrace this mandate as a testament to our client-centric approach and dedication to transparency."
+		],
+		"interestsTitle": "Your Best Interests, Our Priority:",
+		"interestsItems": [
+			"When you choose Consumer Solutions, you're choosing a partner committed to your financial well-being.",
+			"We prioritise your best interests, ensuring that you receive free, client-friendly mortgage brokerage services in Portugal."
+		],
+		"button": "Meet the team"
 	}
 }

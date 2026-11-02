@@ -2,31 +2,30 @@
 	"links": {
 		"services": "Services",
 		"certifications": "Certificats",
-		"terms": "T&Cs",
-		"sitemap": "plan du site",
-		"about": "Infos"
+		"terms": "Confidentialité",
+		"sitemap": "Plan du site",
+		"about": "À propos"
 	},
-	"header": [
-		"Votre courtier en crédit au Portugal",
-		"O seu intermediário de crédito",
-		"Your mortgage broker"
-	],
+	"header": {
+		"theme": "Basculer le mode sombre",
+		"tagline": "Votre courtier en crédit au Portugal"
+	},
 	"home": {
+		"metaTitle": "Courtier en crédit immobilier au Portugal pour acheteurs internationaux",
+		"metaDescription": "Intermédiaire de crédit à Lisbonne, enregistré auprès de la Banque du Portugal. Nous comparons les offres de nos banques partenaires et accompagnons les acheteurs internationaux dans leur crédit immobilier au Portugal, gratuitement.",
 		"videoError": "Votre navigateur ne prend pas en charge la vidéo.",
-		"title": "Concrétisez votre projet immobilier au Portugal ?",
-		"subtitle": "Courtage hypothécaire expert pour investisseurs internationaux.",
+		"title": "Concrétisez votre projet immobilier au Portugal",
+		"subtitle": "Courtage expert en crédit immobilier pour investisseurs internationaux.",
 		"text": "Nous simplifions le financement immobilier portugais pour les investisseurs du monde entier.",
 		"services-button": "Découvrir nos services"
 	},
-
 	"services": {
-		"kicker": "Supervision · Portugal",
 		"heroTitle": "Intermédiaire de crédit au Portugal",
 		"heroLead": "La Banque du Portugal est l'autorité de surveillance de notre activité. Vous trouverez ci-dessous nos informations d'enregistrement, les services autorisés, les institutions partenaires et les informations réglementaires.",
 		"registrationTitle": "Enregistrement auprès de la Banque du Portugal",
-		"registrationBody": "CPCDS Consumer Solutions — Unipessoal, Lda est un intermédiaire de crédit lié, enregistré auprès de la Banque du Portugal sous le numéro 0006380. Vous pouvez vérifier cet enregistrement sur le <bpportal>portail des intermédiaires de crédit de la Banque du Portugal</bpportal>.",
+		"registrationBody": "CPCDS Consumer Solutions — Unipessoal, Lda est un intermédiaire de crédit lié, enregistré auprès de la Banque du Portugal sous le numéro {registration}. Vous pouvez vérifier cet enregistrement sur le <bpportal>portail des intermédiaires de crédit de la Banque du Portugal</bpportal>.",
 		"insuranceTitle": "Assurance de responsabilité civile professionnelle",
-		"insuranceMortgage": "Crédit immobilier : police n° 2524519 — Hiscox, S.A. Succursale au Portugal, valable du 1er juillet 2025 au 30 juin 2026.",
+		"insuranceMortgage": "Crédit immobilier : police n° {policy} — Hiscox S.A., succursale au Portugal, valable du 1er juillet 2026 au 30 juin 2027.",
 		"authorizedTitle": "Services que nous sommes autorisés à fournir",
 		"authorizedItems": [
 			"Présenter ou proposer des contrats de crédit aux consommateurs.",
@@ -37,24 +36,104 @@
 		],
 		"banksTitle": "Établissements prêteurs (banques partenaires)",
 		"complaintsTitle": "Réclamations",
-		"complaintsP1": "Les réclamations concernant CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA peuvent être soumises par e-mail ou via le Livre de Réclamations en ligne (livroreclamacoes.pt). Les réclamations peuvent également être déposées directement auprès de l'autorité de surveillance (Banque du Portugal).",
+		"complaintsP1": "Les réclamations concernant CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA peuvent être adressées par e-mail ou via le Livre de réclamations électronique (livroreclamacoes.pt). Elles peuvent également être déposées directement auprès de l'autorité de surveillance (Banque du Portugal).",
 		"adrTitle": "Résolution alternative des litiges",
 		"adrLead": "CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA a conclu des accords avec deux centres d'arbitrage de résolution alternative des litiges :",
-		"adrLisbon": "Centre d'arbitrage des conflits de Lisbonne — numéro d'adhésion 34883 — <adrlisbon>centroarbitragemlisboa.pt</adrlisbon>",
-		"adrCniacc": "Centre national d'information sur l'arbitrage de la consommation — numéro d'adhésion 4262 — <adrcniacc>cniacc.pt</adrcniacc>",
-		"prohibitedNote": "En vertu de l'article 46 du décret-loi n° 81-C/2017 du 7 juillet (Régime juridique des intermédiaires de crédit), CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA ne peut recevoir ni remettre aucune somme liée à la formation, à l'exécution ou à la résiliation anticipée de contrats de crédit.",
-		"contactTitle": "Siège social & contact",
-		"address": "Av. Elias Garcia, 144, 3º Esq — 1050-101 Lisboa",
+		"adrLisbon": "Centre d'arbitrage des litiges de consommation de Lisbonne — numéro d'adhésion 34883 — <adrlisbon>centroarbitragemlisboa.pt</adrlisbon>",
+		"adrCniacc": "Centre national d'information et d'arbitrage des litiges de consommation — numéro d'adhésion 4262 — <adrcniacc>cniacc.pt</adrcniacc>",
+		"prohibitedNote": "En vertu de l'article 46 du décret-loi n° 81-C/2017 du 7 juillet (Régime juridique des intermédiaires de crédit), CPCDS CONSUMER SOLUTIONS — UNIPESSOAL, LDA ne peut recevoir ni remettre aucune somme liée à la conclusion, à l'exécution ou au remboursement anticipé de contrats de crédit.",
+		"contactTitle": "Siège social et contact",
+		"address": "Av. Elias Garcia, 144, 3.º Esq. — 1050-101 Lisboa",
 		"phone": "+351 968 457 788",
 		"email": "consumer.solutions@outlook.com",
 		"privacyLabel": "Politique de confidentialité (RGPD)"
 	},
 	"tcs": {
-		"title": "PROTECTION DES DONNÉES",
+		"title": "Comment nous protégeons vos données",
 		"content": [
 			"La protection de la confidentialité et de l'intégrité des données de nos clients est considérée par CPCDS CONSUMER SOLUTIONS comme l'un des piliers fondamentaux de la relation de confiance avec les personnes qui utilisent nos services.",
-			"CPCDS CONSUMER SOLUTIONS dispose d'une organisation et d'un processus adéquat pour protéger vos données contre la destruction, l'altération et l'accès non autorisé.\nLe Règlement Général sur la Protection des Données (RGPD) s'applique au traitement des données personnelles par des moyens entièrement ou partiellement automatisés, ainsi qu'au traitement par des moyens non automatisés des données personnelles contenues dans des fichiers.",
-			"Nous respectons les obligations de confidentialité découlant de l'activité d'intermédiaires en crédits immobiliers et en prêts, conformément aux dispositions de la législation nationale applicable et du Règlement (UE) 2016/679 du Parlement européen et du Conseil du 27 avril 2016 — Règlement Général sur la Protection des Données (RGPD)."
+			"CPCDS CONSUMER SOLUTIONS dispose d'une organisation et de processus adéquats pour protéger vos données contre la destruction, l'altération et l'accès non autorisé.\nLe règlement général sur la protection des données (RGPD) s'applique au traitement de données à caractère personnel, automatisé en tout ou en partie, ainsi qu'au traitement non automatisé de données à caractère personnel contenues dans un fichier.",
+			"Nous respectons les obligations de confidentialité découlant de notre activité d'intermédiaire de crédit, conformément à la législation nationale applicable et au règlement (UE) 2016/679 du Parlement européen et du Conseil du 27 avril 2016 — règlement général sur la protection des données (RGPD)."
 		]
+	},
+	"meta": {
+		"title": "Consumer Solutions",
+		"description": "Besoin d'un crédit immobilier ? Votre courtier local de confiance vous conseille sur les prêts immobiliers, la renégociation de crédit et les solutions de financement au Portugal !"
+	},
+	"cta": {
+		"title": "Découvrez la force d'un courtage expert en crédit immobilier pour les investisseurs internationaux",
+		"button": "Commencer",
+		"complianceTitle": "Financement immobilier au Portugal - Conformité réglementaire :",
+		"complianceBody": "Nous sommes fiers d'être enregistrés auprès de la Banque du Portugal, l'autorité de régulation du secteur bancaire et financier. Cet enregistrement témoigne de notre engagement en matière de conformité, de pratiques commerciales éthiques et de services financiers du plus haut niveau pour nos clients."
+	},
+	"footer": {
+		"consultation": "Demander une consultation >",
+		"mailSubject": "Demande de consultation",
+		"mailNote": "ou contactez-nous par email"
+	},
+	"about": {
+		"founder": [
+			"Rencontrez notre fondatrice et experte en finance - Conceição Caldeira da Silva",
+			"Conceição Caldeira da Silva, moteur de notre activité de courtage, apporte à notre mission plus de vingt ans d'expertise financière. Son parcours a commencé au sein d'une banque multinationale, où elle a consacré 15 ans à aider des familles à réaliser leur rêve de devenir propriétaires.",
+			"Au fil de sa carrière, Conceição s'est spécialisée dans la conception de solutions financières sur mesure pour des partenaires premium, où son savoir-faire en stratégies financières personnalisées s'est pleinement épanoui. Aujourd'hui, c'est une professionnelle de la finance chevronnée, dotée d'une connaissance approfondie des produits de financement bancaire. Avec Conceição aux commandes, vous pouvez compter sur l'excellence et l'expertise en choisissant notre cabinet de courtage.",
+			"Bienvenue dans un monde de sagesse financière et de solutions sur mesure. Bienvenue chez Consumer Solutions."
+		],
+		"faqTitle": "FAQ",
+		"faqs": [
+			{
+				"title": "Quel est le rôle d'un courtier en crédit immobilier au Portugal ?",
+				"body": "Au Portugal, le courtier en crédit immobilier joue le rôle d'intermédiaire entre emprunteurs et prêteurs. Il aide ses clients à obtenir les meilleures conditions de prêt en analysant leur situation financière, en comparant les offres de différentes banques et en les accompagnant tout au long de la demande."
+			},
+			{
+				"title": "Pourquoi passer par un courtier plutôt que d'aller directement à la banque ?",
+				"body": "Les courtiers offrent plusieurs avantages. Ils ont accès à un large éventail de produits de crédit et peuvent vous conseiller sur les meilleures options selon vos besoins. Ils obtiennent souvent des conditions plus avantageuses et simplifient la demande, ce qui vous fait gagner du temps et de l'argent."
+			},
+			{
+				"title": "Comment les courtiers sont-ils rémunérés au Portugal ?",
+				"body": "Nos services de courtage sont entièrement gratuits pour les clients : conformément aux règles de la Banque du Portugal, nous ne vous facturons pas notre accompagnement. Nous sommes rémunérés par une commission versée par l'établissement prêteur lorsque le crédit du client est accordé, généralement un pourcentage du montant emprunté."
+			},
+			{
+				"title": "Les courtiers en crédit sont-ils réglementés au Portugal ?",
+				"body": "Oui, les courtiers en crédit au Portugal sont réglementés par la Banque du Portugal (Banco de Portugal). Pour exercer légalement, ils doivent détenir un agrément valide délivré par cette autorité, ce qui garantit le respect de normes professionnelles et de pratiques éthiques."
+			},
+			{
+				"title": "Quels facteurs influencent les taux des crédits immobiliers au Portugal ?",
+				"body": "Les taux peuvent dépendre de plusieurs facteurs : la politique monétaire de la zone euro, la localisation du bien, le ratio prêt/valeur, la solvabilité de l'emprunteur et la concurrence entre les prêteurs."
+			},
+			{
+				"title": "Comment augmenter mes chances d'obtenir un crédit immobilier au Portugal ?",
+				"body": "Pour augmenter vos chances, gardez un historique bancaire sain, constituez un apport conséquent, fournissez des justificatifs financiers exacts et faites appel à un courtier pour identifier les prêteurs adaptés à votre profil."
+			},
+			{
+				"title": "Quel est le ratio prêt/valeur (LTV) maximal au Portugal ?",
+				"body": "Le ratio LTV peut varier, mais les prêteurs proposent couramment des crédits allant jusqu'à 80 % de la valeur du bien. Les conditions précises dépendent toutefois de votre situation financière et de l'établissement prêteur."
+			},
+			{
+				"title": "Puis-je obtenir un crédit immobilier au Portugal en tant qu'investisseur étranger ou non-résident ?",
+				"body": "Oui, le Portugal accueille les investisseurs étrangers, et les non-résidents peuvent généralement obtenir un crédit pour acheter un bien. Les exigences varient : il est donc conseillé de travailler avec un courtier habitué aux clients internationaux."
+			},
+			{
+				"title": "Combien de temps dure l'approbation d'un crédit immobilier au Portugal ?",
+				"body": "L'approbation peut prendre plusieurs semaines au Portugal. Elle comprend l'expertise du bien, l'analyse de crédit et la vérification des documents. Les délais varient selon la complexité du dossier et la réactivité du prêteur."
+			}
+		]
+	},
+	"certifications": {
+		"imageAlt": "Transparence",
+		"title": "Notre engagement envers la transparence et les avantages pour nos clients",
+		"kicker": "Courtage en crédit immobilier au Portugal",
+		"freeTitle": "Un courtage transparent : des services gratuits au Portugal",
+		"freeBody": "Chez Consumer Solutions, la transparence n'est pas qu'un principe : c'est notre engagement. Nos services de courtage sont entièrement gratuits pour les clients, conformément aux exigences de la Banque du Portugal. Cela reflète notre dévouement total aux intérêts et au bien-être financier de nos clients.",
+		"mandateTitle": "Les exigences de la Banque du Portugal :",
+		"mandateItems": [
+			"Nos services respectent la réglementation de la Banque du Portugal, qui interdit aux courtiers de facturer leur accompagnement aux clients.",
+			"Nous adhérons à cette exigence, preuve de notre approche centrée sur le client et de notre engagement envers la transparence."
+		],
+		"interestsTitle": "Vos intérêts, notre priorité :",
+		"interestsItems": [
+			"En choisissant Consumer Solutions, vous choisissez un partenaire engagé pour votre bien-être financier.",
+			"Nous plaçons vos intérêts en premier et vous garantissons des services de courtage gratuits et adaptés à vos besoins au Portugal."
+		],
+		"button": "Rencontrer l'équipe"
 	}
 }

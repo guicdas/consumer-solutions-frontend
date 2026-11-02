@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
 
-
-# Optional: Specify that Googlebot can follow redirects
-Allow: followlinks
+Sitemap: https://www.cpcdsconsumersolutions.pt/sitemap.xml

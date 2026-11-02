@@ -1,0 +1,2 @@
+# Cloudflare Pages: real 301 from the bare domain to the default language (src/app/page.tsx is only the fallback).
+/  /en  301

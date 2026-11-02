@@ -3,15 +3,15 @@ import Image from "next/image";
 type ImageWithLinkProps = {
 	href: string;
 	src: string;
-	size: number;
+	size?: number;
 	alt: string;
 };
 
 export default function ImageWithLink({
 	href,
 	src,
-	size = 20,
-	alt = "image",
+	size = 17,
+	alt,
 }: ImageWithLinkProps) {
 	return (
 		<a href={href} referrerPolicy="no-referrer" style={{

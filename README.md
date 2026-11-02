@@ -1,13 +1,18 @@
-# [Consumer Solutions](https://guicdas.github.io/consumer-solutions-frontend/) [![Deploy Next.js site to Pages](https://github.com/guicdas/consumer-solutions-frontend/actions/workflows/nextjs.yml/badge.svg)](https://github.com/guicdas/consumer-solutions-frontend/actions/workflows/nextjs.yml)
+# [Consumer Solutions](https://www.cpcdsconsumersolutions.pt/)
 
-### [services](https://www.goldcapitalsolutions.com/blank-page)
-### [privacy policy](https://www.goldcapitalsolutions.com/pol%C3%ADtica-de-privacidade)
-### [Only about Us](https://www.goldcapitalsolutions.com/blank-page-2)
-### [helpful resources](https://www.goldcapitalsolutions.com/clients)
+[![Deploy to Cloudflare Pages](https://github.com/guicdas/consumer-solutions-frontend/actions/workflows/nextjs.yml/badge.svg)](https://github.com/guicdas/consumer-solutions-frontend/actions/workflows/nextjs.yml)
 
-### Not Found + certifications
+Website of CPCDS Consumer Solutions, a mortgage credit intermediary in Portugal registered with the Bank of Portugal.
 
-- Use Location Keywords: Ensure your city/region name is naturally included in your title, H1, and body copy.
-- Set up a Google Business Profile (GBP) and ensure your Name, Address, and Phone Number (NAP) are consistent across the entire web.
-- Examples: "What is the difference between a fixed and variable mortgage?", "How much does a mortgage broker cost?", "Tips for refinancing in [Your City]."
-- Use LSI Keywords: Use related terms naturally (e.g., LTV, interest rates, amortization, debt-to-income ratio).
+- Available in English, French and Portuguese
+- Light and dark theme
+- Built with Next.js and Tailwind CSS, exported as a static site and hosted on Cloudflare Pages
+
+Visit the site: **[cpcdsconsumersolutions.pt](https://www.cpcdsconsumersolutions.pt/)**
+
+## TODO
+
+- [ ] Ver nome da organisacao nos logs
+- [ ] Change to Astro
+- [ ] Google Business Console
+- [ ] Add extra pages from faqs
