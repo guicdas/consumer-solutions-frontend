@@ -1,8 +1,9 @@
-import { defineRouting } from "next-intl/routing";
-
-export const routing = defineRouting({
+export const routing = {
 	locales: ["en", "fr", "pt"],
 	defaultLocale: "en",
-	localePrefix: "always",
-	localeDetection: false,
-});
+} as const;
+
+export type Locale = (typeof routing.locales)[number];
+
+// For getStaticPaths() of every page under src/pages/[locale]/.
+export const localeStaticPaths = () => routing.locales.map((locale) => ({ params: { locale } }));

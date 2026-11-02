@@ -1,0 +1,13 @@
+---
+interface Props {
+	href: string;
+	src: string;
+	size?: number;
+	alt: string;
+}
+const { href, src, size = 17, alt } = Astro.props;
+---
+
+<a href={href} referrerpolicy="no-referrer" class="relative flex" style={{ height: `${size}px`, width: `${size}px` }}>
+	<img src={src} height={size} width={size} alt={alt} class="h-full w-full" />
+</a>

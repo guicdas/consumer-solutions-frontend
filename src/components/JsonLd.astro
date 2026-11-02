@@ -1,0 +1,9 @@
+---
+// Structured data for search engines. "<" is escaped so translated text can never close the script tag.
+interface Props {
+	data: object;
+}
+const json = JSON.stringify({ "@context": "https://schema.org", ...Astro.props.data }).replace(/</g, "\\u003c");
+---
+
+<script type="application/ld+json" is:inline set:html={json} />

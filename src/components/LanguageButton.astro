@@ -1,0 +1,49 @@
+---
+import { routing, type Locale } from "../i18n/routing";
+import { localHref } from "../i18n/t";
+
+// Plain links to the same page in each language, built at build time. <details> gives open/close without JS.
+interface Props {
+	locale: Locale;
+	path: string;
+}
+const { locale, path } = Astro.props;
+const FLAGS: Record<Locale, string> = { en: "GBR", fr: "FRA", pt: "PT" };
+---
+
+<details class="group relative" data-lang-menu>
+	<summary
+		class="flex cursor-pointer list-none items-center gap-2 rounded-full border border-neutral-900/[0.12] px-3 py-1.5 text-sm font-medium transition hover:border-accent/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent [&::-webkit-details-marker]:hidden"
+	>
+		<img src={`/${FLAGS[locale]}.png`} alt="" height="17" width="27" class="rounded-[2px]" />
+		{locale.toUpperCase()}
+		<span class="h-1.5 w-1.5 -translate-y-0.5 rotate-45 border-b-[1.5px] border-r-[1.5px] border-accent transition-transform group-open:translate-y-0.5 group-open:-rotate-[135deg]" aria-hidden="true"></span>
+	</summary>
+	<div class="absolute right-0 z-50 mt-2 overflow-hidden rounded-xl border-2 border-neutral-900/[0.08] bg-surface shadow-[0_24px_64px_-28px_oklch(0.32_0.1_158_/_0.5)]">
+		{
+			routing.locales.map((l) => (
+				<a
+					href={localHref(l, path || "/")}
+					hreflang={l}
+					lang={l}
+					aria-current={l === locale ? "true" : undefined}
+					class={`flex w-full items-center gap-3 px-4 py-2.5 text-sm transition hover:bg-tint ${l === locale ? "font-semibold text-accent" : "text-neutral-800"}`}
+				>
+					<img src={`/${FLAGS[l]}.png`} alt="" height="17" width="27" class="rounded-[2px]" />
+					{l.toUpperCase()}
+				</a>
+			))
+		}
+	</div>
+</details>
+
+<script>
+	// Close on a press outside the switcher or on Escape.
+	const menu = document.querySelector<HTMLDetailsElement>("[data-lang-menu]");
+	document.addEventListener("pointerdown", (e) => {
+		if (menu?.open && !menu.contains(e.target as Node)) menu.open = false;
+	});
+	document.addEventListener("keydown", (e) => {
+		if (e.key === "Escape" && menu?.open) menu.open = false;
+	});
+</script>

@@ -1,0 +1,60 @@
+---
+import "@fontsource-variable/oswald";
+import oswaldLatin from "@fontsource-variable/oswald/files/oswald-latin-wght-normal.woff2?url";
+import "../styles/globals.css";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import type { Locale } from "../i18n/routing";
+import { getT } from "../i18n/t";
+import { pageMeta } from "../site";
+
+interface Props {
+	locale: Locale;
+	path: string; // "" for the homepage, "/services" etc.
+	title: string; // page title; " · Consumer Solutions" is appended for <title> unless brand={false}
+	brand?: boolean;
+	description: string;
+}
+
+const { locale, path, title, description, brand = true } = Astro.props;
+const meta = pageMeta(locale, path);
+const t = getT(locale);
+const fullTitle = brand ? `${title} · ${t("meta.title")}` : title;
+---
+
+<!doctype html>
+<html lang={locale}>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{fullTitle}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={meta.canonical} />
+		{meta.alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content={t("meta.title")} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={meta.canonical} />
+		<meta property="og:locale" content={meta.ogLocale} />
+		{meta.ogAlternateLocales.map((l) => <meta property="og:locale:alternate" content={l} />)}
+		<meta property="og:image" content={meta.image} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="preload" href={oswaldLatin} as="font" type="font/woff2" crossorigin />
+		<slot name="head" />
+		<!-- Runs before paint so the page never flashes the wrong theme. -->
+		<script is:inline>
+			try {
+				var t = localStorage.getItem("theme");
+				if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+				document.documentElement.dataset.theme = t;
+			} catch (e) {}
+		</script>
+	</head>
+	<body>
+		<Header locale={locale} path={path} />
+		<slot />
+		<Footer locale={locale} />
+	</body>
+</html>

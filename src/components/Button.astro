@@ -1,0 +1,16 @@
+---
+// Looks like a button but is a <span>: always wrap it in an <a>,
+// which gives the click and keyboard behaviour (a <button> inside a link is invalid HTML).
+interface Props {
+	str: string;
+	type: 1 | 2;
+	class?: string;
+}
+const { str, type, class: extra = "" } = Astro.props;
+const look =
+	type === 1
+		? "w-fit whitespace-nowrap p-2 bg-[#368867] hover:bg-green-700 text-white dark:bg-accent-strong dark:hover:bg-accent-strong/85"
+		: "border border-accent w-60 p-2 text-accent hover:bg-accent-strong hover:text-white";
+---
+
+<span class={`relative inline-block text-center ${look} ${extra}`}>{str}</span>

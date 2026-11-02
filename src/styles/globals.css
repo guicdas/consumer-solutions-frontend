@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  color-scheme: light;
+  --page: oklch(0.982 0.014 152);
+  --surface: oklch(0.997 0.006 155);
+  --tint: oklch(0.96 0.022 155);
+  --panel: oklch(0.14 0.032 158);
+  --accent: #2a6b52;
+  --accent-strong: #2a6b52;
+  --glow: oklch(0.88 0.06 162 / 0.38);
+  --panel-glow: oklch(0.28 0.09 165 / 0.5);
+}
+
+@theme inline {
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-tint: var(--tint);
+  --color-panel: var(--panel);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+}
+
+/* Theme is set on <html data-theme> by the head script in src/layouts/Base.astro (saved choice, else system preference). */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  /* Low-chroma forest tones; sage for text/lines, deeper pine for fills. */
+  --page: oklch(0.18 0.01 160);
+  --surface: oklch(0.215 0.012 158);
+  --tint: oklch(0.25 0.018 155);
+  --panel: oklch(0.235 0.04 160);
+  --accent: oklch(0.78 0.05 145);
+  --accent-strong: oklch(0.5 0.065 162);
+  --glow: oklch(1 0 0 / 0.12);
+  --panel-glow: oklch(0.5 0.08 155 / 0.32);
+
+  /* Flip the neutral scale so text-neutral-* reads light and border-neutral-900/x stays a faint hairline. */
+  --color-neutral-500: oklch(0.62 0 0);
+  --color-neutral-600: oklch(0.72 0 0);
+  --color-neutral-700: oklch(0.8 0 0);
+  --color-neutral-800: oklch(0.88 0 0);
+  --color-neutral-900: oklch(0.93 0 0);
+  --color-neutral-950: oklch(0.97 0 0);
+}
+
+body {
+  background: var(--page);
+  color: var(--color-neutral-950);
+  font-family: "Oswald Variable", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth FAQ accordion. shortcut: browsers without ::details-content (Firefox today) open instantly; fine as a fallback. */
+details.faq {
+  interpolate-size: allow-keywords;
+}
+
+details.faq::details-content {
+  block-size: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: block-size 320ms ease, opacity 240ms ease, content-visibility 320ms allow-discrete;
+}
+
+details.faq[open]::details-content {
+  block-size: auto;
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  details.faq::details-content {
+    transition: none;
+  }
+}

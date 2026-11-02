@@ -1,0 +1,78 @@
+---
+import type { Locale } from "../i18n/routing";
+import { getT, localHref } from "../i18n/t";
+import Button from "./Button.astro";
+import ContactList from "./ContactList.astro";
+import ImageWithLink from "./ImageWithLink.astro";
+import { LINK_MUTED } from "./styles";
+
+interface Props {
+	locale: Locale;
+}
+const { locale } = Astro.props;
+const t = getT(locale);
+const COL_TITLE = "mb-5 text-xs font-bold uppercase tracking-[0.28em] text-accent";
+const footerLinks = [
+	{ name: t("links.services"), url: "/services" },
+	{ name: t("links.certifications"), url: "/certifications" },
+	{ name: t("links.about"), url: "/about" },
+	{ name: t("links.terms"), url: "/terms-conditions" },
+];
+const socials = [
+	{ href: "https://x.com/CONSUMSOLUTION", src: "/x.png", alt: "X socials", dark: "dark:[&_img]:invert" },
+	{ href: "https://www.linkedin.com/company/cpcdsconsumersolutions", src: "/linkedin.svg", alt: "LinkedIn socials", dark: "" },
+];
+---
+
+<footer class="border-t-2 border-accent/40 bg-surface text-neutral-950">
+	<div class="mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-12 px-5 py-14 sm:px-10 md:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)_minmax(0,1fr)] md:px-14 lg:px-20">
+		<div class="space-y-6">
+			<img class="h-12 w-auto" alt="Consumer Solutions" height="105" width="230" src="/cs.avif" loading="lazy" />
+			<p class="max-w-[36ch] text-base font-light leading-[1.6] text-neutral-600">{t("header.tagline")}</p>
+			<div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+				<a href={`mailto:${t("services.email")}?subject=${encodeURIComponent(t("footer.mailSubject"))}`} class="inline-block">
+					<Button str={t("footer.consultation")} type={1} class="px-5 py-2.5" />
+				</a>
+				<a
+					href={`mailto:${t("services.email")}`}
+					class="text-sm font-light text-neutral-600 underline decoration-neutral-900/20 underline-offset-[0.22em] transition hover:text-accent hover:decoration-accent"
+				>
+					{t("footer.mailNote")}
+				</a>
+			</div>
+		</div>
+
+		<nav aria-label={t("links.sitemap")}>
+			<p class={COL_TITLE}>{t("links.sitemap")}</p>
+			<ul class="space-y-3">
+				{
+					footerLinks.map((l) => (
+						<li>
+							<a class={LINK_MUTED} href={localHref(locale, l.url)}>
+								{l.name}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</nav>
+
+		<div>
+			<p class={COL_TITLE}>{t("services.contactTitle")}</p>
+			<ContactList locale={locale} class="space-y-3" />
+			<div class="mt-6 flex items-center gap-3">
+				{
+					socials.map((s) => (
+						<span class={`flex h-10 w-10 items-center justify-center rounded-full border border-neutral-900/[0.12] transition hover:border-accent/50 ${s.dark}`}>
+							<ImageWithLink href={s.href} src={s.src} alt={s.alt} />
+						</span>
+					))
+				}
+			</div>
+		</div>
+	</div>
+
+	<div class="border-t border-neutral-900/[0.08]">
+		<p class="mx-auto w-full max-w-[90rem] px-5 py-6 text-sm text-neutral-500 sm:px-10 md:px-14 lg:px-20">© 2021 Consumer Solutions</p>
+	</div>
+</footer>

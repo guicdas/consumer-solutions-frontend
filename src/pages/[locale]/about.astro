@@ -1,0 +1,37 @@
+---
+import Faqs, { type FaqItem } from "../../components/Faqs.astro";
+import Founder from "../../components/Founder.astro";
+import { splitFounderHeading } from "../../components/founder";
+import JsonLd from "../../components/JsonLd.astro";
+import PageShell from "../../components/PageShell.astro";
+import { localeStaticPaths, type Locale } from "../../i18n/routing";
+import { getT } from "../../i18n/t";
+import Base from "../../layouts/Base.astro";
+import { SITE_URL } from "../../site";
+
+export const getStaticPaths = localeStaticPaths;
+const locale = Astro.params.locale as Locale;
+const t = getT(locale, "about");
+const founder = t.raw("founder") as string[];
+const faqs = t.raw("faqs") as FaqItem[];
+const { name } = splitFounderHeading(founder[0]);
+---
+
+<Base locale={locale} path="/about" title={founder[0]} description={founder[1]}>
+	<PageShell>
+		<JsonLd
+			data={{
+				"@graph": [
+					{
+						"@type": "FAQPage",
+						inLanguage: locale,
+						mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.title, acceptedAnswer: { "@type": "Answer", text: f.body } })),
+					},
+					{ "@type": "Person", name, jobTitle: "Founder", worksFor: { "@id": `${SITE_URL}/#business` } },
+				],
+			}}
+		/>
+		<Founder locale={locale} />
+		<Faqs title={t("faqTitle")} items={faqs} />
+	</PageShell>
+</Base>

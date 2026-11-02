@@ -1,6 +1,6 @@
 /node_modules
 /build
-/out
-/.next
+/dist
+/.astro
 .DS_Store
 .env*

@@ -1,0 +1,153 @@
+---
+import Card from "../../components/Card.astro";
+import ContactList from "../../components/ContactList.astro";
+import PageShell from "../../components/PageShell.astro";
+import RichText from "../../components/RichText.astro";
+import { LINK_DARK } from "../../components/styles";
+import { localeStaticPaths, type Locale } from "../../i18n/routing";
+import { getT, localHref } from "../../i18n/t";
+import Base from "../../layouts/Base.astro";
+import { BANKS, POLICY_NO, REGISTRATION_NO } from "../../site";
+
+export const getStaticPaths = localeStaticPaths;
+const locale = Astro.params.locale as Locale;
+const t = getT(locale, "services");
+
+const LINK_LIGHT =
+	"font-medium text-accent underline decoration-accent/35 underline-offset-[0.22em] transition hover:decoration-accent focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent";
+const H2 = "text-[clamp(1.65rem,3.5vw,2.35rem)] leading-tight tracking-[-0.025em]";
+const LINKS = {
+	bpportal: "https://www.bportugal.pt/page/listagem-intermediarios-de-credito",
+	adrlisbon: "http://www.centroarbitragemlisboa.pt",
+	adrcniacc: "https://www.cniacc.pt/pt/",
+};
+
+const authorized = t.raw("authorizedItems") as string[];
+// The last item defines "advisory services" rather than listing a service, so it renders as a footnote.
+const services = authorized.slice(0, -1);
+const advisoryNote = authorized.at(-1);
+const facts = [
+	{ label: t("registrationTitle"), value: REGISTRATION_NO },
+	{ label: t("insuranceTitle"), value: POLICY_NO },
+	{ label: t("banksTitle"), value: String(BANKS.length) },
+];
+const adrCentres = [t.rich("adrLisbon"), t.rich("adrCniacc")];
+---
+
+<Base locale={locale} path="/services" title={t("heroTitle")} description={t("heroLead")}>
+	<PageShell>
+		<!-- Hero + key facts -->
+		<header class="relative border-b-2 border-accent/40 px-5 py-16 sm:px-10 sm:py-20 md:px-14 md:py-24 lg:px-20">
+			<div class="mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-16">
+				<div class="space-y-6">
+					<h1 class="max-w-[42rem] text-[clamp(2.5rem,8vw,4.5rem)] font-normal leading-[0.96] tracking-[-0.038em]">
+						{t("heroTitle")}
+					</h1>
+					<p class="max-w-[60ch] text-lg font-extralight leading-[1.6] text-neutral-700 sm:text-xl">
+						{t("heroLead")}
+					</p>
+				</div>
+				<dl class="divide-y divide-neutral-900/[0.08] overflow-hidden rounded-2xl border-2 border-neutral-900/[0.08] bg-surface shadow-[0_24px_64px_-36px_oklch(0.32_0.1_158_/_0.4)]">
+					{
+						facts.map((f) => (
+							<div class="flex items-center justify-between gap-6 px-7 py-6 sm:px-9">
+								<dt class="text-sm font-medium leading-snug text-neutral-600 sm:text-base">{f.label}</dt>
+								<dd class="text-[clamp(1.6rem,3vw,2.1rem)] font-normal tabular-nums tracking-[-0.02em] text-accent">{f.value}</dd>
+							</div>
+						))
+					}
+				</dl>
+			</div>
+		</header>
+
+		<div class="relative mx-auto flex w-full max-w-[90rem] flex-col gap-16 px-5 py-14 sm:px-8 sm:py-16 md:gap-24 md:px-12 md:py-20 lg:px-16">
+			<!-- Credentials -->
+			<div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
+				<Card id="reg-heading" title={t("registrationTitle")}>
+					<p class="text-base leading-[1.8] text-neutral-700 sm:text-lg">
+						<RichText parts={t.rich("registrationBody", { registration: REGISTRATION_NO })} links={LINKS} linkClass={LINK_LIGHT} />
+					</p>
+				</Card>
+				<Card id="ins-heading" title={t("insuranceTitle")}>
+					<p class="text-base leading-[1.8] text-neutral-700 sm:text-lg">{t("insuranceMortgage", { policy: POLICY_NO })}</p>
+				</Card>
+			</div>
+
+			<!-- Authorised services -->
+			<section aria-labelledby="auth-heading">
+				<h2 id="auth-heading" class={`${H2} mb-10`}>{t("authorizedTitle")}</h2>
+				<ol class="grid grid-cols-1 gap-6 md:grid-cols-2">
+					{
+						services.map((item) => (
+							<li class="flex gap-4 rounded-2xl border border-neutral-900/12 bg-tint p-6 sm:p-8">
+								<span class="mt-[0.45em] h-4 w-0.5 shrink-0 rounded-full bg-accent-strong/55" aria-hidden="true" />
+								<span class="text-base leading-[1.75] text-neutral-900 sm:text-[1.05rem]">{item}</span>
+							</li>
+						))
+					}
+				</ol>
+				{
+					advisoryNote && (
+						<p class="mt-8 max-w-[90ch] border-l-2 border-accent pl-5 text-sm italic leading-[1.8] text-neutral-600 sm:text-base">{advisoryNote}</p>
+					)
+				}
+			</section>
+
+			<!-- Partner banks -->
+			<section aria-labelledby="banks-heading" class="relative overflow-hidden rounded-2xl bg-panel dark:ring-1 dark:ring-accent/30 px-7 py-12 text-zinc-100 sm:px-10 sm:py-14">
+				<div
+					class="pointer-events-none absolute inset-0"
+					aria-hidden="true"
+					style="background: radial-gradient(ellipse 100% 80% at 100% 0%, var(--panel-glow), transparent 55%)"
+				>
+				</div>
+				<div class="relative">
+					<h2 id="banks-heading" class={`${H2} mb-10 text-white`}>{t("banksTitle")}</h2>
+					<ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+						{
+							BANKS.map((b) => (
+								<li class="flex items-center rounded-xl border border-white/10 bg-white/[0.04] px-5 py-4 text-[0.85rem] font-medium leading-snug tracking-[0.02em] text-zinc-200">
+									{b}
+								</li>
+							))
+						}
+					</ul>
+				</div>
+			</section>
+
+			<!-- Complaints & dispute resolution -->
+			<section aria-labelledby="comp-heading" class="space-y-10">
+				<div>
+					<h2 id="comp-heading" class={`${H2} mb-6`}>{t("complaintsTitle")}</h2>
+					<p class="max-w-[80ch] text-base leading-[1.85] text-neutral-700 sm:text-lg">{t("complaintsP1")}</p>
+				</div>
+				<div class="rounded-2xl border border-neutral-900/12 bg-tint p-6 sm:p-10">
+					<h3 class="mb-3 text-sm font-bold uppercase tracking-[0.28em] text-accent">{t("adrTitle")}</h3>
+					<p class="mb-6 max-w-[80ch] text-base leading-[1.8] text-neutral-700">{t("adrLead")}</p>
+					<ul class="grid grid-cols-1 gap-4 md:grid-cols-2">
+						{
+							adrCentres.map((parts) => (
+								<li class="rounded-xl border border-neutral-900/12 bg-surface p-5 text-base leading-relaxed text-neutral-800">
+									<RichText parts={parts} links={LINKS} linkClass={LINK_LIGHT} />
+								</li>
+							))
+						}
+					</ul>
+				</div>
+				<p class="flex gap-5 rounded-xl border-2 border-accent/35 bg-tint p-6 text-sm font-medium leading-[1.8] text-neutral-900 sm:p-8 sm:text-base">
+					<span class="text-2xl leading-none text-accent" aria-hidden="true">§</span>
+					{t("prohibitedNote")}
+				</p>
+			</section>
+
+			<!-- Contact -->
+			<section aria-labelledby="contact-heading" class="relative overflow-hidden rounded-2xl bg-panel dark:ring-1 dark:ring-accent/30 px-7 py-12 text-zinc-200 sm:px-10 sm:py-14">
+				<h2 id="contact-heading" class={`${H2} mb-10 text-white`}>{t("contactTitle")}</h2>
+				<ContactList locale={locale} dark class="grid grid-cols-1 gap-8 text-base md:grid-cols-3" />
+				<p class="mt-10 border-t border-zinc-600/50 pt-8">
+					<a class={`${LINK_DARK} text-base`} href={localHref(locale, "/terms-conditions")}>{t("privacyLabel")}</a>
+				</p>
+			</section>
+		</div>
+	</PageShell>
+</Base>

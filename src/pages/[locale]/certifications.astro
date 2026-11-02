@@ -1,0 +1,77 @@
+---
+import Button from "../../components/Button.astro";
+import Card from "../../components/Card.astro";
+import PageShell from "../../components/PageShell.astro";
+import { KICKER } from "../../components/styles";
+import { localeStaticPaths, type Locale } from "../../i18n/routing";
+import { getT, localHref } from "../../i18n/t";
+import Base from "../../layouts/Base.astro";
+
+export const getStaticPaths = localeStaticPaths;
+const locale = Astro.params.locale as Locale;
+const t = getT(locale, "certifications");
+const pointCards = [
+	{ id: "mandate-heading", title: t("mandateTitle"), items: t.raw("mandateItems") as string[] },
+	{ id: "interests-heading", title: t("interestsTitle"), items: t.raw("interestsItems") as string[] },
+];
+---
+
+<Base locale={locale} path="/certifications" title={t("title")} description={t("freeBody")}>
+	<PageShell>
+		<header class="relative border-b-2 border-accent/40 px-5 py-16 sm:px-10 sm:py-20 md:px-14 md:py-24 lg:px-20">
+			<div class="mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-16">
+				<div class="space-y-6">
+					<p class={KICKER}>{t("kicker")}</p>
+					<h1 class="max-w-[42rem] text-[clamp(2.25rem,7vw,4.25rem)] font-normal leading-[0.98] tracking-[-0.038em]">
+						{t("title")}
+					</h1>
+				</div>
+				<div class="overflow-hidden rounded-2xl shadow-[0_24px_64px_-36px_oklch(0.32_0.1_158_/_0.5)]">
+					<img alt={t("imageAlt")} src="/transparency.avif" width="1000" height="600" class="h-full w-full object-cover" fetchpriority="high" />
+				</div>
+			</div>
+		</header>
+
+		<div class="relative mx-auto flex w-full max-w-[90rem] flex-col gap-14 px-5 py-14 sm:px-8 sm:py-16 md:gap-20 md:px-12 md:py-20 lg:px-16">
+			<section aria-labelledby="free-heading" class="relative overflow-hidden rounded-2xl bg-panel dark:ring-1 dark:ring-accent/30 px-7 py-12 text-zinc-100 sm:px-10 sm:py-14">
+				<div
+					class="pointer-events-none absolute inset-0"
+					aria-hidden="true"
+					style="background: radial-gradient(ellipse 100% 80% at 100% 0%, var(--panel-glow), transparent 55%)"
+				>
+				</div>
+				<div class="relative grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
+					<h2 id="free-heading" class="text-[clamp(1.75rem,3.8vw,2.65rem)] leading-tight tracking-[-0.03em] text-white">
+						{t("freeTitle")}
+					</h2>
+					<p class="border-t border-zinc-600/50 pt-8 text-base font-light leading-[1.85] text-zinc-300 sm:text-lg lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
+						{t("freeBody")}
+					</p>
+				</div>
+			</section>
+
+			<div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
+				{
+					pointCards.map((c) => (
+						<Card id={c.id} title={c.title.replace(/\s*:$/, "")}>
+							<ul class="space-y-6">
+								{c.items.map((item) => (
+									<li class="flex gap-4 text-base leading-[1.8] text-neutral-700 sm:text-lg">
+										<span class="mt-[0.7em] h-2 w-2 shrink-0 rounded-full bg-accent-strong" aria-hidden="true" />
+										{item}
+									</li>
+								))}
+							</ul>
+						</Card>
+					))
+				}
+			</div>
+
+			<div class="flex justify-center border-t border-neutral-900/[0.08] pt-12">
+				<a href={localHref(locale, "/about")}>
+					<Button str={t("button")} type={2} />
+				</a>
+			</div>
+		</div>
+	</PageShell>
+</Base>

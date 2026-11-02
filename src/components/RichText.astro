@@ -1,0 +1,23 @@
+---
+import type { RichPart } from "../i18n/t";
+
+// Renders t.rich() output: tagged parts become external links (href looked up by tag name).
+interface Props {
+	parts: RichPart[];
+	links: Record<string, string>;
+	linkClass: string;
+}
+const { parts, links, linkClass } = Astro.props;
+---
+
+{
+	parts.map((p) =>
+		p.tag ? (
+			<a href={links[p.tag]} class={linkClass} rel="noopener noreferrer" target="_blank">
+				{p.text}
+			</a>
+		) : (
+			p.text
+		),
+	)
+}
