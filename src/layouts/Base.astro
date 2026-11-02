@@ -4,6 +4,7 @@ import oswaldLatin from "@fontsource-variable/oswald/files/oswald-latin-wght-nor
 import "../styles/globals.css";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import ThemeScript from "../components/ThemeScript.astro";
 import type { Locale } from "../i18n/routing";
 import { getT } from "../i18n/t";
 import { pageMeta } from "../site";
@@ -43,14 +44,7 @@ const fullTitle = brand ? `${title} · ${t("meta.title")}` : title;
 		<link rel="icon" href="/favicon.ico" />
 		<link rel="preload" href={oswaldLatin} as="font" type="font/woff2" crossorigin />
 		<slot name="head" />
-		<!-- Runs before paint so the page never flashes the wrong theme. -->
-		<script is:inline>
-			try {
-				var t = localStorage.getItem("theme");
-				if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-				document.documentElement.dataset.theme = t;
-			} catch (e) {}
-		</script>
+		<ThemeScript />
 	</head>
 	<body>
 		<Header locale={locale} path={path} />

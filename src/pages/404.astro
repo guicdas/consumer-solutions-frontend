@@ -1,6 +1,7 @@
 ---
 import "@fontsource-variable/oswald";
 import "../styles/globals.css";
+import ThemeScript from "../components/ThemeScript.astro";
 
 // Cloudflare Pages serves this (dist/404.html) for any unknown URL. It sits outside [locale], so it shows all three languages.
 const LANGS = [
@@ -17,6 +18,8 @@ const LANGS = [
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="robots" content="noindex" />
 		<title>404 · Consumer Solutions</title>
+		<link rel="icon" href="/favicon.ico" />
+		<ThemeScript />
 	</head>
 	<body>
 		<main class="flex min-h-screen items-center justify-center bg-page px-5 py-16 text-neutral-950">

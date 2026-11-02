@@ -5,6 +5,7 @@ import { KICKER } from "../../components/styles";
 import { localeStaticPaths, type Locale } from "../../i18n/routing";
 import { getT } from "../../i18n/t";
 import Base from "../../layouts/Base.astro";
+import Panel from "../../components/Panel.astro";
 
 export const getStaticPaths = localeStaticPaths;
 const locale = Astro.params.locale as Locale;
@@ -32,20 +33,12 @@ const paragraphs = rest.flatMap((p) => p.split("\n"));
 				{paragraphs.map((p) => <p class="px-7 py-8 text-base leading-[1.85] text-neutral-700 sm:px-10 sm:text-lg">{p}</p>)}
 			</div>
 
-			<aside aria-labelledby="privacy-contact" class="relative self-start overflow-hidden rounded-2xl bg-panel dark:ring-1 dark:ring-accent/30 px-7 py-10 text-zinc-200 sm:px-9">
-				<div
-					class="pointer-events-none absolute inset-0"
-					aria-hidden="true"
-					style="background: radial-gradient(ellipse 100% 80% at 100% 0%, var(--panel-glow), transparent 55%)"
-				>
-				</div>
-				<div class="relative">
-					<h2 id="privacy-contact" class="mb-8 text-[clamp(1.35rem,2.4vw,1.75rem)] leading-tight tracking-[-0.02em] text-white">
-						{all("services.contactTitle")}
-					</h2>
-					<ContactList locale={locale} dark class="space-y-4" />
-				</div>
-			</aside>
+			<Panel as="aside" aria-labelledby="privacy-contact" class="self-start px-7 py-10 text-zinc-200 sm:px-9">
+				<h2 id="privacy-contact" class="mb-8 text-[clamp(1.35rem,2.4vw,1.75rem)] leading-tight tracking-[-0.02em] text-white">
+					{all("services.contactTitle")}
+				</h2>
+				<ContactList locale={locale} dark class="space-y-4" />
+			</Panel>
 		</div>
 	</PageShell>
 </Base>

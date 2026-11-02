@@ -6,7 +6,7 @@ const pages = [
 	{ path: "/services", changefreq: "monthly", priority: 0.8 },
 	{ path: "/about", changefreq: "yearly", priority: 0.7 },
 	{ path: "/certifications", changefreq: "yearly", priority: 0.6 },
-	{ path: "/terms-conditions", changefreq: "weekly", priority: 0.5 },
+	{ path: "/terms-conditions", changefreq: "yearly", priority: 0.5 },
 ];
 
 // One <url> per page (default locale), with the other languages as hreflang alternates.

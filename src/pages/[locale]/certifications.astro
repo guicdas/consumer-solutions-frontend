@@ -6,6 +6,7 @@ import { KICKER } from "../../components/styles";
 import { localeStaticPaths, type Locale } from "../../i18n/routing";
 import { getT, localHref } from "../../i18n/t";
 import Base from "../../layouts/Base.astro";
+import Panel from "../../components/Panel.astro";
 
 export const getStaticPaths = localeStaticPaths;
 const locale = Astro.params.locale as Locale;
@@ -27,20 +28,14 @@ const pointCards = [
 					</h1>
 				</div>
 				<div class="overflow-hidden rounded-2xl shadow-[0_24px_64px_-36px_oklch(0.32_0.1_158_/_0.5)]">
-					<img alt={t("imageAlt")} src="/transparency.avif" width="1000" height="600" class="h-full w-full object-cover" fetchpriority="high" />
+					<img alt={t("imageAlt")} src="/transparency.avif" width="980" height="225" class="h-full w-full object-cover" fetchpriority="high" />
 				</div>
 			</div>
 		</header>
 
 		<div class="relative mx-auto flex w-full max-w-[90rem] flex-col gap-14 px-5 py-14 sm:px-8 sm:py-16 md:gap-20 md:px-12 md:py-20 lg:px-16">
-			<section aria-labelledby="free-heading" class="relative overflow-hidden rounded-2xl bg-panel dark:ring-1 dark:ring-accent/30 px-7 py-12 text-zinc-100 sm:px-10 sm:py-14">
-				<div
-					class="pointer-events-none absolute inset-0"
-					aria-hidden="true"
-					style="background: radial-gradient(ellipse 100% 80% at 100% 0%, var(--panel-glow), transparent 55%)"
-				>
-				</div>
-				<div class="relative grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
+			<Panel aria-labelledby="free-heading" class="px-7 py-12 text-zinc-100 sm:px-10 sm:py-14">
+				<div class="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
 					<h2 id="free-heading" class="text-[clamp(1.75rem,3.8vw,2.65rem)] leading-tight tracking-[-0.03em] text-white">
 						{t("freeTitle")}
 					</h2>
@@ -48,7 +43,7 @@ const pointCards = [
 						{t("freeBody")}
 					</p>
 				</div>
-			</section>
+			</Panel>
 
 			<div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
 				{

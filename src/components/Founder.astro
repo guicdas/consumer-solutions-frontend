@@ -3,6 +3,7 @@ import type { Locale } from "../i18n/routing";
 import { getT } from "../i18n/t";
 import { splitFounderHeading } from "./founder";
 import { KICKER } from "./styles";
+import Panel from "./Panel.astro";
 
 interface Props {
 	locale: Locale;
@@ -40,14 +41,9 @@ const initials = name.split(" ").filter(Boolean).map((w) => w[0]).filter((c) => 
 	</div>
 	{
 		closing && (
-			<blockquote class="relative self-start overflow-hidden rounded-2xl bg-panel dark:ring-1 dark:ring-accent/30 px-7 py-10 sm:px-10 sm:py-12">
-				<div
-					class="pointer-events-none absolute inset-0"
-					aria-hidden="true"
-					style="background: radial-gradient(ellipse 100% 80% at 100% 0%, var(--panel-glow), transparent 55%)"
-				/>
-				<p class="relative text-[clamp(1.35rem,2.6vw,1.85rem)] leading-snug tracking-[-0.02em] text-white">{closing}</p>
-			</blockquote>
+			<Panel as="blockquote" class="self-start px-7 py-10 sm:px-10 sm:py-12">
+				<p class="text-[clamp(1.35rem,2.6vw,1.85rem)] leading-snug tracking-[-0.02em] text-white">{closing}</p>
+			</Panel>
 		)
 	}
 </section>

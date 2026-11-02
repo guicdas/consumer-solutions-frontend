@@ -8,6 +8,7 @@ import { localeStaticPaths, type Locale } from "../../i18n/routing";
 import { getT, localHref } from "../../i18n/t";
 import Base from "../../layouts/Base.astro";
 import { BANKS, POLICY_NO, REGISTRATION_NO } from "../../site";
+import Panel from "../../components/Panel.astro";
 
 export const getStaticPaths = localeStaticPaths;
 const locale = Astro.params.locale as Locale;
@@ -18,7 +19,7 @@ const LINK_LIGHT =
 const H2 = "text-[clamp(1.65rem,3.5vw,2.35rem)] leading-tight tracking-[-0.025em]";
 const LINKS = {
 	bpportal: "https://www.bportugal.pt/page/listagem-intermediarios-de-credito",
-	adrlisbon: "http://www.centroarbitragemlisboa.pt",
+	adrlisbon: "https://www.centroarbitragemlisboa.pt",
 	adrcniacc: "https://www.cniacc.pt/pt/",
 };
 
@@ -94,26 +95,18 @@ const adrCentres = [t.rich("adrLisbon"), t.rich("adrCniacc")];
 			</section>
 
 			<!-- Partner banks -->
-			<section aria-labelledby="banks-heading" class="relative overflow-hidden rounded-2xl bg-panel dark:ring-1 dark:ring-accent/30 px-7 py-12 text-zinc-100 sm:px-10 sm:py-14">
-				<div
-					class="pointer-events-none absolute inset-0"
-					aria-hidden="true"
-					style="background: radial-gradient(ellipse 100% 80% at 100% 0%, var(--panel-glow), transparent 55%)"
-				>
-				</div>
-				<div class="relative">
-					<h2 id="banks-heading" class={`${H2} mb-10 text-white`}>{t("banksTitle")}</h2>
-					<ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-						{
-							BANKS.map((b) => (
-								<li class="flex items-center rounded-xl border border-white/10 bg-white/[0.04] px-5 py-4 text-[0.85rem] font-medium leading-snug tracking-[0.02em] text-zinc-200">
-									{b}
-								</li>
-							))
-						}
-					</ul>
-				</div>
-			</section>
+			<Panel aria-labelledby="banks-heading" class="px-7 py-12 text-zinc-100 sm:px-10 sm:py-14">
+				<h2 id="banks-heading" class={`${H2} mb-10 text-white`}>{t("banksTitle")}</h2>
+				<ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+					{
+						BANKS.map((b) => (
+							<li class="flex items-center rounded-xl border border-white/10 bg-white/[0.04] px-5 py-4 text-[0.85rem] font-medium leading-snug tracking-[0.02em] text-zinc-200">
+								{b}
+							</li>
+						))
+					}
+				</ul>
+			</Panel>
 
 			<!-- Complaints & dispute resolution -->
 			<section aria-labelledby="comp-heading" class="space-y-10">
@@ -141,13 +134,13 @@ const adrCentres = [t.rich("adrLisbon"), t.rich("adrCniacc")];
 			</section>
 
 			<!-- Contact -->
-			<section aria-labelledby="contact-heading" class="relative overflow-hidden rounded-2xl bg-panel dark:ring-1 dark:ring-accent/30 px-7 py-12 text-zinc-200 sm:px-10 sm:py-14">
+			<Panel aria-labelledby="contact-heading" class="px-7 py-12 text-zinc-200 sm:px-10 sm:py-14">
 				<h2 id="contact-heading" class={`${H2} mb-10 text-white`}>{t("contactTitle")}</h2>
 				<ContactList locale={locale} dark class="grid grid-cols-1 gap-8 text-base md:grid-cols-3" />
 				<p class="mt-10 border-t border-zinc-600/50 pt-8">
 					<a class={`${LINK_DARK} text-base`} href={localHref(locale, "/terms-conditions")}>{t("privacyLabel")}</a>
 				</p>
-			</section>
+			</Panel>
 		</div>
 	</PageShell>
 </Base>

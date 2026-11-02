@@ -1,0 +1,17 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+// Dark green rounded box with the corner glow (and a thin outline in dark mode). Padding and text colour come via `class`.
+type Props = HTMLAttributes<"section"> & { as?: "section" | "div" | "aside" | "blockquote" };
+const { as: Tag = "section", class: extra = "", ...rest } = Astro.props;
+---
+
+<Tag class={`relative overflow-hidden rounded-2xl bg-panel dark:ring-1 dark:ring-accent/30 ${extra}`} {...rest}>
+	<div
+		class="pointer-events-none absolute inset-0"
+		aria-hidden="true"
+		style="background: radial-gradient(ellipse 100% 80% at 100% 0%, var(--panel-glow), transparent 55%)"
+	>
+	</div>
+	<div class="relative"><slot /></div>
+</Tag>
